@@ -242,7 +242,6 @@ function savecontactInfo(participantName, participantEmail, participantPNo, year
 regformSubmit = document.getElementById('regformSubmit');
 regformSubmit.addEventListener('click' homeRedirection)
 
-
 function homeRedirection(){
     setTimeout(function() {
       function newLocation() {
