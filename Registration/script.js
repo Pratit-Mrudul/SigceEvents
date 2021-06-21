@@ -7,12 +7,6 @@ hamburger_menu.addEventListener("click", () => {
 let regFormFn = document.getElementById('regFormFn');
 regFormFn.addEventListener('click', regform);
 
-function regform() {
-  document.getElementById('chooseevent').style.display = 'none';
-  document.getElementById('regform').style.display = 'block';
-}
-
-
 function validate() {
   // POETRY-SHAYRI
   if (document.getElementById('event').value == 'POETRY-SHAYRI') {
