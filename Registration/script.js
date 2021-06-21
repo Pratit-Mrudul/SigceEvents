@@ -240,14 +240,5 @@ function savecontactInfo(participantName, participantEmail, participantPNo, year
     Year: year,
     Branch: branch,
     RollNo: participantRNo,
-    EVENT: event,
-    Language: languageselect,
-    ProOrAgainst: proagainstselect,
-    Topic: topicvalue,
-    Instrument: instrumentselect,
-    CodingLanguage: codelanguageselect,
-    BGMICharacterID: BGMICharID,
-    BGMIUserName: BGMIUsername,
-    ChessId: ParticipantChessID,
   });
 }
