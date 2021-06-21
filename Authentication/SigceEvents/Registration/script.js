@@ -220,6 +220,12 @@ function registerForm(e) {
       setTimeout(function() {
         document.getElementById('reg_form').reset()
       }, 1000);
+      
+      setTimeout(function() {
+      function newLocation() {
+        window.location.href="/";
+      }
+    }, 1000);    
 }
 
 
@@ -237,16 +243,3 @@ function savecontactInfo(participantName, participantEmail, participantPNo, year
   });
 }
 
-
-
-regformSubmit = document.getElementById('regformSubmit');
-regformSubmit.addEventListener('click' homeRedirection)
-
-function homeRedirection(){
-    setTimeout(function() {
-      function newLocation() {
-        window.location.href="/";
-      }
-    }, 1000);    
-}
-    
