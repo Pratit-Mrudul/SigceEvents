@@ -360,3 +360,6 @@ select {
 .btnform:hover {
   border-color: #2ecc71;
 }
+.authForm{
+  display: block;
+}
