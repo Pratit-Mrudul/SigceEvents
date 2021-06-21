@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024px" />
+  <title>SIGCE/Events</title>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+  <script src="Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="Registration/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+        <h3 class="logo">SIGCE <span>Events</span></h3>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">
+              <div id="chooseevent">
+                <h2 class="title">EVENT REGISTRATION</h2>
+                <button id="regFormFn" class="btn">REGISTER NOW!</button>
+              </div>
+              <!-- FORM -->
+              <div id="regform">
+                <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
+                  <input type="text" name="" id="participantName" value="" placeholder="Full-Name" required="required" />
+                  <input type="email" name="" id="participantEmail" value="" placeholder="College Email" required="required" />
+                  <input type="number" name="" id="participantPNo" value="" placeholder="Mobile Number" required="required" />
+                  <label for="year">Year :
+                    <select name="year" id="year" required="required">
+                      <option value="" selected="selected">Select</option>
+                      <option value="FY">FIRST YEAR</option>
+                      <option value="SY">SECOND YEAR</option>
+                      <option value="TY">THIRD YEAR</option>
+                    </select>
+                  </label>
+
+                  <label for="branch">Branch :
+                    <select name="branch" id="branch" required="required">
+                      <option value="" selected="selected">Select</option>
+                      <option value="COMP-PLAIN">Computer Plain</option>
+                      <option value="AIML">AI & ML</option>
+                      <option value="IOT">IOT</option>
+                      <option value="ELECTRICAL">Electrical</option>
+                      <option value="MECHANICAL">Mechanical</option>
+                    </select>
+                  </label>
+                  <input type="number" name="" id="participantRNo" value="" placeholder="Roll No." required="required" />
+                  <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+
+    <div class="links">
+      <ul>
+        <li>
+          <a href="home.html" style="--i: 0.05s;">Home</a>
+        </li>
+        <li>
+          <a href="event.html" style="--i: 0.1s;">Events</a>
+        </li>
+        <li>
+          <a href="co-ordinators.html" style="--i: 0.15s;">Co-Ordinators</a>
+        </li>
+        <li>
+          <a href="registration.html" style="--i: 0.2s;">Registration</a>
+        </li>
+        <li>
+          <a href="submission.html" style="--i: 0.25s;">Submission</a>
+        </li>
+        <li>
+          <a href="credits.html" style="--i: 0.3s;">Credits</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="Registration/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024px" />
+  <title>SIGCE/Events</title>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+  <script src="Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="/Registration/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+        <h3 class="logo">SIGCE <span>Events</span></h3>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">
+              <div id="chooseevent">
+                <h2 class="title">EVENT REGISTRATION</h2>
+                <button id="regFormFn" class="btn">REGISTER NOW!</button>
+              </div>
+              <!-- FORM -->
+              <div id="regform">
+                <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
+                  <label for="event">Event :
+                    <select name="event" id="event" onchange="validate()" required="required">
+                      <option value="" selected="selected">Select</option>
+                      <option value="POETRY-SHAYRI">POETRY/SHAYRI</option>
+                      <option value="STANDUP">STANDUP</option>
+                      <option value="NAIL-ART">NAIL ART</option>
+                      <option value="DEBATE">DEBATE</option>
+                      <option value="POSTER">POSTER</option>
+                      <option value="SKRIBBLE">SKRIBBLE</option>
+                      <option value="MASK-PAINTING">MASK PAINTING</option>
+                      <option value="MUSIC">MUSIC</option>
+                      <option value="DANCE">DANCE</option>
+                      <option value="PHOTOGRAPHY">PHOTOGRAPHY</option>
+                      <option value="SCI-PROJECT">SCI PROJECT IDEAS</option>
+                      <option value="INSTRUMENT">INSTRUMENT</option>
+                      <option value="QUIZ">QUIZ</option>
+                      <option value="ELOCUTION">ELOCUTION</option>
+                      <option value="CODING">CODING</option>
+                      <option value="BGMI">BGMI</option>
+                      <option value="CHALK">CHALK ART/CARVING</option>
+                      <option value="CHESS">CHESS</option>
+                    </select>
+                  </label>
+                  <!-- LANGUAGE -->
+                  <div id="language" class="hideclass">
+                    <label for="languageselect">Language : </label>
+                    <select name="languageselect" id="languageselect">
+                      <option value="" selected="selected">Select</option>
+                      <option value="English">English</option>
+                      <option value="Marathi">Marathi</option>
+                      <option value="Hindi">Hindi</option>
+                    </select>
+                  </div>
+                  <!-- PROAGAINST -->
+                  <div id="proagainst" class="hideclass">
+                    <label for="proagainstselect">Pro/Against :
+                      <select name="proagainstselect" id="proagainstselect">
+                        <option value="" selected="selected">Select</option>
+                        <option value="PRO">PRO</option>
+                        <option value="AGAINST">AGAINST</option>
+                      </select>
+                    </label>
+                  </div>
+                  <!-- TOPIC -->
+                  <div id="topic" class="hideclass">
+                    <input type="text" name="topic" id="topicvalue" placeholder="Topic" />
+                  </div>
+                  <!-- INSTRUMENT -->
+                  <div id="instrument" class="hideclass">
+                    <input type="text" name="instrument" id="instrumentselect" placeholder="Name Of Instrument">
+                  </div>
+                  <!-- CODING -->
+                  <div class="hideclass" id="codelang">
+                    <label for="codelanguageselect">Language : </label>
+                    <select name="codelanguageselect" id="codelanguageselect">
+                      <option value="" selected="selected">Select</option>
+                      <option value="PYTHON">PYTHON</option>
+                      <option value="C++">C++</option>
+                      <option value="JAVA">JAVA</option>
+                    </select>
+                  </div>
+                  <!-- CHARACTER-ID -->
+                  <div id="characterid" class="hideclass">
+                    <input type="number" name="" id="BGMICharID" value="" placeholder="Character-ID" />
+                    <input type="text/" name="" id="BGMIUsername" placeholder="BGMI-Username" />
+                  </div>
+                  <!-- CHESS-ID -->
+                  <div class="hideclass" id="chessid">
+                    <input type="text" name="" id="ParticipantChessID" placeholder="Chess-Id">
+                  </div>
+                  <br>
+                  <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+
+    <div class="links">
+      <ul>
+        <li>
+          <a href="/" style="--i: 0.05s;">Home</a>
+        </li>
+        <li>
+          <a href="/Event" style="--i: 0.1s;">Events</a>
+        </li>
+        <li>
+          <a href="/Co-ordinators" style="--i: 0.15s;">Co-Ordinators</a>
+        </li>
+        <li>
+          <a href="/Registration" style="--i: 0.2s;">Registration</a>
+        </li>
+        <li>
+          <a href="/Submission" style="--i: 0.25s;">Submission</a>
+        </li>
+        <li>
+          <a href="/Credits" style="--i: 0.3s;">Credits</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="/Registration/script.js"></script>
+</body>
+</html>
