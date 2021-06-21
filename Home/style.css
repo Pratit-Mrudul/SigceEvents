@@ -131,7 +131,7 @@ header {
   margin: 2rem;
 }
 
-.authRedirect {
+.btn {
   margin-top: 1rem;
   padding: 0.6rem 1.8rem;
   background-color: #1179e7;
@@ -142,7 +142,11 @@ header {
   cursor: pointer;
   text-decoration: none;
 }
-
+.authRedirect{
+  margin-top: 23px;
+  color: red;
+  background-color: green;
+}
 .container.active .bar {
   transform: rotate(360deg);
   background-color: transparent;
