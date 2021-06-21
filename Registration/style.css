@@ -300,9 +300,6 @@ ul {
 .container.active .main:hover {
   transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
 }
-#regform {
-  display: none;
-}
 #characterid {
   display: none;
 }
