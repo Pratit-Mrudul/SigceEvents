@@ -128,10 +128,11 @@ header {
 
 .title {
   font-size: 2.3rem;
+  margin: 2rem;
 }
 
 .btn {
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0.6rem 1.8rem;
   background-color: #1179e7;
   border: none;
