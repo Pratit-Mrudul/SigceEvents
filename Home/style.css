@@ -144,7 +144,7 @@ header {
 }
 .authRedirect{
   margin-top: 23px;
-  color: red;
+  color: red !important;
   background-color: green;
 }
 .container.active .bar {
