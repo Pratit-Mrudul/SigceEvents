@@ -12,13 +12,21 @@ function emailValidation(email) {
     return value;
   };
 
-function createUser(email, password, name) {
+function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       user = userCredential.user;
       user.updateProfile({
         displayName: name,
       }).then(() => {
+          sendData({
+              "name": name,
+              "email": email,
+              "phoneNo": phoneNo,
+              "year": year,
+              "branch": branch,
+              "rollNo": rollNo,
+          });
         firebase.auth().currentUser.sendEmailVerification().then(() => {
             window.alert('Verification Email sent!');
           });
