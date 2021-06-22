@@ -18,8 +18,7 @@ function createUser(email, password, name) {
         displayName: name,
       }).then(() => {
         firebase.auth().currentUser.sendEmailVerification().then(() => {
-            window.alert('Verification Email sent!')
-            window.open('/EmailVerification/', '_self')
+            window.alert('Verification Email sent!');
           });
       }).catch((error) => {
         document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert">
