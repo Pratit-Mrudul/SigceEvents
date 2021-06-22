@@ -11,11 +11,7 @@
   <script type="text/javascript" charset="utf-8">
 
     console.log('hello');
-
-
     const auth = firebase.auth();
-
-    const SignUp = document.getElementById('SignUp');
     function registerAcc() {
       let email = document.getElementById('participantEmail').value;
       let pass = document.getElementById('password').value;
@@ -31,7 +27,7 @@
         return value;
       }
       if (value == true) {
-        const promise = auth.createUserWithEmailAndPassword(email, pass);
+        let promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e=> alert(e.message));
         alert('Signed Up!');
       } else {
@@ -42,9 +38,7 @@
   <link rel="stylesheet" href="/Registration/style.css" />
 
   <style>
-    .btn_hide {
-      display: none;
-    }
+    .btn_hide {}
   </style>
 </head>
 <body>
