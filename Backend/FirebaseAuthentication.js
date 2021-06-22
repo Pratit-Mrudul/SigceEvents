@@ -10,11 +10,22 @@ function validation(email) {
     return value;
   };
 
-function createUser(email, password) {
+function createUser(email, password, name) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       user = userCredential.user;
-      window.open('https://sigceevent.ml/Event/', '_self')
+      user.updateProfile({
+        displayName: name,
+      }).then(() => {
+        firebase.auth().currentUser.sendEmailVerification().then(() => {
+            window.alert('Verification Email sent!')
+            window.open('/EmailVerification/', '_self')
+          });
+      }).catch((error) => {
+        document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert">
+        ${error}
+      </div>`
+      });
     })
     .catch((error) => {
       document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert">
