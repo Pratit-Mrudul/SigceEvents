@@ -30,6 +30,7 @@
         let promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e=> alert(e.message));
         alert('Signed Up!');
+        document.getElementById('reg_form').reset();
         setTimeout(function() {
           window.open('https://sigceevent.ml', '_self');
         }, 10);
