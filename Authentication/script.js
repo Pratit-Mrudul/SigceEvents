@@ -24,7 +24,7 @@ function registerAcc() {
     alert('Signed Up!');
     document.getElementById('reg_form').reset();
     setTimeout(function() {
-      window.open('https://sigceevent.ml', '_self');
+      window.open('https://sigceevent.ml/Event/', '_self');
     }, 1000);
   } else {
     alert('Enter The College Email Id!');
