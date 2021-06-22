@@ -22,6 +22,7 @@
         } else {
           value = false;
         }
+        return value;
       }
       if (value == true) {
         const promise = auth.createUserWithEmailAndPassword(email, pass);
