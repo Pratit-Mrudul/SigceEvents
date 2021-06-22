@@ -24,10 +24,14 @@ function registerAcc() {
     promise.catch(e=> alert(e.message));
     alert('Signed Up!');
     document.getElementById('reg_form').reset();
+    registerNow.style.display = 'none';
+    learnMore.style.display = 'block';
     setTimeout(function() {
       window.open('https://sigceevent.ml', '_self');
     }, 1000);
   } else {
     alert('Enter The College Email Id!');
+    registerNow.style.display = 'block';
+    learnMore.style.display = 'none';
   }
 };
