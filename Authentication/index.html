@@ -11,6 +11,11 @@
   <script src="/Backend/script.js"></script>
   <script src="/Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
   <link rel="stylesheet" href="/Registration/style.css" />
+  <style>
+    .btn_hide {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -32,7 +37,7 @@
                 <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
                   <input type="text" name="" id="participantName" value="" placeholder="Full-Name" required="required" />
                   <input type="email" name="" id="participantEmail" value="" placeholder="College Email" required="required" />
-                  <input type="number" name="" id="participantPNo" value="" placeholder="Mobile Number" required="required" />
+                  <input type="text" name="" id="password" value="" placeholder="Password" required="required" />
                   <label for="year">Year :
                     <select name="year" id="year" required="required">
                       <option value="" selected="selected">Select</option>
@@ -53,7 +58,9 @@
                     </select>
                   </label>
                   <input type="number" name="" id="participantRNo" value="" placeholder="Roll No." required="required" />
-                  <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
+                  <button type="button" id="Login" class="btnform">Login</button>
+                  <button type="button" id="Logout" class="btn_hide btnform">Log out</button>
+                  <button type="button" id="SignUp" class="btnform">Sign Up</button>
                 </form>
               </div>
             </div>
