@@ -10,6 +10,32 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
   <script src="/Backend/script.js"></script>
   <script src="/Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    console.log('hello');
+
+
+    const auth = firebase.auth();
+
+    const SignUp = document.getElementById('SignUp');
+    function registerAcc() {
+      let email = document.getElementById('participantEmail').value;
+      let pass = document.getElementById('password').value;
+
+      const promise = auth.createUserWithEmailAndPassword(email, pass);
+      promise.catch(e=> alert(e.message));
+      alert('Signed Up!');
+    }
+    const Login = document.getElementById('Login');
+    function signIn() {
+
+      let email = document.getElementById('participantEmail').value;
+      let pass = document.getElementById('password').value;
+      const promise = auth.signInWithEmailAndPassword(email, pass);
+      promise.catch(e=> alert(e.message));
+      alert('Signed In!' + email);
+    }
+
+  </script>
   <link rel="stylesheet" href="/Registration/style.css" />
   <style>
     .btn_hide {
