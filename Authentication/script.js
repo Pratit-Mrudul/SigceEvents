@@ -1,4 +1,3 @@
- console.log('hello');
     const hamburger_menu = document.querySelector(".hamburger-menu");
     const container = document.querySelector(".container");
 
@@ -20,22 +19,22 @@ function registerAcc(){
   function validation(email) {
   let domain_name = (email.substring(email.length - 13));
     if (domain_name == '@sigce.edu.in') {
-      value = true;
+      value = 'true';
     }
     else{
-      value = false;
+      value = 'false';
     }
     return value;
   }
-  if (value == true) {
+  if (value == 'true) {
   const promise = auth.createUserWithEmailAndPassword(email, pass);
   promise.catch(e=> alert(e.message));
   alert('Signed Up!');
   }
-  else{
+  else if('false') {
     alert('Enter The College Email Id!');
   }
-}
+};
 const Login = document.getElementById('Login');
 function signIn(){
   
