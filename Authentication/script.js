@@ -9,7 +9,6 @@ function registerAcc() {
   let email = document.getElementById('participantEmail').value;
   let pass = document.getElementById('password').value;
   validation(email);
-
   function validation(email) {
     let domain_name = (email.substring(email.length - 13));
     if (domain_name == '@sigce.edu.in') {
@@ -18,7 +17,7 @@ function registerAcc() {
       value = false;
     }
     return value;
-  }
+  };
   if (value == true) {
     let promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e=> alert(e.message));
