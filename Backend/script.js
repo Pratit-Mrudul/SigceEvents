@@ -1,24 +1,31 @@
-Name = document.getElementById('participantName').value;
-email = document.getElementById('participantEmail').value;
-PhoneNo = document.getElementById('participantPNo').value;
-Year = document.getElementById('year').value;
-Branch = document.getElementById('branch').value;
-RollNo = document.getElementById('participantRNo').value;
 
 
-let regformSubmit = document.getElementById('regformSubmit');
-regformSubmit.addEventListener('click' signIn);
+let Login = document.getElementById('Login');
+Login.addEventListener('click', e =>{
+  const email = document.getElementById('participantEmail').value;
+  const pass = document.getElementById('password').value;
+  const auth = firebase.auth();
+  const promise = auth.signInWithEmailAndPassword(email, pass);
+  promise.catch(e => console.log(e.message));
+  
+});
 
-function signIn(){
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in 
-      var user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ..
-    });
-}
+let SignUp = document.getElementById('SignUp');
+SignUp.addEventListener('click', e=>{
+  
+  const email = document.getElementById('participantEmail').value;
+  const pass = document.getElementById('password').value;
+  const auth = firebase.auth();
+  const promise = auth.createUserWithEmailAndPassword(email, pass);
+  promise 
+      .catch(e => console.log(e.message));
+});
+
+firebase.auth().onAuthStateChanged(firebaseUser =>{
+  if(firebaseUser){
+    console.log(firebaseUser);
+  }
+  else{
+    console.log('Not Logged In');
+  }
+});
