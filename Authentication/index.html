@@ -60,7 +60,7 @@
             <div class="inner">
               <!-- FORM -->
               <div id="" class="authForm">
-                <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
+                <form id="reg_form" class="formback">
                   <input type="text" name="" id="participantName" value="" placeholder="Full-Name" required="required" />
                   <input type="email" name="" id="participantEmail" value="" placeholder="College Email" required="required" />
                   <input type="text" name="" id="password" value="" placeholder="Password" required="required" />
@@ -84,9 +84,11 @@
                     </select>
                   </label>
                   <input type="number" name="" id="participantRNo" value="" placeholder="Roll No." required="required" />
-                  <button type="button" id="Login" class="btnform">Login</button>
+                  <div id="output-box"></div>
+
+                  <button type="button" id="Login" onclick="signIn()" class="btnform">Login</button>
                   <button type="button" id="Logout" class="btn_hide btnform">Log out</button>
-                  <button type="button" id="SignUp" class="btnform">Sign Up</button>
+                  <button type="button" id="SignUp" class="btnform" onclick="registerAcc()">Sign Up</button>
                 </form>
               </div>
             </div>
