@@ -28,6 +28,7 @@
         const promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e=> alert(e.message));
         alert('Signed Up!');
+        document.getElementById('reg_form').reset();
       } else {
         alert('Enter The College Email Id!');
       }
