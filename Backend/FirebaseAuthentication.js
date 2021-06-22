@@ -28,7 +28,8 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
               "rollNo": rollNo,
           });
         firebase.auth().currentUser.sendEmailVerification().then(() => {
-            window.alert('Verification Email sent!');
+            document.getElementById('verficationCollapse').style.display = 'block';
+            document.getElementById('formCollapse').style.display = 'none';
           });
       }).catch((error) => {
         document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert">
