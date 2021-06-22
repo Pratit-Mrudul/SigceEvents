@@ -1,6 +1,8 @@
+// Global Variables
+const auth = firebase.auth();
 var user
 
-function validation(email) {
+function emailValidation(email) {
     let domain_name = (email.substring(email.length - 13));
     if (domain_name == '@sigce.edu.in') {
       value = true;
