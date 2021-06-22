@@ -16,6 +16,7 @@
       container.classList.toggle('active');
     });
 
+
     console.log('hello');
 
 
@@ -30,30 +31,20 @@
       function validation(email) {
         let domain_name = (email.substring(email.length - 13));
         if (domain_name == '@sigce.edu.in') {
-          value = 'true';
+          value = true;
         } else {
-          value = 'false';
+          value = false;
         }
         return value;
       }
-      if (value == 'true') {
+      if (value == true) {
         const promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e=> alert(e.message));
         alert('Signed Up!');
-      } else if ('false') {
+      } else {
         alert('Enter The College Email Id!');
       }
     };
-    const Login = document.getElementById('Login');
-    function signIn() {
-
-      let email = document.getElementById('participantEmail').value;
-      let pass = document.getElementById('password').value;
-      const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch(e=> alert(e.message));
-      alert('Signed In!' + email);
-    }
-
   </script>
   <link rel="stylesheet" href="/Registration/style.css" />
 
