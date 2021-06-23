@@ -23,3 +23,12 @@ async function getDocumentData(docRef) {
     console.log(error);
 });
 }
+
+function sendEventData(event, mapData) {
+  user = firebase.auth().currentUser;
+  var docRef = db.collection('events').doc(event);
+  await getDocumentData(db.collection('users').doc(user.uid))
+  mapData = {}
+
+  await sendData(docRef, mapData);
+}

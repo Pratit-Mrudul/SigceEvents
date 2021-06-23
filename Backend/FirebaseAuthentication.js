@@ -1,7 +1,7 @@
 // Global Variables
 const auth = firebase.auth();
 var user
-var userData
+var userData = {}
 
 function emailValidation(email) {
   let domain_name = (email.substring(email.length - 13));
