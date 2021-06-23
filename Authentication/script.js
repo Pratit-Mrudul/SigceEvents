@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const container = document.getElementsByClassName(".container");
 
 function menu_toggle() {
   container.classList.toggle("active");
