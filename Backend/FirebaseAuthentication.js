@@ -20,7 +20,9 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     user.updateProfile({
       displayName: name,
     }).then(() => {
-      sendData({
+      var docRef = db.collection("users").doc(users.getuid);
+      sendData(docRef, 
+        {
         "name": name,
         "email": email,
         "phoneNo": phoneNo,
