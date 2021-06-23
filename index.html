@@ -7,12 +7,17 @@
   <link rel="stylesheet" href="/Home/style.css" />
   <script src="/__/firebase/8.6.8/firebase-app.js"></script>
   <script src="/__/firebase/init.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-    jQuery(function(){
+    jQuery(function() {
       jQuery('.links').load('/menu.html')
     });
   </script>
+  <style>
+    .btn {
+      margin: 0 5px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -36,6 +41,7 @@
                 A TESTAMENT TO HUMAN ENDURANCE
               </p>
               <button class="btn" id="registerNow" onclick="location.href = '/Authentication/'">Register Now!</button>
+              <button class="btn" id="loginNow" onclick="location.href = '/Login/'">Login!</button>
             </div>
           </div>
         </header>
