@@ -63,8 +63,7 @@ function login(email, password) {
     user = userCredential.user;
     if (user.emailVerified) {
       var docRef = db.collection("users").doc(user.getuid);
-      getDocumentData(docRef);
-      window.location.href = '/';
+      getDocumentData(docRef).then(() => {window.location.href = '/'});
     } else {
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
