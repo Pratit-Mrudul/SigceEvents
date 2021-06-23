@@ -310,7 +310,7 @@ ul {
   margin-top: 1rem;
   display: flex;
 }
-.card{
+.formback{
   width: 60vw;
   font-size: 14px;
   height: 100%;
@@ -326,7 +326,7 @@ ul {
   border-radius: 15px;
   cursor: pointer;
 }
-.container.active .card {
+.container.active .formback {
   opacity: 0;
   animation: opacitytoggle ease;
   animation-duration: 0.5s;
@@ -356,7 +356,23 @@ ul {
     opacity: 1;
   }
 }
-.card p{
+.formback p{
   margin-left: 3px;
   margin-right: 3px;
+}
+
+.formback {
+  height: auto;
+  width: 55vw;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #191919;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
+  -webkit-box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
+  -moz-box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
 }
