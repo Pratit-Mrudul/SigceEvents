@@ -19,10 +19,10 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     user = userCredential.user;
     user.updateProfile({
       displayName: name,
-    }).then(() => {
-      db.clearPersistence().then(() => {
+    }).then(async () => {
+      await db.clearPersistence().then(async () => {
         var docRef = db.collection("users").doc(user.uid);
-        sendData(docRef, 
+        await sendData(docRef, 
           {
           "name": name,
           "email": email,

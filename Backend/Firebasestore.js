@@ -1,6 +1,6 @@
 var db = firebase.firestore();
 
-function sendData(docRef, mapData) {
+async function sendData(docRef, mapData) {
   // Add a new document in collection "cities"
   await docRef.set(mapData, {merge: true})
   .then(() => {
