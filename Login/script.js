@@ -11,5 +11,6 @@ function getLoginData() {
   
   if (emailValidation(loginEmail)) {
     login(loginEmail, LoginPw);
+    window.location.href = '/';
   }
 }
