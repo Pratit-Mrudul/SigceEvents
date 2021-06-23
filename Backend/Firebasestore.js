@@ -24,7 +24,7 @@ async function getDocumentData(docRef) {
 });
 }
 
-function sendEventData(event, mapData) {
+async function sendEventData(event, mapData) {
   user = firebase.auth().currentUser;
   var docRef = db.collection('events').doc(event);
   await getDocumentData(db.collection('users').doc(user.uid))
