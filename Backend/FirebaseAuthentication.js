@@ -1,6 +1,7 @@
 // Global Variables
 const auth = firebase.auth();
 var user
+var userData
 
 function emailValidation(email) {
   let domain_name = (email.substring(email.length - 13));
@@ -13,7 +14,7 @@ function emailValidation(email) {
 };
 
 function createUser(email, password, name, phoneNo, year, branch, rollNo) {
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+  auth.createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     user = userCredential.user;
     user.updateProfile({
@@ -47,5 +48,29 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     }).catch((error) => {
       document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> Rougue User Created </div>`
     });
+  });
+}
+
+function login(email, password) {
+  auth.signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    user = userCredential.user;
+    var docRef = db.collection("users").doc(users.getuid);
+    getDocumentData(docRef);
+  })
+  .catch((error) => {
+    document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`
+  });
+}
+
+function signOut() {
+  // doc.data() will be undefined in this case
+  auth.signOut().then(() => {
+    // Sign-out successful.
+    console.log('Signed Out')
+  }).catch((error) => {
+    // An error happened.
+    console.log(error);
   });
 }
