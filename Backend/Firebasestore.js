@@ -11,8 +11,8 @@ async function sendData(docRef, mapData) {
   });
 }
 
-function getDocumentData(docRef) {
-  docRef.get().then((doc) => {
+async function getDocumentData(docRef) {
+  await docRef.get().then((doc) => {
     if (doc.exists) {
         userData = doc.data();
     } else {

@@ -58,12 +58,13 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
 
 function login(email, password) {
   auth.signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
+  .then(async (userCredential) => {
     // Signed in
     user = userCredential.user;
     if (user.emailVerified) {
       var docRef = db.collection("users").doc(user.uid);
-      getDocumentData(docRef);
+      await getDocumentData(docRef);
+      window.location.href = '/';
     } else {
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
