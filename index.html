@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=1024px" />
   <title>SIGCE Events</title>
   <link rel="stylesheet" href="/Home/style.css" />
+  <link rel="stylesheet" href="/Preloader/style.css" />
   <script src="/__/firebase/8.6.8/firebase-app.js"></script>
   <script src="/__/firebase/init.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
@@ -14,7 +15,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     jQuery(function() {
-      jQuery('.links').load('/menu.html')
+      jQuery('#preloader').load('/Preloader/index.html');
+      jQuery('.links').load('/menu.html');
     });
     
     firebase.auth().onAuthStateChanged((user) => {
@@ -25,6 +27,7 @@
       // User is signed out
       // ...
     }
+    document.getElementById('preloader').style.display = 'none';
 });
   </script>
   <style>
@@ -34,6 +37,9 @@
   </style>
 </head>
 <body>
+  <div id="preloader" style="z-index: 1000;">
+    
+  </div>
   <div class="container">
     <div class="navbar">
       <div class="menu">
