@@ -4,7 +4,7 @@ const container = document.querySelector(".container");
 hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
 });
-let regFormFn = document.getElementById('regFormFn');
+let regFormFn = document.getElementById('regForm');
 regFormFn.addEventListener('click', regform);
 
 function validate() {
@@ -188,51 +188,4 @@ function validate() {
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'block';
   }
-}
-
-//FIREBASE
-
-const regformSubmit = document.getElementById('regformSubmit');
-regformSubmit.addEventListener('click', registerForm);
-
-let contactInfo = firebase.database().ref("Participants");
-
-function registerForm(e) {
-  e.preventDefault()
-  let participantName = document.getElementById('participantName').value;
-  let participantEmail = document.getElementById('participantEmail').value;
-  let participantPNo = document.getElementById('participantPNo').value;
-  let year = document.getElementById('year').value;
-  let branch = document.getElementById('branch').value;
-  let participantRNo = document.getElementById('participantRNo').value;
-  let event = document.getElementById('event').value;
-  let languageselect = document.getElementById('languageselect').value;
-  let proagainstselect = document.getElementById('proagainstselect').value;
-  let topicvalue = document.getElementById('topicvalue').value;
-  let instrumentselect = document.getElementById('instrumentselect').value;
-  let codelanguageselect = document.getElementById('codelanguageselect').value;
-  let BGMICharID = document.getElementById('BGMICharID').value;
-  let BGMIUsername = document.getElementById('BGMIUsername').value;
-  let ParticipantChessID = document.getElementById('ParticipantChessID').value;
-
-  savecontactInfo(participantName, participantEmail, participantPNo, year, branch, participantRNo, event, languageselect, proagainstselect, topicvalue, instrumentselect, codelanguageselect, BGMICharID, BGMIUsername, ParticipantChessID);
-  
-      setTimeout(function() {
-        document.getElementById('reg_form').reset()
-      }, 1000);
-}
-
-
-
-function savecontactInfo(participantName, participantEmail, participantPNo, year, branch, participantRNo, event, languageselect, proagainstselect, topicvalue, instrumentselect, codelanguageselect,  BGMICharID, BGMIUsername, ParticipantChessID) {
-  let newcontactInfo = contactInfo.push();
-
-  newcontactInfo.set({
-    Name: participantName,
-    EmailID: participantEmail,
-    PhoneNo: participantPNo,
-    Year: year,
-    Branch: branch,
-    RollNo: participantRNo,
-  });
 }
