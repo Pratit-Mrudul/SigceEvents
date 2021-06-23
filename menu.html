@@ -1,3 +1,10 @@
+<script>
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      document.getElementById('RegistrationLink').style.display = '';
+    }
+  });
+</script>
 <ul>
   <li>
     <a href="/" style="--i: 0.05s;">Home</a>
@@ -9,7 +16,7 @@
     <a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
   </li>
   <li>
-    <a href="/Registration/" style="--i: 0.2s;">Registration</a>
+    <a href="/Registration/" style="--i: 0.2s; display: none;" id="RegistrationLink">Registration</a>
   </li>
   <li>
     <a href="/Submissions/" style="--i: 0.25s;">Submission</a>
