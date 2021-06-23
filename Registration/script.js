@@ -4,7 +4,7 @@ const container = document.querySelector(".container");
 hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
 });
-let regFormFn = document.getElementById('regform');
+let regFormFn = document.getElementById('regformSubmit');
 regFormFn.addEventListener('click', regform);
 
 async function regform() {
