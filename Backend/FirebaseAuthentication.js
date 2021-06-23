@@ -61,8 +61,13 @@ function login(email, password) {
   .then((userCredential) => {
     // Signed in
     user = userCredential.user;
-    var docRef = db.collection("users").doc(users.getuid);
-    getDocumentData(docRef);
+    if (user.emailVerified) {
+      var docRef = db.collection("users").doc(users.getuid);
+      getDocumentData(docRef);
+    } else {
+      document.getElementById('emailVerify').style.display = '';
+      signOut();
+    }
   })
   .catch((error) => {
     document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`
