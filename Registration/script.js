@@ -7,7 +7,7 @@ hamburger_menu.addEventListener("click", () => {
 let regFormFn = document.getElementById('regForm');
 regFormFn.addEventListener('click', regform);
 
-function regform() {
+async function regform() {
   var event = document.getElementById('event').value;
   await sendEventRegistrationData(event);
 };
