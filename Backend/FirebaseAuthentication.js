@@ -66,6 +66,7 @@ function login(email, password) {
       getDocumentData(docRef);
     } else {
       document.getElementById('emailVerify').style.display = '';
+      document.getElementById('regform').style.display = 'none';
       signOut();
     }
   })
