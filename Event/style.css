@@ -317,7 +317,7 @@ ul {
   border-radius: 15px;
 }
 .card h2{
-  text-align: center;
+  text-align: center !important;
 }
 .card p{
   margin-left: 3px;
@@ -329,7 +329,7 @@ ul {
 }
 .btnrules{
   width: 100px;
-  margin: 8px auto;
+  margin: 8px auto !important;
 }
 select{
   font-size: 15px;  
