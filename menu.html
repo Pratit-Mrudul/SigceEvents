@@ -2,6 +2,7 @@
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       document.getElementById('RegistrationLink').style.display = '';
+      document.getElementById('LogOutLink').style.display = '';
     }
   });
 </script>
@@ -25,6 +26,6 @@
     <a href="/Credits/" style="--i: 0.3s;">Credits</a>
   </li>
   <li>
-    <a style="--i: 0.3s;" onclick="signOut()">LogOut</a>
+    <a style="--i: 0.3s; display: none;" onclick="signOut()" id="LogOutLink">LogOut</a>
   </li>
 </ul>
