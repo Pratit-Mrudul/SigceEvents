@@ -103,7 +103,7 @@ header {
   min-height: 100vh;
   width: 100%;
   background-color: black;
-  background: url("image1.2.jpg") no-repeat top center / cover;
+  background: url("/Imgs/image1.2.jpg") no-repeat top center / cover;
   position: relative;
 }
 
@@ -304,7 +304,7 @@ ul {
   width: 50vw;
   height: auto;
   margin: auto;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5)
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.1);
   display: flex;

@@ -103,7 +103,7 @@ header {
   min-height: 100vh;
   width: 100%;
   background-color: black;
-  background: url("image1.2.jpg") no-repeat top center / cover;
+  background: url("/Imgs/image1.2.jpg") no-repeat top center / cover;
   position: relative;
 }
 
