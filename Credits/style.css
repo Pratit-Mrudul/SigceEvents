@@ -5,11 +5,12 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+body{
+  overflow-y: scroll;
+}
 body,
 button {
   font-family: "Poppins", sans-serif;
-  overflow-y: scroll;
 }
 
 .container {
@@ -307,6 +308,7 @@ ul {
 .creditsdiv{
   justify-content: center;
   align-items: center;
+  margin-top: 15%;
 }
 .formback{
   width: 60vw;
@@ -321,6 +323,7 @@ ul {
   -webkit-box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
   -moz-box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
   background-color: #191919;
+  padding: 20px;
 }
 .container.active .formback {
   opacity: 0;
