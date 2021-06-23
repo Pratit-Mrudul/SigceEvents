@@ -72,7 +72,7 @@ function login(email, password) {
     }
   })
   .catch((error) => {
-    console.log(error);e
+    console.log(error);
     document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`
   });
 }
