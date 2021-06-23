@@ -32,14 +32,20 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
         document.getElementById('formCollapse').style.display = 'none';
       });
     }).catch((error) => {
-      document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert">
-      ${error}
-      </div>`
+      user.delete().then(() => {
+        // User deleted.
+        document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error} </div>`
+      }).catch((error) => {
+        document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> Rougue User Created </div>`
+      });
     });
   })
   .catch((error) => {
-    document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert">
-    ${error.message}
-    </div>`
+    user.delete().then(() => {
+      // User deleted.
+      document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`
+    }).catch((error) => {
+      document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> Rougue User Created </div>`
+    });
   });
 }
