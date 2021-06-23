@@ -62,7 +62,7 @@ function login(email, password) {
     // Signed in
     user = userCredential.user;
     if (user.emailVerified) {
-      var docRef = db.collection("users").doc(users.getuid);
+      var docRef = db.collection("users").doc(user.getuid);
       getDocumentData(docRef);
     } else {
       document.getElementById('emailVerify').style.display = '';
