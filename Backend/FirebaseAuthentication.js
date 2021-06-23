@@ -20,17 +20,19 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     user.updateProfile({
       displayName: name,
     }).then(() => {
-      db.clearPersistence();
-      var docRef = db.collection("users").doc(users.getuid);
-      sendData(docRef, 
-        {
-        "name": name,
-        "email": email,
-        "phoneNo": phoneNo,
-        "year": year,
-        "branch": branch,
-        "rollNo": rollNo,
+      db.clearPersistence().then(() => {
+        var docRef = db.collection("users").doc(users.getuid);
+        sendData(docRef, 
+          {
+          "name": name,
+          "email": email,
+          "phoneNo": phoneNo,
+          "year": year,
+          "branch": branch,
+          "rollNo": rollNo,
+        });
       });
+
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.getElementById('verficationCollapse').style.display = 'block';
         document.getElementById('formCollapse').style.display = 'none';
