@@ -2,7 +2,7 @@ var db = firebase.firestore();
 
 function sendData(docRef, mapData) {
   // Add a new document in collection "cities"
-  docRef.set(mapData, {merge: true})
+  await docRef.set(mapData, {merge: true})
   .then(() => {
     console.log("Document successfully written!");
   })
