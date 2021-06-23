@@ -304,11 +304,8 @@ ul {
   transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
 }
 .creditsdiv{
-  position: relative;
-  left: -5rem;
-  width: 95vw;
-  margin-top: 1rem;
-  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .formback{
   width: 60vw;
