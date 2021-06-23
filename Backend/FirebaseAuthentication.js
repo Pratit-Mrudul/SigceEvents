@@ -20,6 +20,7 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     user.updateProfile({
       displayName: name,
     }).then(() => {
+      db.clearPersistence();
       var docRef = db.collection("users").doc(users.getuid);
       sendData(docRef, 
         {
