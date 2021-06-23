@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1024px" />
-  <title>SIGCE/Events</title>
-  <link rel="stylesheet" href="/Home/style.css" />
-  <script src="/__/firebase/8.6.8/firebase-app.js"></script>
-  <script src="/__/firebase/init.js"></script>
-  <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
-  <style>
-    .notification a {
-      color: white;
-      height: 20px;
-      width: 20px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1024px" />
+<title>SIGCE/Events</title>
+<link rel="stylesheet" href="/Home/style.css" />
+<script src="/__/firebase/8.6.8/firebase-app.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<style>
+.notification {
+  height: 20px;
+  width: 20px;
+}
+.notification a {
+  font-size: 20px;
+  color: white;
+  height: 20px;
+  width: 20px;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="navbar">
-      <div class="menu">
-        <a href="/" style="color: whitesmoke; text-decoration: none;">
-          <h3 class="logo">SIGCE <span>Events</span></h3>
-        </a>
-        <div class="notification">
-          <a href="/Notification/"><i class='bx bx-bell'></i></a>
-        </div>
-        <div class="hamburger-menu">
-          <div class="bar"></div>
-        </div>
-      </div>
-    </div>
-    <div class="main-container">
-      <div class="main">
-        <header>
-          <div class="overlay">
-            <div class="inner">
-              <h2 class="title">THE NEW NORMAL</h2>
-              <p>
-                A TESTAMENT TO HUMAN ENDURANCE
-              </p>
-              <button class="btn" id="registerNow" onclick="location.href = '/Authentication/'">Register Now!</button>
-            </div>
-          </div>
-        </header>
-      </div>
+<div class="container">
+<div class="navbar">
+<div class="menu">
+<a href="/" style="color: whitesmoke; text-decoration: none;">
+<h3 class="logo">SIGCE <span>Events</span></h3>
+</a>
+<div class="notification">
+<a href="/Notification/"><i class='bx bx-bell'></i></a>
+</div>
+<div class="hamburger-menu">
+<div class="bar"></div>
+</div>
+</div>
+</div>
+<div class="main-container">
+<div class="main">
+<header>
+<div class="overlay">
+<div class="inner">
+<h2 class="title">THE NEW NORMAL</h2>
+<p>
+A TESTAMENT TO HUMAN ENDURANCE
+</p>
+<button class="btn" id="registerNow" onclick="location.href = '/Authentication/'">Register Now!</button>
+</div>
+</div>
+</header>
+</div>
 
-      <div class="shadow one"></div>
-      <div class="shadow two"></div>
-    </div>
+<div class="shadow one"></div>
+<div class="shadow two"></div>
+</div>
 
-    <div class="links">
-      <ul>
-        <li>
-          <a href="/" style="--i: 0.05s;">Home</a>
-        </li>
-        <li>
-          <a href="/Event/" style="--i: 0.1s;">Events</a>
-        </li>
-        <li>
-          <a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
-        </li>
-        <li>
-          <a href="/Registration/" style="--i: 0.2s;">Registration</a>
-        </li>
-        <li>
-          <a href="/Submissions/" style="--i: 0.25s;">Submission</a>
-        </li>
-        <li>
-          <a href="/Credits/" style="--i: 0.3s;">Credits</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<div class="links">
+<ul>
+<li>
+<a href="/" style="--i: 0.05s;">Home</a>
+</li>
+<li>
+<a href="/Event/" style="--i: 0.1s;">Events</a>
+</li>
+<li>
+<a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
+</li>
+<li>
+<a href="/Registration/" style="--i: 0.2s;">Registration</a>
+</li>
+<li>
+<a href="/Submissions/" style="--i: 0.25s;">Submission</a>
+</li>
+<li>
+<a href="/Credits/" style="--i: 0.3s;">Credits</a>
+</li>
+</ul>
+</div>
+</div>
 
-  <script src="/Home/script.js"></script>
+<script src="/Home/script.js"></script>
 </body>
 </html>
