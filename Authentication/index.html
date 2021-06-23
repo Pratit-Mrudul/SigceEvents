@@ -13,9 +13,9 @@
   <script src="/Backend/FirebaseAuthentication.js" charset="utf-8"></script>
   <script src="/Backend/Firebasestore.js" charset="utf-8"></script>
   <link rel="stylesheet" href="/Registration/style.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-    jQuery(function(){
+    jQuery(function() {
       jQuery('.links').load('/menu.html')
     });
   </script>
@@ -54,7 +54,9 @@
   <div class="container">
     <div class="navbar">
       <div class="menu">
-        <h3 class="logo">SIGCE <span>Events</span></h3>
+        <a href="/" style="color: whitesmoke; text-decoration: none;">
+          <h3 class="logo">SIGCE <span>Events</span></h3>
+        </a>
         <div class="hamburger-menu" onclick="menu_toggle()">
           <div class="bar"></div>
         </div>
@@ -125,12 +127,12 @@
     </div>
   </div>
   <script>
-      const hamburger_menu = document.querySelector(".hamburger-menu");
-      const container = document.querySelector(".container");
+    const hamburger_menu = document.querySelector(".hamburger-menu");
+    const container = document.querySelector(".container");
 
-      hamburger_menu.addEventListener("click", () => {
-        container.classList.toggle("active");
-      });
+    hamburger_menu.addEventListener("click", () => {
+      container.classList.toggle("active");
+    });
   </script>
 </body>
 </html>
