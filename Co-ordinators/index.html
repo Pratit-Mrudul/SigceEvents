@@ -5,12 +5,59 @@
   <meta name="viewport" content="width=1024px" />
   <title>SIGCE/Events</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-    jQuery(function(){
+    jQuery(function() {
       jQuery('.links').load('/menu.html')
     });
   </script>
+  <style>
+
+    .formback {
+      height: auto;
+      width: 55vw;
+      padding: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #191919;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
+      -webkit-box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
+      -moz-box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
+    }
+    .formback input {
+      border: 0;
+      background: none;
+      display: block;
+      margin: 10px auto;
+      text-align: center;
+      border: 1px solid #3498dd;
+      padding: 7px 5px;
+      width: 200px;
+      color: white;
+      border-radius: 15px;
+      transition: 0.25s;
+    }
+    .formback input:focus {
+      width: 280px;
+      border-color: #2ecc71;
+    }
+    select {
+      border: 0;
+      background: none;
+      display: inline-block;
+      margin: 10px auto;
+      text-align: center;
+      border: 1px solid #3498dd;
+      padding: 7px 5px;
+      width: auto;
+      color: white;
+      border-radius: 12px;
+      transition: 0.25s;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -27,7 +74,7 @@
         <header>
           <div class="overlay">
             <div class="inner">
-              <div id="main">
+              <div id="main" class="formback">
                 <h2 class="title">CHOOSE EVENT</h2>
                 <select name="event" id="event">
                   <option value="" selected="selected">Select</option>
@@ -55,7 +102,7 @@
                 <button type="button" onclick="info()" class="btn">CHECK</button>
               </div>
               <!-- POETRY-SHAYRI -->
-              <div class="card hideinfo" id="POETRY-SHAYRI">
+              <div class="formback hideinfo" id="POETRY-SHAYRI">
                 <h2>POETRY/SHAYRI</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Ateeque Surve<br>
@@ -64,7 +111,7 @@
                 </p>
                 <button onclick="close1()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="STANDUP">
+              <div class="formback hideinfo" id="STANDUP">
                 <h2>STANDUP</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Ateeque Surve<br>
@@ -73,7 +120,7 @@
                 </p>
                 <button type="button" onclick="close2()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="NAIL-ART">
+              <div class="formback hideinfo" id="NAIL-ART">
                 <h2>NAIL-ART</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Bindu Sharma<br>
@@ -83,7 +130,7 @@
                 </p>
                 <button type="button" onclick="close3()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="DEBATE">
+              <div class="formback hideinfo" id="DEBATE">
                 <h2>DEBATE</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Bindu Sharma<br>
@@ -94,7 +141,7 @@
                 </p>
                 <button type="button" onclick="close4()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="POSTER">
+              <div class="formback hideinfo" id="POSTER">
                 <h2>POSTER</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Harsh Sen<br>
@@ -105,7 +152,7 @@
                 </p>
                 <button type="button" onclick="close5()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="SKRIBBLE">
+              <div class="formback hideinfo" id="SKRIBBLE">
                 <h2>SKRIBBLE</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Rajas Chaudhari<br>
@@ -116,7 +163,7 @@
                 </p>
                 <button type="button" onclick="close6()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="MASK-PAINTING">
+              <div class="formback hideinfo" id="MASK-PAINTING">
                 <h2>MASK-PAINTING</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Sakshi Diwan<br>
@@ -126,7 +173,7 @@
                 </p>
                 <button type="button" onclick="close7()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="MUSIC">
+              <div class="formback hideinfo" id="MUSIC">
                 <h2>MUSIC</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Sakshi Diwan<br>
@@ -137,7 +184,7 @@
                 </p>
                 <button type="button" onclick="close8()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="DANCE">
+              <div class="formback hideinfo" id="DANCE">
                 <h2>DANCE</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Sakshi Diwan<br>
@@ -148,7 +195,7 @@
                 </p>
                 <button type="button" onclick="close9()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="PHOTOGRAPHY">
+              <div class="formback hideinfo" id="PHOTOGRAPHY">
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Shivam Narkhede<br>
                   Ankit Maurya<br>
@@ -157,7 +204,7 @@
                 </p>
                 <button type="button" onclick="close10()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="SCI-PROJECT">
+              <div class="formback hideinfo" id="SCI-PROJECT">
                 <h2>SCI-PROJECT</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Shivam Narkhede<br>
@@ -168,7 +215,7 @@
                 </p>
                 <button type="button" onclick="close11()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="QUIZ">
+              <div class="formback hideinfo" id="QUIZ">
                 <h2>QUIZ</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Vatsal  Sharma<br>
@@ -179,7 +226,7 @@
                 </p>
                 <button type="button" onclick="close12()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="ELOCUTION">
+              <div class="formback hideinfo" id="ELOCUTION">
                 <h2>ELOCUTION</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Vatsal  Sharma<br>
@@ -189,7 +236,7 @@
                 </p>
                 <button type="button" onclick="close13()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="CODING">
+              <div class="formback hideinfo" id="CODING">
                 <h2>CODING</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Harsh Sen<br>
@@ -199,7 +246,7 @@
                 </p>
                 <button type="button" onclick="close14()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="INSTRUMENTS">
+              <div class="formback hideinfo" id="INSTRUMENTS">
                 <h2>INSTRUMENTS</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Rajas Chaudhari<br>
@@ -209,7 +256,7 @@
                 </p>
                 <button type="button" onclick="close15()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="SKETCH">
+              <div class="formback hideinfo" id="SKETCH">
                 <h2>SKETCH</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Rajas Chaudhari<br>
@@ -219,7 +266,7 @@
                 </p>
                 <button type="button" onclick="close16()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="PUBG">
+              <div class="formback hideinfo" id="PUBG">
                 <h2>PUBG</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Harsh Sen<br>
@@ -231,7 +278,7 @@
                 </p>
                 <button type="button" onclick="close17()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="CHALK">
+              <div class="formback hideinfo" id="CHALK">
                 <h2>CHALK</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   Vatsal Sharma<br>
@@ -241,7 +288,7 @@
                 </p>
                 <button type="button" onclick="close18()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="LUDO">
+              <div class="formback hideinfo" id="LUDO">
                 <h2>LUDO</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3> <p>
                   STUDENT COORDINATORS<br>
@@ -250,7 +297,7 @@
                 </p>
                 <button type="button" onclick="close19()" class="btn btnco-ordinator">CLOSE</button>
               </div>
-              <div class="card hideinfo" id="CHESS">
+              <div class="formback hideinfo" id="CHESS">
                 <h2>CHESS</h2>
                 <h3 class="co-ordinatorleft">Co-Ordinator:<br></h3>
                 <p>
