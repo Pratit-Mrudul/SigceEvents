@@ -13,6 +13,12 @@
   <script src="/Backend/FirebaseAuthentication.js" charset="utf-8"></script>
   <script src="/Backend/Firebasestore.js" charset="utf-8"></script>
   <link rel="stylesheet" href="/Registration/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+  <script>
+    jQuery(function(){
+      jQuery('.links').load('/menu.html')
+    });
+  </script>
   <style>
     .btn_hide {
       display: none;
@@ -116,26 +122,6 @@
     </div>
 
     <div class="links" id="menu">
-      <ul>
-        <li>
-          <a href="/" style="--i: 0.05s;">Home</a>
-        </li>
-        <li>
-          <a href="/Event/" style="--i: 0.1s;">Events</a>
-        </li>
-        <li>
-          <a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
-        </li>
-        <li>
-          <a href="/Registration/" style="--i: 0.2s;">Registration</a>
-        </li>
-        <li>
-          <a href="/Submissions/" style="--i: 0.25s;">Submission</a>
-        </li>
-        <li>
-          <a href="/Credits/" style="--i: 0.3s;">Credits</a>
-        </li>
-      </ul>
     </div>
   </div>
 </body>
