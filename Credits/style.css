@@ -121,7 +121,7 @@ header {
   align-items: center;
 }
 .inner {
-  max-width: 35rem;
+  width: max-content;
   text-align: center;
   color: #fff;
   padding: 0 2rem;
