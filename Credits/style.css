@@ -9,6 +9,7 @@
 body,
 button {
   font-family: "Poppins", sans-serif;
+  overflow-y: scroll;
 }
 
 .container {
