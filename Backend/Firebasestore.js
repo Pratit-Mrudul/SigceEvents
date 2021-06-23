@@ -24,11 +24,19 @@ async function getDocumentData(docRef) {
 });
 }
 
-async function sendEventData(event, mapData) {
+async function sendEventRegistrationData(event) {
   user = firebase.auth().currentUser;
   var docRef = db.collection('events').doc(event);
-  await getDocumentData(db.collection('users').doc(user.uid))
-  mapData = {}
+  await getDocumentData(db.collection('users').doc(user.uid));
+  participantData = userData;
+  newFields = document.getElementsByClassName(event);
+  for(let i = 0; i<newFields.length; i++) {
+    participantData[newFields[i].id] = newFields[i].value;
+  }
+  email = userData['email'];
+  mapData = {
+    email: userData
+  };
 
   await sendData(docRef, mapData);
 }

@@ -68,9 +68,9 @@
                     </select>
                   </label>
                   <!-- LANGUAGE -->
-                  <div id="language" class="hideclass POETRY-SHAYRI STANDUP">
+                  <div id="language" class="hideclass">
                     <label for="languageselect">Language : </label>
-                    <select name="languageselect" id="languageselect">
+                    <select name="languageselect" id="languageselect" class="POETRY-SHAYRI STANDUP">
                       <option value="" selected="selected">Select</option>
                       <option value="English">English</option>
                       <option value="Marathi">Marathi</option>
@@ -78,9 +78,9 @@
                     </select>
                   </div>
                   <!-- PROAGAINST -->
-                  <div id="proagainst" class="hideclass DEBATE">
+                  <div id="proagainst" class="hideclass">
                     <label for="proagainstselect">Pro/Against :
-                      <select name="proagainstselect" id="proagainstselect">
+                      <select name="proagainstselect" id="proagainstselect" class="DEBATE">
                         <option value="" selected="selected">Select</option>
                         <option value="PRO">PRO</option>
                         <option value="AGAINST">AGAINST</option>
@@ -88,17 +88,17 @@
                     </label>
                   </div>
                   <!-- TOPIC -->
-                  <div id="topic" class="hideclass ELOCUTION SCI-PROJECT POSTER DEBATE STANDUP">
-                    <input type="text" name="topic" id="topicvalue" placeholder="Topic" />
+                  <div id="topic" class="hideclass">
+                    <input type="text" name="topic" id="topicvalue" placeholder="Topic" class="ELOCUTION SCI-PROJECT POSTER DEBATE STANDUP"/>
                   </div>
                   <!-- INSTRUMENT -->
-                  <div id="instrument" class="hideclass INSTRUMENT">
-                    <input type="text" name="instrument" id="instrumentselect" placeholder="Name Of Instrument">
+                  <div id="instrument" class="hideclass">
+                    <input type="text" name="instrument" id="instrumentselect" placeholder="Name Of Instrument" class="INSTRUMENT">
                   </div>
                   <!-- CODING -->
-                  <div class="hideclass CODING" id="codelang">
+                  <div class="hideclass" id="codelang">
                     <label for="codelanguageselect">Language : </label>
-                    <select name="codelanguageselect" id="codelanguageselect">
+                    <select name="codelanguageselect" id="codelanguageselect" class="CODING">
                       <option value="" selected="selected">Select</option>
                       <option value="PYTHON">PYTHON</option>
                       <option value="C++">C++</option>
@@ -106,13 +106,12 @@
                     </select>
                   </div>
                   <!-- CHARACTER-ID -->
-                  <div id="characterid" class="hideclass BGMI">
-                    <input type="number" name="" id="BGMICharID" value="" placeholder="Character-ID" />
-                    <input type="text/" name="" id="BGMIUsername" placeholder="BGMI-Username" />
+                  <div id="characterid" class="hideclass">
+                    <input type="number" name="" id="BGMICharID" value="" placeholder="Character-ID" class="BGMI"/>
                   </div>
                   <!-- CHESS-ID -->
-                  <div class="hideclass CHESS" id="chessid">
-                    <input type="text" name="" id="ParticipantChessID" placeholder="Chess-Id">
+                  <div class="hideclass" id="chessid">
+                    <input type="text" name="" id="ParticipantChessID" placeholder="Chess-Id" class="CHESS">
                   </div>
                   <br>
                   <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
@@ -128,26 +127,6 @@
     </div>
 
     <div class="links">
-      <ul>
-        <li>
-          <a href="/" style="--i: 0.05s;">Home</a>
-        </li>
-        <li>
-          <a href="/Event/" style="--i: 0.1s;">Events</a>
-        </li>
-        <li>
-          <a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
-        </li>
-        <li>
-          <a href="/Registration/" style="--i: 0.2s;">Registration</a>
-        </li>
-        <li>
-          <a href="/Submissions/" style="--i: 0.25s;">Submission</a>
-        </li>
-        <li>
-          <a href="/Credits/" style="--i: 0.3s;">Credits</a>
-        </li>
-      </ul>
     </div>
   </div>
   <script src="script.js"></script>
