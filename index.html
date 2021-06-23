@@ -15,6 +15,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     jQuery(function() {
+      document.getElementsByClassName('container').style.display = 'none';
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html');
     });
@@ -27,7 +28,10 @@
       // User is signed out
       // ...
     }
-    setTimeout(function(){ document.getElementById('preloader').style.display = 'none'; }, 3000);
+    setTimeout(function(){
+      document.getElementById('preloader').style.display = 'none';
+      document.getElementsByClassName('container').style.display = '';
+    }, 3000);
 });
   </script>
   <style>
