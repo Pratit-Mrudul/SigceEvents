@@ -64,6 +64,7 @@ function login(email, password) {
     if (user.emailVerified) {
       var docRef = db.collection("users").doc(user.getuid);
       getDocumentData(docRef);
+      window.location.href = '/';
     } else {
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
