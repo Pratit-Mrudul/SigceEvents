@@ -7,12 +7,18 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
   <script src="Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-    jQuery(function(){
+    jQuery(function() {
       jQuery('.links').load('/menu.html')
     });
   </script>
+  <style>
+    .title {
+      font-size: 2.7rem;
+    }
+
+  </style>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -31,12 +37,9 @@
         <header>
           <div class="overlay">
             <div class="inner">
-              <div id="chooseevent">
-                <h2 class="title">EVENT REGISTRATION</h2>
-                <button id="regFormFn" class="btn">REGISTER NOW!</button>
-              </div>
               <!-- FORM -->
               <div id="regform">
+                <h2 class="title">CHOOSE EVENT</h2>
                 <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
                   <label for="event">Event :
                     <select name="event" id="event" onchange="validate()" required="required">
