@@ -1,9 +1,3 @@
-const container = document.getElementsByClassName("container");
-
-function menu_toggle() {
-  container.classList.toggle("active");
-};
-
 function registerAcc() {
   let email = document.getElementById('participantEmail').value;
   let pass = document.getElementById('password').value;
