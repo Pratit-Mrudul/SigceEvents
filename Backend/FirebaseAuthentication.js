@@ -29,7 +29,6 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
       });
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.getElementById('verficationCollapse').style.display = 'block';
-        document.getElementById('mailTo').innerHTML = `Email Sent To ${email}!`;
         document.getElementById('formCollapse').style.display = 'none';
       });
     }).catch((error) => {
