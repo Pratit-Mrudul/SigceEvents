@@ -19,7 +19,7 @@
     
     firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      document.getElementById('noLogin').style.display = 'none';
+      document.getElementById('notLogin').style.display = 'none';
       document.getElementById('afterLogin').style.display = '';
     } else {
       // User is signed out
