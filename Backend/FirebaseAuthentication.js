@@ -21,7 +21,7 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
       displayName: name,
     }).then(() => {
       db.clearPersistence().then(() => {
-        var docRef = db.collection("users").doc(user.getuid);
+        var docRef = db.collection("users").doc(user.uid);
         sendData(docRef, 
           {
           "name": name,
@@ -62,7 +62,7 @@ function login(email, password) {
     // Signed in
     user = userCredential.user;
     if (user.emailVerified) {
-      var docRef = db.collection("users").doc(user.getuid);
+      var docRef = db.collection("users").doc(user.uid);
       getDocumentData(docRef);
     } else {
       document.getElementById('emailVerify').style.display = '';
