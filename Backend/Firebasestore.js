@@ -33,6 +33,7 @@ async function sendEventRegistrationData(event) {
   for(let i = 0; i<newFields.length; i++) {
     participantData[newFields[i].id] = newFields[i].value;
   }
+  mapData = {};
   mapData[userData['email']] = participantData;
 
   await sendData(docRef, mapData);
