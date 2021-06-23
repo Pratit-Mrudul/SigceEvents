@@ -21,7 +21,7 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
       displayName: name,
     }).then(() => {
       db.clearPersistence().then(() => {
-        var docRef = db.collection("users").doc(users.getuid);
+        var docRef = db.collection("users").doc(user.getuid);
         sendData(docRef, 
           {
           "name": name,
