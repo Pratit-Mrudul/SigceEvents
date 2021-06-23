@@ -1,9 +1,8 @@
-const hamburger_menu = document.querySelector(".hamburger-menu");
 const container = document.querySelector(".container");
 
-hamburger_menu.addEventListener("click", () => {
+function menu_toggle() {
   container.classList.toggle("active");
-});
+};
 
 function registerAcc() {
   let email = document.getElementById('participantEmail').value;
