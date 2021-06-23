@@ -10,7 +10,6 @@ function getLoginData() {
   let LoginPw = document.getElementById('LoginPw').value;
   
   if (emailValidation(loginEmail)) {
-    login(loginEmail, LoginPw);
-    window.location.href = '/';
+    login(loginEmail, LoginPw).then(() => {window.location.href = '/'});
   }
 }
