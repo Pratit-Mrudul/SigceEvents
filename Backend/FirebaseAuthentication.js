@@ -22,15 +22,15 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     }).then(async () => {
       await db.clearPersistence().then(async () => {
         var docRef = db.collection("users").doc(user.uid);
-        await sendData(docRef, 
+        await sendData(docRef,
           {
-          "name": name,
-          "email": email,
-          "phoneNo": phoneNo,
-          "year": year,
-          "branch": branch,
-          "rollNo": rollNo,
-        });
+            "name": name,
+            "email": email,
+            "phoneNo": phoneNo,
+            "year": year,
+            "branch": branch,
+            "rollNo": rollNo,
+          });
       });
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.getElementById('verficationCollapse').style.display = 'block';
@@ -82,6 +82,7 @@ function signOut() {
   auth.signOut().then(() => {
     // Sign-out successful.
     console.log('Signed Out')
+    window.location.href = '/';
   }).catch((error) => {
     // An error happened.
     console.log(error);
