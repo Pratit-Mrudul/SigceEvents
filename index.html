@@ -19,30 +19,30 @@
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html');
     });
-    
+
     firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      document.getElementById('notLogin').style.display = 'none';
-      document.getElementById('afterLogin').style.display = '';
-    } else {
-      // User is signed out
-      // ...
-    }
-    setTimeout(function(){
-      document.getElementById('preloader').style.display = 'none';
-      document.getElementById('container').style.display = '';
-    }, 4500);
-});
+      if (user) {
+        document.getElementById('notLogin').style.display = 'none';
+        document.getElementById('afterLogin').style.display = '';
+      } else {
+        // User is signed out
+        // ...
+      }
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('container').style.display = '';
+      }, 4500);
+    });
   </script>
   <style>
     .btn {
-      margin: 0 5px;
+      margin: 10px 5px;
     }
   </style>
 </head>
 <body>
   <div id="preloader" style="z-index: 1000;">
-    
+
   </div>
   <div class="container" id="container">
     <div class="navbar">
