@@ -382,4 +382,7 @@ ul {
   height: 300px;
   overflow-y: auto;
   width: 50px;
+  position: absolute;
+  top: 0;
+  right: 5%;
 }
