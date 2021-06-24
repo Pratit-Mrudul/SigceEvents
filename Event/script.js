@@ -59,9 +59,6 @@ function info() {
   } else if (document.getElementById('event').value == 'CHALK') {
     document.getElementById('CHALK').style.display = 'block'
     document.getElementById('main').style.display = 'none';
-  } else if (document.getElementById('event').value == 'LUDO') {
-    document.getElementById('LUDO').style.display = 'block'
-    document.getElementById('main').style.display = 'none';
   } else if (document.getElementById('event').value == 'CHESS') {
     document.getElementById('CHESS').style.display = 'block'
     document.getElementById('main').style.display = 'none';
@@ -120,9 +117,6 @@ function close1() {
   document.getElementById('main').style.display = 'block'
 }function close18() {
   document.getElementById('CHALK').style.display = 'none';
-  document.getElementById('main').style.display = 'block'
-}function close19() {
-  document.getElementById('LUDO').style.display = 'none';
   document.getElementById('main').style.display = 'block'
 }function close20() {
   document.getElementById('CHESS').style.display = 'none';
