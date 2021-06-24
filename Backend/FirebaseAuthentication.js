@@ -82,7 +82,6 @@ function signOut() {
   auth.signOut().then(() => {
     // Sign-out successful.
     console.log('Signed Out')
-    window.location.href = '/';
   }).catch((error) => {
     // An error happened.
     console.log(error);
