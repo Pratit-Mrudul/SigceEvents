@@ -310,7 +310,7 @@ ul {
   margin-top: 15%;
   margin-top: 10%;
 }
-.formback{
+.formback {
   width: 60vw;
   font-size: 14px;
   height: 100%;
@@ -325,6 +325,7 @@ ul {
   background-color: #191919;
   padding: 20px;
   margin-bottom: 20%;
+  margin-top: 40%;
 }
 .container.active .formback {
   opacity: 0;
