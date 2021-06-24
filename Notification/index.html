@@ -18,16 +18,41 @@
     });
   </script>
   <style>
-    .notiBack {
-      height: auto;
-      width: 55vw;
-      padding: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      background-color: #191919;
-      transform: translate(-50%, -50%);
+    .notiText {
       text-align: center;
+      background-color: #171717 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center
+      border-radius: 10px;
+      color: white;
+      border-radius: 20px;
+      margin: 10px auto;
+      padding: 3px;
+    }
+    .notificationBar {
+      display: flex;
+      align-items: center;
+      justify-content: center
+      margin: 10px auto;
+    }
+    .notificationBar h4 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .notificationBar p {
+      font-size: 16px;
+      margin-right: 18px;
+    }
+    .dotLight {
+      background-color: green;
+      filter: blur(3px);
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      margin-right: 18px;
+      box-shadow: 0px 0px 8px green;
+      margin-left: 18px;
     }
   </style>
 </head>
@@ -56,11 +81,56 @@
                 <h2>Notifications</h2>
                 <div class="notiSection">
                   <ul>
-                    <li>Notification1</li>
-                    <li>Notification2</li>
-                    <li>Notification3</li>
-                    <li>Notification4</li>
-                    <li>Notification5</li>
+                    <li><div class="notificationBar">
+                      <div class="notiText">
+                        <div class="dotLight"></div>
+                        <h4>Yay! &nbsp;</h4>
+                        <p>
+                          You Have Been Registered For Chess
+                        </p>
+                      </div>
+                    </div>
+                    </li>
+                    <li><div class="notificationBar">
+                      <div class="notiText">
+                        <div class="dotLight"></div>
+                        <h4>Yay! &nbsp;</h4>
+                        <p>
+                          You Have Been Registered For Chess
+                        </p>
+                      </div>
+                    </div>
+                    </li>
+                    <li><div class="notificationBar">
+                      <div class="notiText">
+                        <div class="dotLight"></div>
+                        <h4>Yay! &nbsp;</h4>
+                        <p>
+                          You Have Been Registered For Chess
+                        </p>
+                      </div>
+                    </div>
+                    </li>
+                    <li><div class="notificationBar">
+                      <div class="notiText">
+                        <div class="dotLight"></div>
+                        <h4>Yay! &nbsp;</h4>
+                        <p>
+                          You Have Been Registered For Chess
+                        </p>
+                      </div>
+                    </div>
+                    </li>
+                    <li><div class="notificationBar">
+                      <div class="notiText">
+                        <div class="dotLight"></div>
+                        <h4>Yay! &nbsp;</h4>
+                        <p>
+                          You Have Been Registered For Chess
+                        </p>
+                      </div>
+                    </div>
+                    </li>
                   </ul>
                 </div>
               </div>
