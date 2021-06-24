@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="/Preloader/style.css" />
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
   <script src="/Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
@@ -15,6 +16,10 @@
       document.getElementById('container').style.display = 'none';
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html')
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('container').style.display = '';
+      }, 4500);
     });
   </script>
   <style>
@@ -70,7 +75,7 @@
   <div id="preloader" style="z-index: 1000;">
 
   </div>
-  <div class="container">
+  <div class="container" id="container">
     <div class="navbar">
       <div class="menu">
         <a href="/" style="color: whitesmoke; text-decoration: none;">
