@@ -15,6 +15,10 @@
       document.getElementById('container').style.display = 'none';
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html')
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('container').style.display = '';
+      }, 4500);
     });
   </script>
   <style>
