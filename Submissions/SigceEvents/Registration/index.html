@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024px" />
+  <title>SIGCE/Events</title>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script src="firebase.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/Backend/FirebaseAuthentication.js"></script>
+  <script src="/Backend/Firebasestore.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    jQuery(function() {
+      document.getElementById('container').style.display = 'none';
+      jQuery('#preloader').load('/Preloader/index.html');
+      jQuery('.links').load('/menu.html')
+    });
+  </script>
+  <style>
+    .title {
+      font-size: 2.7rem;
+    }
+
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="preloader" style="z-index: 1000;">
+
+  </div>
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+        <a href="/" style="color: whitesmoke; text-decoration: none;">
+          <h3 class="logo">SIGCE <span>Events</span></h3>
+        </a>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">
+              <!-- FORM -->
+              <div id="regform">
+                <h2 class="title">CHOOSE EVENT</h2>
+                <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
+                  <label for="event">Event :
+                    <select name="event" id="event" onchange="validate()" required="required">
+                      <option value="" selected="selected">Select</option>
+                      <option value="POETRY-SHAYRI">POETRY/SHAYRI</option>
+                      <option value="STANDUP">STANDUP</option>
+                      <option value="NAIL-ART">NAIL ART</option>
+                      <option value="DEBATE">DEBATE</option>
+                      <option value="POSTER">POSTER</option>
+                      <option value="SKRIBBLE">SKRIBBLE</option>
+                      <option value="MASK-PAINTING">MASK PAINTING</option>
+                      <option value="MUSIC">MUSIC</option>
+                      <option value="DANCE">DANCE</option>
+                      <option value="PHOTOGRAPHY">PHOTOGRAPHY</option>
+                      <option value="SCI-PROJECT">SCI PROJECT IDEAS</option>
+                      <option value="INSTRUMENT">INSTRUMENT</option>
+                      <option value="QUIZ">QUIZ</option>
+                      <option value="ELOCUTION">ELOCUTION</option>
+                      <option value="CODING">CODING</option>
+                      <option value="BGMI">BGMI</option>
+                      <option value="CHALK">CHALK ART/CARVING</option>
+                      <option value="CHESS">CHESS</option>
+                    </select>
+                  </label>
+                  <!-- LANGUAGE -->
+                  <div id="language" class="hideclass">
+                    <label for="languageselect">Language : </label>
+                    <select name="languageselect" id="languageselect" class="POETRY-SHAYRI STANDUP">
+                      <option value="" selected="selected">Select</option>
+                      <option value="English">English</option>
+                      <option value="Marathi">Marathi</option>
+                      <option value="Hindi">Hindi</option>
+                    </select>
+                  </div>
+                  <!-- PROAGAINST -->
+                  <div id="proagainst" class="hideclass">
+                    <label for="proagainstselect">Pro/Against :
+                      <select name="proagainstselect" id="proagainstselect" class="DEBATE">
+                        <option value="" selected="selected">Select</option>
+                        <option value="PRO">PRO</option>
+                        <option value="AGAINST">AGAINST</option>
+                      </select>
+                    </label>
+                  </div>
+                  <!-- TOPIC -->
+                  <div id="topic" class="hideclass">
+                    <input type="text" name="topic" id="topicvalue" placeholder="Topic" class="ELOCUTION SCI-PROJECT POSTER DEBATE STANDUP" />
+                  </div>
+                  <!-- INSTRUMENT -->
+                  <div id="instrument" class="hideclass">
+                    <input type="text" name="instrument" id="instrumentselect" placeholder="Name Of Instrument" class="INSTRUMENT">
+                  </div>
+                  <!-- CODING -->
+                  <div class="hideclass" id="codelang">
+                    <label for="codelanguageselect">Language : </label>
+                    <select name="codelanguageselect" id="codelanguageselect" class="CODING">
+                      <option value="" selected="selected">Select</option>
+                      <option value="PYTHON">PYTHON</option>
+                      <option value="C++">C++</option>
+                      <option value="JAVA">JAVA</option>
+                    </select>
+                  </div>
+                  <!-- CHARACTER-ID -->
+                  <div id="characterid" class="hideclass">
+                    <input type="number" name="" id="BGMICharID" value="" placeholder="Character-ID" class="BGMI" />
+                  </div>
+                  <!-- CHESS-ID -->
+                  <div class="hideclass" id="chessid">
+                    <input type="text" name="" id="ParticipantChessID" placeholder="Chess-Id" class="CHESS">
+                  </div>
+                  <br>
+                  <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+
+    <div class="links">
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
