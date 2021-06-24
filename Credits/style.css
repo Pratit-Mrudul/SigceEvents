@@ -121,6 +121,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 .inner {
   width: max-content;
