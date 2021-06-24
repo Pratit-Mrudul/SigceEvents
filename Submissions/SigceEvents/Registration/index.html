@@ -23,7 +23,21 @@
     .title {
       font-size: 2.7rem;
     }
-
+    .alert {
+      width: 40%;
+      height: 1%;
+      margin: 5px auto;
+      padding: 5px;
+      border: 1px solid #00ff59;
+      border-radius: 10px;
+    }
+    .alert-error {
+      background-color: transparent;
+      border-color: #00ff59;
+      color: white;
+      width: max-content;
+      padding: 0 10px;
+    }
   </style>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -122,6 +136,9 @@
                     <input type="text" name="" id="ParticipantChessID" placeholder="Chess-Id" class="CHESS">
                   </div>
                   <br>
+                  <!-- SUCCESS MESSAGE -->
+                  <div id="successMsg"></div>
+
                   <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
                 </form>
               </div>
