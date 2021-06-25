@@ -27,4 +27,8 @@ if (year == 'FY') {
   document.getElementById('branch').style.display = 'none';
   document.getElementById('branch2').style.display = 'none';
   document.getElementById('branch3').style.display = 'block';
+} else {
+  document.getElementById('branch').style.display = 'none';
+  document.getElementById('branch2').style.display = 'none';
+  document.getElementById('branch3').style.display = 'none';
 }
