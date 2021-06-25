@@ -1,11 +1,11 @@
-const hamburger_menu = document.querySelector(".hamburger-menu");
-const container = document.querySelector(".container");
+const hamburger_menu = document.querySelector('.hamburger-menu');
+const container = document.querySelector('.container');
 
 function openMenu() {
-  container.classList.toggle("active");
+  container.classList.toggle('active');
 }
 
-hamburger_menu.addEventListener("click", openMenu);
+hamburger_menu.addEventListener('click', openMenu);
 
 function getLoginData() {
   let loginEmail = document.getElementById('loginEmail').value;
