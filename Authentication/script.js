@@ -17,19 +17,19 @@ function registerAcc() {
 function branchToggle() {
   let year = document.getElementById('year').value;
   if (year == 'FY') {
-    document.getElementById('branch').style.display = 'block';
+    document.getElementById('branch').style.display = '';
     document.getElementById('branch2').style.display = 'none';
     document.getElementById('branch3').style.display = 'none';
   } else if (year == 'SY') {
     document.getElementById('branch').style.display = 'none';
-    document.getElementById('branch2').style.display = 'block';
+    document.getElementById('branch2').style.display = '';
     document.getElementById('branch3').style.display = 'none';
   } else if (year == 'TY') {
     document.getElementById('branch').style.display = 'none';
     document.getElementById('branch2').style.display = 'none';
-    document.getElementById('branch3').style.display = 'block';
+    document.getElementById('branch3').style.display = '';
   } else {
-    document.getElementById('branch').style.display = 'block';
+    document.getElementById('branch').style.display = '';
     document.getElementById('branch2').style.display = 'none';
     document.getElementById('branch3').style.display = 'none';
   }
