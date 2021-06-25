@@ -90,17 +90,6 @@ function validate() {
     document.getElementById('chessid').style.display = 'none';
     document.getElementById('musicdiv').style.display = 'none';
   }
-  // MUSIC
-  else if (document.getElementById('event').value == 'MUSIC') {
-    document.getElementById('language').style.display = 'none';
-    document.getElementById('proagainst').style.display = 'none';
-    document.getElementById('topic').style.display = 'none';
-    document.getElementById('codelang').style.display = 'none';
-    document.getElementById('instrument').style.display = 'none';
-    document.getElementById('characterid').style.display = 'none';
-    document.getElementById('chessid').style.display = 'none';
-    document.getElementById('musicdiv').style.display = 'block';
-  }
   // DANCE
   else if (document.getElementById('event').value == 'DANCE') {
     document.getElementById('language').style.display = 'none';
@@ -210,5 +199,16 @@ function validate() {
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'block';
     document.getElementById('musicdiv').style.display = 'none';
+  }
+  // MUSIC
+  else if (document.getElementById('event').value == 'MUSIC') {
+    document.getElementById('language').style.display = 'none';
+    document.getElementById('proagainst').style.display = 'none';
+    document.getElementById('topic').style.display = 'none';
+    document.getElementById('codelang').style.display = 'none';
+    document.getElementById('instrument').style.display = 'none';
+    document.getElementById('characterid').style.display = 'none';
+    document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'block';
   }
 }
