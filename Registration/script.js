@@ -13,7 +13,7 @@ async function regform() {
   await sendEventRegistrationData(event);
 
   setTimeout(function() {
-    document.getElementById('regLoading').style.display = 'inline-block';
+    document.getElementById('regLoading').style.display = 'none';
     document.getElementById('event').value;
     alert(`You Have Successfully Registered For The ${event}!`)
     document.getElementById('reg_form').reset();
