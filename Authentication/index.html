@@ -29,16 +29,14 @@
     });
   </script>
   <script type="text/javascript" charset="utf-8">
-    $(".toggle-password").click(function() {
-
-  $(this).toggleClass("fa-eye fa-eye-slash");
-  var input = $($(this).attr("toggle"));
-  if (input.attr("type") == "password") {
-    input.attr("type", "text");
-  } else {
-    input.attr("type", "password");
-  }
-});
+    function togglePw() {
+      var x = document.getElementById("LoginPw");
+      if (x.type == "password") {
+      x.type = "text";
+      } else {
+      x.type = "password";
+      }
+    }
   </script>
   <style>
     .btn_hide {
@@ -91,6 +89,18 @@
        height: 20px;
        width: 20px;
     }
+    .showPw{
+      display: flex;
+      width: 30%;
+      justify-content: flex-start;
+      align-items: center;
+      margin: auto;
+      font-size: 14px;
+    }
+    #passHide{
+      margin: 0px;
+      width: 18px !important;
+    }
   </style>
 </head>
 <body>
@@ -120,7 +130,9 @@
                     <input type="text" name="" id="participantName" value="" placeholder="Full-Name" required="required" />
                     <input type="email" name="" id="participantEmail" value="" placeholder="College Email" required="required" />
                     <input type="password" name="" id="password" value="" placeholder="Password" required="required" />
-                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                    <div class="showPw">
+                      <input type="checkbox" name="" onchange="togglePw()" id="passHide" /><p id="showHide">Show Password</p>
+                    </div>
                     <input type="number" name="" id="phoneNo" value="" placeholder="Phone Number" required="required" />
                     <div class="column">
                       <label for="year">Year :
