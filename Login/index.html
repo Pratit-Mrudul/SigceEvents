@@ -30,10 +30,12 @@
   <script type="text/javascript" charset="utf-8">
     function togglePw() {
       var x = document.getElementById("LoginPw");
-      if (x.type === "password") {
+      if (x.type == "password") {
       x.type = "text";
+      document.getElementById('showHide').innerHTML = 'Hide';
       } else {
       x.type = "password";
+      document.getElementById('showHide').innerHTML = 'Show';
       }
     }
   </script>
@@ -43,7 +45,7 @@
     }
     .showPw{
       display: flex;
-      width: 50%;
+      width: 30%;
       justify-content: center;
       align-items: center;
       margin: auto;
@@ -78,7 +80,7 @@
                   <input type="email" name="" id="loginEmail" value="" placeholder="College Email" required="required" />
                   <input type="password" name="" id="LoginPw" value="" placeholder="Password" required="required" />
                   <div class="showPw">
-                  <input type="checkbox" name="" onchange="togglePw()" id="passHide" /><p>Show Password</p>
+                  <input type="checkbox" name="" onchange="togglePw()" id="passHide" /><p id="showHide"></p>
                   </div>
                   <div id="alertBox"></div>
                   <button type="button" id="regformSubmit" class="btnform" onclick="getLoginData()">LogIn</button>
