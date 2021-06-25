@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="/Preloader/style.css" />
-  <script src="/__/firebase/8.6.8/firebase-app.js"></script>
-  <script src="/__/firebase/init.js"></script>
-  <script src="/__/firebase/8.6.8/firebase-functions.js"></script>
-  <script src="/__/firebase/8.6.8/firebase-analytics.js"></script>
-  <script src="/__/firebase/8.6.8/firebase-auth.js"></script>
-  <script src="/__/firebase/8.6.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
   <script src="/Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
   <script src="/Backend/FirebaseAuthentication.js"></script>
   <script src="/Backend/Firebasestore.js"></script>
@@ -15,6 +13,7 @@
   <meta name="viewport" content="width=1024px" />
   <title>SIGCE/Events LogIn</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     jQuery(function() {
@@ -27,7 +26,16 @@
         document.getElementById('container').style.display = '';
       }, 3500);
     });
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#LoginPw');
+ 
+  togglePassword.addEventListener('click', function (e) {
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    this.classList.toggle('fa-eye-slash');
+});
   </script>
+  
   <style>
 
     .alert {
@@ -69,6 +77,10 @@
     #circeloader{
       display: none;
     }
+    .eye{
+      margin-left: -30px; 
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -101,6 +113,7 @@
                   <br>
                   <input type="email" name="" id="loginEmail" value="" placeholder="College Email" required="required" />
                   <input type="password" name="" id="LoginPw" value="" placeholder="Password" required="required" />
+                  <i class="eye far fa-eye" id="togglePassword"></i>
                   <div id="alertBox"></div>
                   <button type="button" id="regformSubmit" class="btnform" onclick="getLoginData()">LogIn</button>
                   		<div id="circeloader" class="circle"></div>
