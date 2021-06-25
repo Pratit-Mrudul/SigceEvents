@@ -21,6 +21,9 @@
     .title {
       font-size: 2.7rem;
     }
+    .formLimit{
+      max-width: 300px;
+    }
     .circle{
     	margin: 10px auto;
     	width: 24px;
@@ -62,8 +65,9 @@
             <div class="inner">
               <!-- FORM -->
               <div id="regform">
-                <h2 class="title">CHOOSE EVENT</h2>
+                <div class="formLimit">
                 <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
+                <h2 class="title">CHOOSE EVENT</h2>
                   <label for="event">Event :
                     <select name="event" id="event" onchange="validate()" required="required">
                       <option value="" selected="selected">Select</option>
@@ -142,6 +146,7 @@
                 
                   <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
                 </form>
+                </div>
               </div>
             </div>
           </div>
