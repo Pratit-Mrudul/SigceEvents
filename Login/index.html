@@ -61,16 +61,30 @@
         <header>
           <div class="overlay">
             <div class="inner">
-              <h2 class="title">THE NEW NORMAL</h2>
-              <p>
-                A TESTAMENT TO HUMAN ENDURANCE
-              </p>
-              <div id="notLogin">
-                <button class="btn" id="registerNow" onclick="location.href = '/Authentication/'">Register Now!</button>
-                <button class="btn" id="loginNow" onclick="location.href = '/Login/'">Login!</button>
+              <div class="chooseevents"></div>
+              <div id="regform" class="formback">
+                <form id="reg_form" class="" action="" method="post" accept-charset="utf-8">
+                  <h4>Login</h4>
+                  <br>
+                  <input type="email" name="" id="loginEmail" value="" placeholder="College Email" required="required" />
+                  <input type="password" name="" id="LoginPw" value="" placeholder="Password" required="required" />
+                  <div style="display: flex;">
+                  <input type="checkbox" name="" id="passHide" /> <p>Show Password</p>
+                  </div>
+                  <div id="alertBox"></div>
+                  <button type="button" id="regformSubmit" class="btnform" onclick="getLoginData()">LogIn</button>
+                  		<div id="circeloader" class="circle"></div>
+                </form>
+                <div class="SignUp">
+                  <p>
+                    Create A New Account &nbsp; &nbsp;<a href="/Authentication/">Sign Up</a>
+                  </p>
+                </div>
               </div>
-              <div id="afterLogin" style="display: none;">
-                <button class="btn" id="RegisterEvents" onclick="location.href = '/Registration/'">Register For Events</button>
+              <div id="emailVerify" style="display: none;">
+                <div class='formback'>
+                  <h2>Please Verify Your Email First!</h2>
+                </div>
               </div>
             </div>
           </div>
