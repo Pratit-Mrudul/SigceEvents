@@ -78,12 +78,10 @@ function login(email, password) {
 }
 
 function signOut() {
-  // doc.data() will be undefined in this case
   auth.signOut().then(() => {
-    // Sign-out successful.
-    console.log('Signed Out')
+    console.log('Signed Out');
+    window.location.href = '/';
   }).catch((error) => {
-    // An error happened.
     console.log(error);
   });
 }
