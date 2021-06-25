@@ -9,6 +9,10 @@ regFormFn.addEventListener('click', regform);
 
 async function regform() {
   document.getElementById('regLoading').style.display = '';
+  setTimeout(function() {
+    document.getElementById('eventSuccess').style.display = '';
+    document.getElementById('regLoading').style.display = '';
+  }, 2000);
   var event = document.getElementById('event').value;
   await sendEventRegistrationData(event);
 };
