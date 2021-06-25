@@ -53,6 +53,38 @@
       margin: 0px;
       width: 18px !important;
     }
+    .circleDiv{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 280px;
+      margin: auto;
+    }
+    .circle{
+      margin: auto !important;
+    	margin-top: 10px;
+    	margin-bottom: 10px;
+    	width: 24px;
+    	height: 24px;
+    	border: 5px solid rgba(255,255,255,0.2);
+    	border-radius: 50%;
+    	border-top-color: #fff;
+    	z-index: 1000;
+    	animation: spin 1s infinite;
+    }
+    @keyframes spin{
+    	100%{
+    		transform: rotate(360deg);
+    	}
+    }
+    #regLoading{
+      display: none;
+    }
+    .formLimit{
+      margin: auto;
+      width: 280px;
+      max-width: 300px;
+    }
   </style>
 </head>
 <body>
@@ -78,6 +110,7 @@
               <div class="chooseevents"></div>
               <div id="regform" class="formback">
                 <form id="reg_form" class="" action="" method="post" accept-charset="utf-8">
+                  <div class="formLimit">
                   <h4>Login</h4>
                   <br>
                   <input type="email" name="" id="loginEmail" value="" placeholder="College Email" required="required" />
@@ -88,6 +121,7 @@
                   <div id="alertBox"></div>
                   <button type="button" id="regformSubmit" class="btnform" onclick="getLoginData()">LogIn</button>
                   		<div id="circeloader" class="circle"></div>
+                  		</div>
                 </form>
                 <div class="SignUp">
                   <p>
