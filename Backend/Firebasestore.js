@@ -28,6 +28,11 @@ async function sendEventRegistrationData(event) {
   user = firebase.auth().currentUser;
   var docRef = db.collection('events').doc(event);
   await getDocumentData(db.collection('users').doc(user.uid));
+  let participatedList = []
+  try {
+    participatedList = userData['participatedEvents'];
+  } catch (e) {}
+  await sendData(db.collection('users').doc(user.uid), {'participatedEvents': participatedList.push(event)})
   participantData = userData;
   newFields = document.getElementsByClassName(event);
   for(let i = 0; i<newFields.length; i++) {
