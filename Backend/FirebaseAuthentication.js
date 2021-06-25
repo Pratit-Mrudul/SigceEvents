@@ -33,10 +33,9 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
           });
       });
       firebase.auth().currentUser.sendEmailVerification().then(() => {
-        document.getElementById('verficationCollapse').style.display = 'block';
+        document.getElementById('verficationCollapse').style.display = '';
         document.getElementById('formCollapse').style.display = 'none';
       });
-      signOut();
     }).catch((error) => {
       user.delete().then(() => {
         // User deleted.
