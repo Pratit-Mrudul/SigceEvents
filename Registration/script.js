@@ -9,6 +9,8 @@ regFormFn.addEventListener('click', regform);
 
 async function regform() {
   document.getElementById('regLoading').style.display = 'inline-block';
+  var event = document.getElementById('event').value;
+  await sendEventRegistrationData(event);
 
   setTimeout(function() {
     document.getElementById('regLoading').style.display = 'inline-block';
@@ -16,8 +18,6 @@ async function regform() {
     alert(`You Have Successfully Registered For The ${event}!`)
     document.getElementById('reg_form').reset();
   }, 1000);
-  var event = document.getElementById('event').value;
-  await sendEventRegistrationData(event);
 };
 
 function validate() {
