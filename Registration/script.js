@@ -17,7 +17,7 @@ function loading() {
   document.getElementById('regLoading').style.display = 'inline-block';
   setTimeout(function() {
     document.getElementById('regLoading').style.display = 'none';
-    document.getElementById('event').value;
+    event = document.getElementById('event').value;
     alert(`You Have Successfully Registered For The ${event}!`)
     document.getElementById('reg_form').reset();
   }, 1000);
