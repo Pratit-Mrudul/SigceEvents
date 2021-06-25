@@ -22,6 +22,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // STANDUP
   else if (document.getElementById('event').value == 'STANDUP') {
@@ -32,6 +33,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // NAIL-ART
   else if (document.getElementById('event').value == 'NAIL-ART') {
@@ -42,6 +44,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // DEBATE
   else if (document.getElementById('event').value == 'DEBATE') {
@@ -52,6 +55,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // POSTER
   else if (document.getElementById('event').value == 'POSTER') {
@@ -62,6 +66,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   //SKRIBBLE
   else if (document.getElementById('event').value == 'POSTER') {
@@ -72,6 +77,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // MASK-PAINTING
   else if (document.getElementById('event').value == 'MASK-PAINTING') {
@@ -82,6 +88,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // MUSIC
   else if (document.getElementById('event').value == 'MUSIC') {
@@ -92,6 +99,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // DANCE
   else if (document.getElementById('event').value == 'DANCE') {
@@ -102,6 +110,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // PHOTOGRAPHY
   else if (document.getElementById('event').value == 'PHOTOGRAPHY') {
@@ -112,6 +121,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // SCI-PROJECT
   else if (document.getElementById('event').value == 'SCI-PROJECT') {
@@ -122,6 +132,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // ELOCUTION
   else if (document.getElementById('event').value == 'ELOCUTION') {
@@ -132,6 +143,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // CODING
   else if (document.getElementById('event').value == 'CODING') {
@@ -142,6 +154,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // INSTRUMENT
   else if (document.getElementById('event').value == 'INSTRUMENT') {
@@ -152,6 +165,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'block';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // QUIZ
   else if (document.getElementById('event').value == 'QUIZ') {
@@ -162,6 +176,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // BGMI
   else if (document.getElementById('event').value == 'BGMI') {
@@ -172,6 +187,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'block';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // CHALK
   else if (document.getElementById('event').value == 'CHALK') {
@@ -182,6 +198,7 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'none';
   }
   // CHESS
   else if (document.getElementById('event').value == 'CHESS') {
@@ -192,5 +209,17 @@ function validate() {
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
     document.getElementById('chessid').style.display = 'block';
+    document.getElementById('musicdiv').style.display = 'none';
+  }
+  // MUSIC
+  else if (document.getElementById('event').value == 'MUSIC') {
+    document.getElementById('language').style.display = 'none';
+    document.getElementById('proagainst').style.display = 'none';
+    document.getElementById('topic').style.display = 'none';
+    document.getElementById('codelang').style.display = 'none';
+    document.getElementById('instrument').style.display = 'none';
+    document.getElementById('characterid').style.display = 'none';
+    document.getElementById('chessid').style.display = 'none';
+    document.getElementById('musicdiv').style.display = 'block';
   }
 }
