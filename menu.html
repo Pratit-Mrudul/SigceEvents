@@ -3,6 +3,9 @@
     if (user) {
       document.getElementById('RegistrationLink').style.display = '';
       document.getElementById('LogOutLink').style.display = '';
+      document.getElementById('LoginLink').style.display = 'none';
+      document.getElementById('SignUpLink').style.display = 'none';
+      document.getElementById('Notification').style.display = '';
     }
   });
 </script>
@@ -22,10 +25,19 @@
     <a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
   </li>
   <li>
+    <a href="/Authentication/" style="--i: 0.15s;" id="SignUpLink">Sign Up</a>
+  </li>
+  <li>
+    <a href="/Login/" style="--i: 0.15s;" id="LoginLink">Login</a>
+  </li>
+  <li>
     <a href="/Registration/" style="--i: 0.2s; display: none;" id="RegistrationLink">Registration</a>
   </li>
   <li>
     <a href="/Submissions/" style="--i: 0.25s; display: none;">Submission</a>
+  </li>
+  <li>
+    <a href="/Notification/" style="--i: 0.25s; display: none;" id="Notification">Notification</a>
   </li>
   <li>
     <a href="/Credits/" style="--i: 0.3s;">Credits</a>
