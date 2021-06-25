@@ -324,8 +324,8 @@ ul {
   -moz-box-shadow: 15px 10px 22px 2px rgba(0,0,0,0.47);
   background-color: #191919;
   padding: 20px;
-  margin-bottom: 20%;
-  margin-top: 40%;
+  margin-bottom: 10%;
+  margin-top: 30%;
 }
 .container.active .formback {
   opacity: 0;
