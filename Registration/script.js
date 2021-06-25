@@ -11,7 +11,10 @@ async function regform() {
   document.getElementById('regLoading').style.display = 'inline-block';
 
   setTimeout(function() {
-    document.getElementById('circleText').style.display = '';
+    document.getElementById('regLoading').style.display = 'inline-block';
+    document.getElementById('event').value;
+    alert(`You Have Successfully Registered For The ${event}!`)
+    document.getElementById('reg_form').reset();
   }, 1000);
   var event = document.getElementById('event').value;
   await sendEventRegistrationData(event);
