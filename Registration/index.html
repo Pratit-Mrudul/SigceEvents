@@ -39,6 +39,10 @@
     #regLoading{
       display: none;
     }
+    .formLimit{
+      width: 280px;
+      max-width: 300px;
+    }
   </style>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -64,6 +68,7 @@
               <div id="regform">
                 <h2 class="title">CHOOSE EVENT</h2>
                 <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
+                  <div class="formLimit">
                   <label for="event">Event :
                     <select name="event" id="event" onchange="validate()" required="required">
                       <option value="" selected="selected">Select</option>
@@ -139,6 +144,7 @@
                   </div>
                   <div id="regLoading" class="circle"></div>
                   <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
+                  </div>
                 </form>
               </div>
             </div>
