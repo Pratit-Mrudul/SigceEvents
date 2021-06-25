@@ -31,7 +31,9 @@
       font-size: 2.7rem;
     }
     .circle{
-    	margin: 10px auto;
+      margin: auto !important;
+    	margin-top: 10px;
+    	margin-bottom: 10px;
     	width: 24px;
     	height: 24px;
     	border: 5px solid rgba(255,255,255,0.2);
@@ -159,7 +161,9 @@
                   <div class="hideclass" id="musicdiv">
                     <input type="text" name="" id="musicName" placeholder="Music Name" class="MUSIC">
                   </div>
-                  <div id="regLoading" class="circle"></div>
+                  <div class="circleDiv">
+                    <div id="regLoading" class="circle"></div>
+                  </div>
                   <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
                   </div>
                 </form>
