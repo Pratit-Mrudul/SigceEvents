@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024" />
+  <title>SIGCE Events</title>
+  <link rel="stylesheet" href="/Home/style.css" />
+  <link rel="stylesheet" href="/Preloader/style.css" />
+  <script src="/__/firebase/8.6.8/firebase-app.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="/__/firebase/8.6.8/firebase-functions.js"></script>
+  <script src="/__/firebase/8.6.8/firebase-analytics.js"></script>
+  <script src="/__/firebase/8.6.8/firebase-auth.js"></script>
+  <script src="/Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/Backend/FirebaseAuthentication.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    jQuery(function() {
+      document.getElementById('container').style.display = 'none';
+      jQuery('#preloader').load('/Preloader/index.html');
+      jQuery('.links').load('/menu.html');
+    });
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        document.getElementById('notLogin').style.display = 'none';
+        document.getElementById('afterLogin').style.display = '';
+      } else {
+        // User is signed out
+        // ...
+      }
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('container').style.display = '';
+      }, 4500);
+    });
+  </script>
+  <style>
+    .btn {
+      margin: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader" style="z-index: 1000;">
+
+  </div>
+  <div class="container" id="container">
+    <div class="navbar">
+      <div class="menu">
+        <a href="/" style="color: whitesmoke; text-decoration: none;">
+          <h3 class="logo">SIGCE <span>Events</span></h3>
+        </a>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">
+              <?xml version="1.0" encoding="utf-8"?>
+              <h2 class="title">THE NEW NORMAL</h2>
+              <p>
+                A TESTAMENT TO HUMAN ENDURANCE
+              </p>
+              <div id="notLogin">
+                <button class="btn" id="registerNow" onclick="location.href = '/Authentication/'">Sign Up</button>
+                <button class="btn" id="loginNow" onclick="location.href = '/Login/'">Login</button>
+              </div>
+              <div id="afterLogin" style="display: none;">
+                <button class="btn" id="RegisterEvents" onclick="location.href = '/Registration/'">Register For Events</button>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+
+    <div id='menu' class="links">
+
+    </div>
+  </div>
+
+  <script src="/Home/script.js"></script>
+</body>
+</html>
