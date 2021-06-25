@@ -5,6 +5,8 @@ function onClickMenu() {
   container.classList.toggle("active");
 }
 
+hamburger_menu.addEventListener("click", onClickMenu);
+
 function getLoginData() {
   let loginEmail = document.getElementById('loginEmail').value;
   let LoginPw = document.getElementById('LoginPw').value;
