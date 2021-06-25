@@ -49,6 +49,20 @@
     .SignUp p {
       color: #eeeeee;
     }
+    .circle{
+    	margin: 70px auto;
+    	width: 24px;
+    	height: 24px;
+    	border: 5px solid rgba(255,255,255,0.2);
+    	border-radius: 50%;
+    	border-top-color: #fff;
+    	animation: spin 1s infinite;
+    }
+    @Keyframes spin{
+    	100%{
+    		transform: rotate(360deg);
+    	}
+    }
   </style>
 </head>
 <body>
@@ -83,6 +97,7 @@
                   <input type="password" name="" id="LoginPw" value="" placeholder="Password" required="required" />
                   <div id="alertBox"></div>
                   <button type="button" id="regformSubmit" class="btnform" onclick="getLoginData()">LogIn</button>
+                  		<div class="circle"></div>
                 </form>
                 <div class="SignUp">
                   <p>
