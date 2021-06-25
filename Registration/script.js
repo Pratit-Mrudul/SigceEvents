@@ -8,7 +8,7 @@ let regFormFn = document.getElementById('regformSubmit');
 regFormFn.addEventListener('click', regform);
 
 async function regform() {
-  document.getElementById('regLoading').style.display = 'block';
+  document.getElementById('regLoading').style.display = '';
   var event = document.getElementById('event').value;
   await sendEventRegistrationData(event);
 };
