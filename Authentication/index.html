@@ -21,6 +21,18 @@
       jQuery('#preloader').load('/Preloader/index.html');
     });
   </script>
+  <script type="text/javascript" charset="utf-8">
+    $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+  </script>
   <style>
     .btn_hide {
       display: none;
@@ -68,6 +80,13 @@
     		transform: rotate(360deg);
     	}
     }
+    .field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
   </style>
 </head>
 <body>
@@ -97,6 +116,7 @@
                     <input type="text" name="" id="participantName" value="" placeholder="Full-Name" required="required" />
                     <input type="email" name="" id="participantEmail" value="" placeholder="College Email" required="required" />
                     <input type="password" name="" id="password" value="" placeholder="Password" required="required" />
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     <input type="number" name="" id="phoneNo" value="" placeholder="Phone Number" required="required" />
                     <div class="column">
                       <label for="year">Year :
