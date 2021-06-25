@@ -35,6 +35,7 @@ function branchToggle() {
   }
 }
 
+
 function finalSelBranch() {
   let year = document.getElementById('year').value;
   let finalBranch;
@@ -45,5 +46,6 @@ function finalSelBranch() {
   } else if (year == 'TY') {
     finalBranch = document.getElementById('branch3').value;
   }
+  console.log(finalBranch);
   return finalBranch;
 }
