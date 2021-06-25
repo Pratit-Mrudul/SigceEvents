@@ -21,11 +21,8 @@
     .title {
       font-size: 2.7rem;
     }
-    .formLimit{
-      width: 280px;
-    }
     .circle{
-      margin: 10px auto;
+    	margin: 10px auto;
     	width: 24px;
     	height: 24px;
     	border: 5px solid rgba(255,255,255,0.2);
@@ -41,11 +38,6 @@
     }
     #regLoading{
       display: none;
-    }
-    #EventSuccess{
-      display: none;
-      text-align: center;
-      margin: auto;
     }
   </style>
   <link rel="stylesheet" href="style.css" />
@@ -69,9 +61,9 @@
           <div class="overlay">
             <div class="inner">
               <!-- FORM -->
-              <div class="formLimit">
-                <div id="regform" class="formback">
-                  <form id="reg_form" class="" action="" method="post" accept-charset="utf-8">
+              <div id="regform">
+                <h2 class="title">CHOOSE EVENT</h2>
+                <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
                   <label for="event">Event :
                     <select name="event" id="event" onchange="validate()" required="required">
                       <option value="" selected="selected">Select</option>
@@ -145,11 +137,9 @@
                   <div class="hideclass" id="musicdiv">
                     <input type="text" name="" id="musicName" placeholder="Music Name" class="MUSIC">
                   </div>
-                </form>
                   <div id="regLoading" class="circle"></div>
-                  <div id="EventSuccess">SuccessFully Registered For Event!</div>
-                <button type="button" id="regformSubmit" onclick="successReg()" class="btnform">SUBMIT</button>
-                </div>
+                  <button type="button" id="regformSubmit" class="btnform">SUBMIT</button>
+                </form>
               </div>
             </div>
           </div>
