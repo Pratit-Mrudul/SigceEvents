@@ -44,15 +44,6 @@
     #regLoading{
       display: none;
     }
-    .eventDiv{
-      margin: auto;
-      width: 300px;
-    }
-    .formback h4{
-      width: 300px;
-      text-align: center;    
-      margin: auto;
-    }
   </style>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -77,10 +68,8 @@
               <!-- FORM -->
               <div id="regform">
                 <div class="formLimit">
-                  <div class="eventDiv">
-                    <h4>CHOOSE EVENT</h4>
-                  </div>
                 <form id="reg_form" class="formback" action="" method="post" accept-charset="utf-8">
+                <h2 class="title">CHOOSE EVENT</h2>
                   <label for="event">Event :
                     <select name="event" id="event" onchange="validate()" required="required">
                       <option value="" selected="selected">Select</option>
