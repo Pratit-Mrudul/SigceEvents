@@ -4,7 +4,7 @@ function registerAcc() {
   let name = document.getElementById('participantName').value;
   let phoneNo = document.getElementById('phoneNo').value;
   let year = document.getElementById('year').value;
-  let branch = finalSelBranch(year);
+  let branch = finalSelBranch();
   let rollNo = document.getElementById('participantRNo').value;
   if (emailValidation(email)) {
     createUser(email, pass, name, phoneNo, year, branch, rollNo);
@@ -33,14 +33,17 @@ function branchToggle() {
     document.getElementById('branch2').style.display = 'none';
     document.getElementById('branch3').style.display = 'none';
   }
-  function finalSelBranch(year) {
-    if (year == 'FY') {
-      finalBranch = document.getElementById('branch').value;
-    } else if {
-      finalBranch = document.getElementById('branch2').value;
-    } else if {
-      finalBranch = document.getElementById('branch3').value;
-    }
-    return finalBranch;
+}
+
+function finalSelBranch() {
+  let year = document.getElementById('year').value;
+  let finalBranch;
+  if (year == 'FY') {
+    finalBranch = document.getElementById('branch').value;
+  } else if (year == 'SY') {
+    finalBranch = document.getElementById('branch2').value;
+  } else if (year == 'TY') {
+    finalBranch = document.getElementById('branch3').value;
   }
+  return finalBranch;
 }
