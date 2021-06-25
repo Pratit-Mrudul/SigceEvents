@@ -9,6 +9,10 @@ regFormFn.addEventListener('click', regform);
 
 async function regform() {
   document.getElementById('regLoading').style.display = 'inline-block';
+
+  setTimeout(function() {
+    document.getElementById('circleText').style.display = '';
+  }, 1000);
   var event = document.getElementById('event').value;
   await sendEventRegistrationData(event);
 };
