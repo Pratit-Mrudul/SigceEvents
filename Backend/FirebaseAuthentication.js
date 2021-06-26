@@ -36,11 +36,9 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.getElementById('verficationCollapse').style.display = '';
         document.getElementById('formCollapse').style.display = 'none';
-        auth.signOut().catch((error) => {console.log(error);});
         setInterval(function(){ 
           user.reload().then(async() => {
             if (firebase.auth().currentUser.emailVerified) {
-              await auth.signInWithEmailAndPassword(email, password)
               document.getElementById('regLoading').style.display = 'none';
               window.location.href = '/';
             }}) 

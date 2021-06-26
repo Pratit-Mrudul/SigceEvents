@@ -51,11 +51,17 @@
 <script>
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      document.getElementById('RegistrationLink').style.display = '';
-      document.getElementById('LogOutLink').style.display = '';
-      document.getElementById('LoginLink').style.display = 'none';
-      document.getElementById('SignUpLink').style.display = 'none';
-      document.getElementById('Notification').style.display = '';
+      if (user.emailVerified) {
+        document.getElementById('RegistrationLink').style.display = '';
+        document.getElementById('LogOutLink').style.display = '';
+        document.getElementById('LoginLink').style.display = 'none';
+        document.getElementById('SignUpLink').style.display = 'none';
+        document.getElementById('Notification').style.display = '';
+      } else {
+        alert(`Hi ${user.displayName}, verify your email id before you proceed. You will be logged out.`);
+        auth.signOut().catch((error) => {console.log(error);});
+        window.location.href = '/Login/';
+      }
     }
   });
 </script>
