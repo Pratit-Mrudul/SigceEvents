@@ -314,6 +314,7 @@ ul {
   /* For mobile phones: */
   .title{
     font-size: 1.8rem;
+    letter-spacing: 2px !important;
   }
   .titleBelow{
     font-size: 0.6rem;
