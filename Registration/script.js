@@ -16,7 +16,7 @@ async function regform() {
     }
   });
   let arrayData = userData['participatedEvents']
-  if (arrayData.includes(event)){
+  if (arrayData != null && arrayData.includes(event)){
   } else {
     await sendEventRegistrationData(event);
   }
