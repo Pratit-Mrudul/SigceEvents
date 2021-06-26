@@ -8,21 +8,11 @@ let regFormFn = document.getElementById('regformSubmit');
 regFormFn.addEventListener('click', regform);
 
 async function regform() {
-
+  document.getElementById('regLoading').style.display = 'inline-block';
   var event = document.getElementById('event').value;
   await sendEventRegistrationData(event);
 };
 
-function loading() {
-  document.getElementById('regLoading').style.display = 'inline-block';
-  setTimeout(function() {
-    document.getElementById('regLoading').style.display = 'none';
-    let event = document.getElementById('event').value;
-    alert(`You Have Successfully Registered For The ${event}!`)
-    document.getElementById('reg_form').reset();
-  }, 1000);
-
-}
 function validate() {
   // POETRY-SHAYRI
   if (document.getElementById('event').value == 'POETRY-SHAYRI') {
