@@ -43,7 +43,6 @@ async function sendEventRegistrationData(event) {
 
   await sendData(docRef, mapData);
   document.getElementById('regLoading').style.display = 'none';
-  let event = document.getElementById('event').value;
   alert(`You Have Successfully Registered For The ${event}!`);
   document.getElementById('reg_form').reset();
 }
