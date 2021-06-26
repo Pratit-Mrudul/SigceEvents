@@ -407,3 +407,12 @@ ul {
 ::-webkit-scrollbar-thumb:hover {
   background: #222;
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .formback {
+    width: 100%;
+    margin-top: 100%;
+  }
+}
