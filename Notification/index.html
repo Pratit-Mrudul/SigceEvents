@@ -41,6 +41,17 @@
                     </div>
                     </li>`
       }
+      CloseButtons = document.getElementsByClassName('closeButton');
+      await getDocumentData(db.collection("users").doc(user.uid));
+      let notificationList = userData['participatedEvents'];
+      for (let i=0; i<=CloseButtons.length; i++) {
+        button.addEventListener('click', () => {
+          let email = user.email;
+          data = {};
+          data[email] = firebase.firestore.FieldValue.delete();
+          db.collection('events').doc(notificationList[i]).update(data);
+        })
+      };
     }});
       setTimeout(function() {
         document.getElementById('preloader').style.display = 'none';
