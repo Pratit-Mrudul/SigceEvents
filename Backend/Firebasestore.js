@@ -44,7 +44,7 @@ async function sendEventRegistrationData(event) {
   participantData = userData;
   newFields = document.getElementsByClassName(event);
   for(let i = 0; i<newFields.length; i++) {
-    if (newFields[i].value != '' || newFields[i].value != null) {
+    if (newFields[i].value != '' && newFields[i].value != null) {
       participantData[newFields[i].id] = newFields[i].value;
     } else {
       alert('Please input all values')
