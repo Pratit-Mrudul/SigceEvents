@@ -39,6 +39,7 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
         setInterval(function(){ 
           user.reload().then(ok => {
             if (firebase.auth().currentUser.emailVerified) {
+              document.getElementById('regLoading').style.display = 'none';
               document.getElementById('reg_form').reset(); 
               window.location.href = '/';
             }}) 
