@@ -46,6 +46,12 @@
         CloseButtons[i].addEventListener('click', async (event) => {
           event.target.classList.remove('fas', 'fa-times', 'closeButton');
           eventName = event.target.classList.item(0);
+          let participated = userData['participatedEvents'];
+          userData['participatedEvents'] = []
+          for (element in  participated) {
+            userData['participatedEvents'].push(element);
+          }
+          db.collection('users').doc(user.uid).set(userData);
           let email = user.email;
           var documentReference = db.collection('events').doc(eventName);
           let Data = {};
