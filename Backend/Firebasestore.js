@@ -30,9 +30,9 @@ async function sendEventRegistrationData(event) {
   await getDocumentData(db.collection('users').doc(user.uid));
   let participatedList = []
   try {
-    participatedList = userData['participatedEvents'];
+    participatedList = [].push(userData['participatedEvents']);
   } catch (e) {}
-  await sendData(db.collection('users').doc(user.uid), {'participatedEvents': participatedList.concat(event)})
+  await sendData(db.collection('users').doc(user.uid), {'participatedEvents': participatedList + (event)})
   participantData = userData;
   newFields = document.getElementsByClassName(event);
   for(let i = 0; i<newFields.length; i++) {
