@@ -61,6 +61,7 @@
           documentReference.get().then((doc) => {Data = doc.data();});
           delete Data[email];
           await documentReference.set(Data);
+          alert(`You have been successfully deleted your registration from ${eventName}.`)
         })
       };
     }});
