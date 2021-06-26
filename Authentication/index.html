@@ -67,8 +67,17 @@
     .logIn p {
       color: #eeeeee;
     }
+    .circleDiv{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 280px;
+      margin: auto;
+    }
     .circle{
-    	margin: 10px auto;
+      margin: auto !important;
+    	margin-top: 10px;
+    	margin-bottom: 10px;
     	width: 24px;
     	height: 24px;
     	border: 5px solid rgba(255,255,255,0.2);
@@ -77,13 +86,16 @@
     	z-index: 1000;
     	animation: spin 1s infinite;
     }
-    .branch{
-      display: none;
-    }
     @keyframes spin{
     	100%{
     		transform: rotate(360deg);
     	}
+    }
+    #regLoading{
+      display: none;
+    }
+    .branch{
+      display: none;
     }
     .field-icon {
        height: 20px;
@@ -179,6 +191,7 @@
                     </div>
                     
                     <button type="button" id="SignUp" class="btnform" onclick="registerAcc()">Sign Up</button>
+                    <div id="regLoading" class="circle"></div>
                     <!-- LOGIN SECTION -->
                     <div class="logIn">
                       <p>
