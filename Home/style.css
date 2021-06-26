@@ -332,17 +332,15 @@ ul {
     font-size: 0.8rem;
   }
   .container.active .main {
-    animation: main-animation 0.5s ease;
+    animation: main-animation 1s ease;
     cursor: pointer;
     transform: perspective(1300px) rotateY(-60deg) translateZ(310px) scale(0.5);
   }
   .container.active .shadow.one {
-    animation: shadow-one 0.6s ease-out;
-    transform: perspective(1300px) rotateY(-60deg) translateZ(215px) scale(0.5);
+    display: none;
   }
   .container.active .shadow.two {
-    animation: shadow-one 0.6s ease-out;
-    transform: perspective(1300px) rotateY(-60deg) translateZ(215px) scale(0.5);
+    display: none;
   }
   .links {
     color: white;
