@@ -46,12 +46,16 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
     });
   })
   .catch((error) => {
-    user.delete().then(() => {
-      // User deleted.
-      document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`
-    }).catch((error) => {
-      document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> Rougue User Created </div>`
-    });
+    if (user != null) {
+      user.delete().then(() => {
+        // User deleted.
+        document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`
+      }).catch((error) => {
+        document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> Rougue User Created </div>`
+      });
+    } else {
+      document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`;
+    }
   });
 }
 
