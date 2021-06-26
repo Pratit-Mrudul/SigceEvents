@@ -73,7 +73,7 @@ function login(email, password) {
     } else {
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
-      signOut();
+      auth.signOut().catch((error) => {console.log(error);});
     }
   })
   .catch((error) => {
