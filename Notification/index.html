@@ -25,7 +25,7 @@
 
       await firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
-      await getDocumentData(db.collection("users").doc(auth.cu.uid));
+      await getDocumentData(db.collection("users").doc(user.uid));
       let notificationList = userData['participatedEvents'];
       let NotificationSection = document.getElementById('Noticontent');
       for (let i = 0; i<notificationList.length; i++) {
