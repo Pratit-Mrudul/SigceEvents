@@ -31,3 +31,9 @@ svg text{
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+#preloader{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
