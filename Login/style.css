@@ -367,3 +367,11 @@ select {
 .authForm{
   display: block;
 }
+
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .formback{
+      width: max-content;
+    }
+  }
