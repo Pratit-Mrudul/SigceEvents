@@ -390,4 +390,7 @@ select {
   .alert-error{
     width: 70% !important;
   }
+  .title {
+    font-size: 1.8rem !important;
+  }
 }
