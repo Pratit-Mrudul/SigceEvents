@@ -44,9 +44,10 @@
       CloseButtons = document.getElementsByClassName('closeButton');
       for (let i=0; i<CloseButtons.length; i++) {
         CloseButtons[i].addEventListener('click', async (event) => {
-          listClasses = event.target.classList.remove('fas', 'fa-times', 'closeButton');
+          event.target.classList.remove('fas', 'fa-times', 'closeButton');
+          eventName = event.target.classList.item(0);
           let email = user.email;
-          var eventInstance = db.collection('events').doc(listClasses[0])
+          var eventInstance = db.collection('events').doc(eventName)
           await eventInstance.update({
             [email]: firebase.firestore.FieldValue.delete()
           },);
