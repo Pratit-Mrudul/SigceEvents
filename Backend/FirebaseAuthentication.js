@@ -36,11 +36,12 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.getElementById('verficationCollapse').style.display = '';
         document.getElementById('formCollapse').style.display = 'none';
+        auth.signOut().catch((error) => {console.log(error);});
         setInterval(function(){ 
           user.reload().then(ok => {
             if (firebase.auth().currentUser.emailVerified) {
+              await auth.signInWithEmailAndPassword(email, password)
               document.getElementById('regLoading').style.display = 'none';
-              document.getElementById('reg_form').reset(); 
               window.location.href = '/';
             }}) 
           }, 3000);
