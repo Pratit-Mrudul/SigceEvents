@@ -35,13 +35,17 @@ async function sendEventRegistrationData(event) {
     }
     participatedList = userData['participatedEvents'];
   } catch (e) {}
-  participatedList.push(event)
-  await sendData(db.collection('users').doc(user.uid), {'participatedEvents': participatedList})
   participantData = userData;
   newFields = document.getElementsByClassName(event);
   for(let i = 0; i<newFields.length; i++) {
-    participantData[newFields[i].id] = newFields[i].value;
+    if (newFields[i].value != '' || newFields[i].value != null) {
+      participantData[newFields[i].id] = newFields[i].value;
+    } else {
+      alert('Please input all values')
+    }
   }
+  participatedList.push(event)
+  await sendData(db.collection('users').doc(user.uid), {'participatedEvents': participatedList})
   mapData = {};
   mapData[userData['email']] = participantData;
 
