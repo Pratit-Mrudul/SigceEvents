@@ -30,6 +30,7 @@ async function sendEventRegistrationData(event) {
     var docRef = db.collection('events').doc(event);
   } catch(e) {
     alert('Please select a event');
+    document.getElementById('reg_form').reset();
     return;
   }
   await getDocumentData(db.collection('users').doc(user.uid));
