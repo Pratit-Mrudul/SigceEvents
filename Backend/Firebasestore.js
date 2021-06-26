@@ -30,7 +30,10 @@ async function sendEventRegistrationData(event) {
   await getDocumentData(db.collection('users').doc(user.uid));
   let participatedList = []
   try {
-    participatedList = [].push(userData['participatedEvents']);
+    participatedList = [userData['participatedEvents']];
+    if (!Array.isArray(participatedList)) {
+      participatedList = [];
+    }
   } catch (e) {}
   participatedList.push(event)
   await sendData(db.collection('users').doc(user.uid), {'participatedEvents': participatedList})
