@@ -36,7 +36,7 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.getElementById('verficationCollapse').style.display = '';
         document.getElementById('formCollapse').style.display = 'none';
-        signOut();
+        auth.signOut().catch((error) => {console.log(error);});
       });
     }).catch((error) => {
       user.delete().then(() => {
@@ -73,7 +73,7 @@ function login(email, password) {
     } else {
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
-      signOut('/Login/');
+      signOut();
     }
   })
   .catch((error) => {
@@ -82,10 +82,10 @@ function login(email, password) {
   });
 }
 
-function signOut(redirectLink = '/') {
+function signOut() {
   auth.signOut().then(() => {
     console.log('Signed Out');
-    window.location.href = redirectLink;
+    window.location.href = '/';
   }).catch((error) => {
     console.log(error);
   });
