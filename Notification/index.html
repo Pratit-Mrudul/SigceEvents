@@ -46,7 +46,8 @@
         CloseButtons[i].addEventListener('click', async (event) => {
           event.target.classList.remove('fas', 'fa-times', 'closeButton');
           eventName = event.target.classList.item(0);
-          document.getElementsByClassName(`noti_li ${eventName}`).remove();
+          var liCard = document.getElementsByClassName(`noti_li ${eventName}`)[0];
+          liCard.remove();
           let participated = userData['participatedEvents'];
           userData['participatedEvents'] = []
           for (element in  participated) {
