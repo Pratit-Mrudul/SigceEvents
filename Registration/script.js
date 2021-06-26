@@ -10,7 +10,12 @@ regFormFn.addEventListener('click', regform);
 async function regform() {
   document.getElementById('regLoading').style.display = 'inline-block';
   var event = document.getElementById('event').value;
-  await sendEventRegistrationData(event);
+  getDocumentData(db.collection('users').database(user.uid));
+  if (userData['participatedEvents'].includes(event)){
+    break;
+  } else {
+    await sendEventRegistrationData(event);
+  }
 };
 
 function validate() {
