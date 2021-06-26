@@ -44,7 +44,7 @@
       CloseButtons = document.getElementsByClassName('closeButton');
       for (let i=0; i<CloseButtons.length; i++) {
         CloseButtons[i].addEventListener('click', async (event) => {
-          listClasses = event.target().classList.remove('fas', 'fa-times', 'closeButton');
+          listClasses = event.target.classList.remove('fas', 'fa-times', 'closeButton');
           let email = user.email;
           var eventInstance = db.collection('events').doc(listClasses[0])
           await eventInstance.update({
