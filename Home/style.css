@@ -313,26 +313,22 @@ ul {
 @media screen and (max-width: 768px) {
   /* For mobile phones: */
   .logo{
-    font-size: 2.4rem;
+    font-size: 1rem;
   }
   .logo span{
-    font-size: 2.4rem;
+    font-size: 1rem;
   }
   .title{
-    font-size: 3.3rem;
+    font-size: 1.5rem;
   }
   .titleBelow{
-    font-size: 2.2rem;
+    font-size: 0.8rem;
   }
-  .btn{
-    margin-top: 1rem;
-    padding: 1.6rem 2.8rem;
+  .btn {
+    padding: 0.2rem 0.8rem;
     background-color: #1179e7;
     border: none;
     border-radius: 30px;
-    font-size: 2.1rem;
-  }
-  .overlay{
-    background-color: red;
+    font-size: 0.8rem;
   }
 }
