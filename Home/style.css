@@ -312,12 +312,6 @@ ul {
 /* MEDIA QUERIES */
 @media screen and (max-width: 768px) {
   /* For mobile phones: */
-  .logo{
-    font-size: 1rem;
-  }
-  .logo span{
-    font-size: 1rem;
-  }
   .title{
     font-size: 1.5rem;
   }
@@ -330,18 +324,5 @@ ul {
     border: none;
     border-radius: 30px;
     font-size: 0.8rem;
-  }
-  .links {
-    color: white;
-    position: absolute;
-    width: 100%;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 }
