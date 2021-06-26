@@ -6,7 +6,7 @@ hamburger_menu.addEventListener("click", () => {
 });
 
 CloseButtons = document.getElementsByClassName('closeButton');
-await firebase.auth().onAuthStateChanged(async (user) => {
+firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
     await getDocumentData(db.collection("users").doc(user.uid));
     let notificationList = userData['participatedEvents'];
