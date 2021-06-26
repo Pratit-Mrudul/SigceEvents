@@ -342,3 +342,14 @@ select:focus{
 .hideinfo{
   display: none;
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .formback {
+    width: 80%;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+}
