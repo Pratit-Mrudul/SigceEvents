@@ -46,25 +46,25 @@
         CloseButtons[i].addEventListener('click', async (event) => {
           let confirmDelete = window.confirm("Are you sure, You want to delete your registration this event?");
           if(confirmDelete){
-          event.target.classList.remove('fas', 'fa-times', 'closeButton');
-          eventName = event.target.classList.item(0);
-          var liCard = document.getElementsByClassName(`noti_li ${eventName}`)[0];
-          liCard.remove();
-          let participated = userData['participatedEvents'];
-          userData['participatedEvents'] = []
-          for (element in  participated) {
-            if (element != eventName) {
-              userData['participatedEvents'].push(participated[element]);
+            event.target.classList.remove('fas', 'fa-times', 'closeButton');
+            eventName = event.target.classList.item(0);
+            var liCard = document.getElementsByClassName(`noti_li ${eventName}`)[0];
+            liCard.remove();
+            let participated = userData['participatedEvents'];
+            userData['participatedEvents'] = []
+            for (element in  participated) {
+              if (participated[element] != eventName) {
+                userData['participatedEvents'].push(participated[element]);
+              }
             }
-          }
-          db.collection('users').doc(user.uid).set(userData);
-          let email = user.email;
-          var documentReference = db.collection('events').doc(eventName);
-          let Data = {};
-          documentReference.get().then((doc) => {Data = doc.data();});
-          delete Data[email];
-          await documentReference.set(Data);
-          alert(`You have been successfully deleted your registration from ${eventName}.`)
+            db.collection('users').doc(user.uid).set(userData);
+            let email = user.email;
+            var documentReference = db.collection('events').doc(eventName);
+            let Data = {};
+            documentReference.get().then((doc) => {Data = doc.data();});
+            delete Data[email];
+            await documentReference.set(Data);
+            alert(`You have been successfully deleted your registration from ${eventName}.`)
           }
           else{
             return;
