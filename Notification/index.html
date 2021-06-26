@@ -44,6 +44,8 @@
       CloseButtons = document.getElementsByClassName('closeButton');
       for (let i=0; i<CloseButtons.length; i++) {
         CloseButtons[i].addEventListener('click', async (event) => {
+          let confirmDelete = window.confirm("Are you sure, You want to delete your registration this event?");
+          if(confirmDelete){
           event.target.classList.remove('fas', 'fa-times', 'closeButton');
           eventName = event.target.classList.item(0);
           var liCard = document.getElementsByClassName(`noti_li ${eventName}`)[0];
@@ -63,6 +65,10 @@
           delete Data[email];
           await documentReference.set(Data);
           alert(`You have been successfully deleted your registration from ${eventName}.`)
+          }
+          else{
+            return;
+          }
         })
       };
     }});
