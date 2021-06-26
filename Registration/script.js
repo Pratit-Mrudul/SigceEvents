@@ -58,7 +58,7 @@ function validate() {
   // DEBATE
   else if (document.getElementById('event').value == 'DEBATE') {
     document.getElementById('language').style.display = 'none';
-    document.getElementById('topic').style.display = 'block';
+    document.getElementById('topic').style.display = 'none';
     document.getElementById('codelang').style.display = 'none';
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
@@ -76,7 +76,7 @@ function validate() {
     document.getElementById('musicdiv').style.display = 'none';
   }
   //SKRIBBLE
-  else if (document.getElementById('event').value == 'POSTER') {
+  else if (document.getElementById('event').value == 'SKRIBBLE') {
     document.getElementById('language').style.display = 'none';
     document.getElementById('topic').style.display = 'none';
     document.getElementById('codelang').style.display = 'none';
@@ -128,7 +128,7 @@ function validate() {
   // ELOCUTION
   else if (document.getElementById('event').value == 'ELOCUTION') {
     document.getElementById('language').style.display = 'none';
-    document.getElementById('topic').style.display = 'block';
+    document.getElementById('topic').style.display = 'none';
     document.getElementById('codelang').style.display = 'none';
     document.getElementById('instrument').style.display = 'none';
     document.getElementById('characterid').style.display = 'none';
