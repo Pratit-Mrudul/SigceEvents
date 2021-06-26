@@ -331,4 +331,30 @@ ul {
     border-radius: 30px;
     font-size: 0.8rem;
   }
+  .container.active .main {
+    animation: main-animation 0.5s ease;
+    cursor: pointer;
+    transform: perspective(1300px) rotateY(-60deg) translateZ(310px) scale(0.5);
+  }
+  .container.active .shadow.one {
+    animation: shadow-one 0.6s ease-out;
+    transform: perspective(1300px) rotateY(-60deg) translateZ(215px) scale(0.5);
+  }
+  .container.active .shadow.two {
+    animation: shadow-one 0.6s ease-out;
+    transform: perspective(1300px) rotateY(-60deg) translateZ(215px) scale(0.5);
+  }
+  .links {
+    color: white;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
