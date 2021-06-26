@@ -10,7 +10,11 @@ regFormFn.addEventListener('click', regform);
 async function regform() {
   document.getElementById('regLoading').style.display = 'inline-block';
   var event = document.getElementById('event').value;
-  await getDocumentData(db.collection('users').database(user.uid));
+  await firebase.auth().onAuthStateChanged(async (user) => {
+    if (user) {
+      await getDocumentData(db.collection('users').database(user.uid));
+    }
+  });
   if (userData['participatedEvents'].includes(event)){
   } else {
     await sendEventRegistrationData(event);
