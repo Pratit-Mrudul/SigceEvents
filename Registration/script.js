@@ -12,7 +12,7 @@ async function regform() {
   var event = document.getElementById('event').value;
   await firebase.auth().onAuthStateChanged(async (user) => {
     if (user) {
-      await db.collection('users').doc(user.uid).get().then((doc) => {
+      await db.collection('users').doc(user.uid).get().then(async (doc) => {
         userData = doc.data();
         let arrayData = userData['participatedEvents'];
         if (arrayData != null && arrayData.includes(event)) {
