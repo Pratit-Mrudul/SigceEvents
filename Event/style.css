@@ -354,3 +354,20 @@ select:focus{
 p ul li{
   list-style-type: circle !important;
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .overlay{
+    overflow-y: auto;
+  }
+  .formback {
+    width: 80%;
+  }
+  .hideinfo{
+    margin: 20% 0;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+}
