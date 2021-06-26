@@ -30,6 +30,7 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
             "year": year,
             "branch": branch,
             "rollNo": rollNo,
+            "participatedEvents": [],
           });
       });
       firebase.auth().currentUser.sendEmailVerification().then(() => {
