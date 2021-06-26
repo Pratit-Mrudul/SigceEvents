@@ -26,7 +26,12 @@ async function getDocumentData(docRef) {
 
 async function sendEventRegistrationData(event) {
   user = firebase.auth().currentUser;
-  var docRef = db.collection('events').doc(event);
+  try{
+    var docRef = db.collection('events').doc(event);
+  } catch(e) {
+    alert('Please select a event');
+    break;
+  }
   await getDocumentData(db.collection('users').doc(user.uid));
   let participatedList = []
   try {
