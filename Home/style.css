@@ -320,6 +320,13 @@ ul {
     font-size: 0.6rem;
     margin-bottom: 8px;
   }
+  .titleAbove{
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+  .titleAbove span{
+    font-size: 1rem !important;
+  }
   .btn {
     padding: 0.2rem 0.8rem;
     background-color: #1179e7;
