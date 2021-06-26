@@ -347,9 +347,9 @@ select:focus{
 @media screen and (max-width: 768px) {
   /* For mobile phones: */
   .formback {
-    width: 80%;
+    width: 80% !important;
   }
   .title {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 }
