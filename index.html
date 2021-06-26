@@ -29,7 +29,7 @@
       if (user) {
         document.getElementById('notLogin').style.display = 'none';
         document.getElementById('afterLogin').style.display = '';
-        document.getElementById('greetDiv').innerHTML = `Hello, ${user.displayName}!`
+        document.getElementById('greetDiv').innerHTML = `Hello, <span> ${user.displayName}! </span>`
       }
       setTimeout(function() {
         document.getElementById('preloader').style.display = 'none';
