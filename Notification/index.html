@@ -47,8 +47,8 @@
         CloseButtons[i].addEventListener('click', () => {
           let email = user.email;
           var eventInstance = db.collection('events').doc(notificationList[i])
-          eventInstance.set({
-            [email]: null
+          eventInstance.updat({
+            [email]: firebase.firestore.FieldValue.delete()
           },);
         })
       };
