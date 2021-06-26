@@ -127,7 +127,6 @@ function validate() {
   // CODING
   else if (document.getElementById('event').value == 'CODING') {
     document.getElementById('language').style.display = 'none';
-    document.getElementById('proagainst').style.display = 'none';
     document.getElementById('topic').style.display = 'none';
     document.getElementById('codelang').style.display = 'block';
     document.getElementById('instrument').style.display = 'none';
