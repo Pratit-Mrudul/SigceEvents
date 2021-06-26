@@ -359,15 +359,15 @@ p ul li{
 @media screen and (max-width: 768px) {
   /* For mobile phones: */
   .overlay{
-    overflow-y: auto;
+    overflow-y: auto !important;
   }
   .formback {
-    width: 80%;
+    width: 80% !important;
   }
   .hideinfo{
-    margin: 20% 0;
+    margin: 20% 0 !important;
   }
   .title {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 }
