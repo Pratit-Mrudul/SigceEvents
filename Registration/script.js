@@ -14,17 +14,16 @@ async function regform() {
     if (user) {
       await db.collection('users').doc(user.uid).get().then((doc) => {
         userData = doc.data();
-        console.log(doc.data()['participatedEvents'])
+        let arrayData = userData['participatedEvents'];
+        if (arrayData != null && arrayData.includes(event)) {
+          document.getElementById('regLoading').style.display = 'none';
+          alert(`You Have already Registered For The ${event}!`);
+        } else {
+          await sendEventRegistrationData(event);
+        }
       });
     }
   });
-  let arrayData = userData['participatedEvents']
-  if (arrayData != null && arrayData.includes(event)){
-    document.getElementById('regLoading').style.display = 'none';
-    alert(`You Have already Registered For The ${event}!`);
-  } else {
-    await sendEventRegistrationData(event);
-  }
 };
 
 function validate() {
