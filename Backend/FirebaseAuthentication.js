@@ -73,7 +73,7 @@ function login(email, password) {
     } else {
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
-      signOut();
+      signOut('/Login/');
     }
   })
   .catch((error) => {
@@ -82,10 +82,10 @@ function login(email, password) {
   });
 }
 
-function signOut() {
+function signOut(redirectLink = '/') {
   auth.signOut().then(() => {
     console.log('Signed Out');
-    window.location.href = '/';
+    window.location.href = redirectLink;
   }).catch((error) => {
     console.log(error);
   });
