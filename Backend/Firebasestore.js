@@ -48,6 +48,7 @@ async function sendEventRegistrationData(event) {
   await sendData(db.collection('users').doc(user.uid), {'participatedEvents': participatedList})
   mapData = {};
   mapData[userData['email']] = participantData;
+  delete mapData['participatedEvents'];
 
   await sendData(docRef, mapData);
   document.getElementById('regLoading').style.display = 'none';

@@ -79,10 +79,15 @@ function login(email, password) {
       window.location.href = '/';
     } else {
       document.getElementById('regLoading').style.display = 'none';
-      document.getElementById('reg_form').reset();
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
-      auth.signOut().catch((error) => {console.log(error);});
+      document.getElementById('reg_form').reset();
+      setInterval(function(){ 
+        user.reload().then(async() => {
+          if (firebase.auth().currentUser.emailVerified) {
+            window.location.href = '/';
+          }}) 
+        }, 3000);
     }
   })
   .catch((error) => {
