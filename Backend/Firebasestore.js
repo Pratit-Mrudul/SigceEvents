@@ -50,7 +50,6 @@ async function sendEventRegistrationData(event) {
     } else {
       document.getElementById('regLoading').style.display = 'none';
       alert('Please input all values')
-      document.getElementById('reg_form').reset();
       return;
     }
   }
