@@ -10,7 +10,6 @@ function registerAcc() {
     document.getElementById('regLoading').style.display = '';
     createUser(email, pass, name, phoneNo, year, branch, rollNo);
     document.getElementById('regLoading').style.display = 'none';
-    document.getElementById('reg_form').reset();
   } else {
     alert('Enter The Valid Email Id!');
   }
