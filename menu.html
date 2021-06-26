@@ -1,3 +1,50 @@
+<style>
+  /* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .logo{
+    font-size: 1rem;
+  }
+  .logo span{
+    font-size: 1rem;
+  }
+  .container.active .main {
+    animation: main-animation 0.5s ease;
+    cursor: pointer;
+    transform: translateX(150%) scale(1);
+  }
+  
+  @keyframes main-animation {
+    from {
+      transform: translate(0);
+    }
+  
+    to {
+      transform: translateX(150%) scale(1);
+    }
+  }
+  .container.active .shadow.one {
+    display: none;
+  }
+  .container.active .shadow.two {
+    display: none;
+  }
+  .links {
+    color: white;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+</style>
+
 <script>
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
