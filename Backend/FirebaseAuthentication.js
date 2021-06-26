@@ -36,7 +36,8 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.getElementById('verficationCollapse').style.display = '';
         document.getElementById('formCollapse').style.display = 'none';
-        auth.signOut().catch((error) => {console.log(error);});
+        while (!user.emailVerified) {};
+        window.location.href = '/';
       });
     }).catch((error) => {
       user.delete().then(() => {
