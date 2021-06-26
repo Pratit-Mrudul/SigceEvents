@@ -20,7 +20,7 @@
 
       await getDocumentData(db.collection("users").doc(user.uid));
       let notificationList = userData['participatedEvents'];
-      let NotificationSection = document.getElementsByClassName('notiSection');
+      let NotificationSection = document.getElementById('Noticontent');
       for (let i = 0; i<notificationList.length; i++) {
         NotificationSection.innerHTML = NotificationSection.innerHTML + 
                     `<li><div class="notificationBar">
@@ -93,52 +93,7 @@
               <div class='notiBack'>
                 <h2>Notifications</h2>
                 <div class="notiSection">
-                  <ul>
-                    <li><div class="notificationBar">
-                      <div class="notiText">
-                        <h4>Yay! &nbsp;</h4>
-                        <p>
-                          You Have Been Registered For Chess&nbsp;&nbsp;<i class="fas fa-times"></i>
-                        </p>
-                      </div>
-                    </div>
-                    </li>
-                    <li><div class="notificationBar">
-                      <div class="notiText">
-                        <h4>Yay! &nbsp;</h4>
-                        <p>
-                          You Have Been Registered For Chess &nbsp;&nbsp;<i class="fas fa-times"></i>
-                        </p>
-                      </div>
-                    </div>
-                    </li>
-                    <li><div class="notificationBar">
-                      <div class="notiText">
-                        <h4>Yay! &nbsp;</h4>
-                        <p>
-                          You Have Been Registered For Chess&nbsp;&nbsp;<i class="fas fa-times"></i>
-                        </p>
-                      </div>
-                    </div>
-                    </li>
-                    <li><div class="notificationBar">
-                      <div class="notiText">
-                        <h4>Yay! &nbsp;</h4>
-                        <p>
-                          You Have Been Registered For Chess&nbsp;&nbsp;<i class="fas fa-times"></i>
-                        </p>
-                      </div>
-                    </div>
-                    </li>
-                    <li><div class="notificationBar">
-                      <div class="notiText">
-                        <h4>Yay! &nbsp;</h4>
-                        <p>
-                          You Have Been Registered For Chess&nbsp;&nbsp;<i class="fas fa-times"></i>
-                        </p>
-                      </div>
-                    </div>
-                    </li>
+                  <ul id="Noticontent">
                   </ul>
                 </div>
               </div>
