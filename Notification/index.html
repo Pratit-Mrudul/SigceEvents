@@ -46,9 +46,9 @@
       for (let i=0; i<CloseButtons.length; i++) {
         CloseButtons[i].addEventListener('click', () => {
           let email = user.email;
-          data = {};
-          data[email] = firebase.firestore.FieldValue.delete();
-          db.collection('events').doc(notificationList[i]).update(data);
+          db.collection('events').doc(notificationList[i]).update({
+            email: firebase.firestore.FieldValue.delete()
+          });
         })
       };
     }});
