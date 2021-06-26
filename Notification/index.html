@@ -23,7 +23,7 @@
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html')
 
-      firebase.auth().onAuthStateChanged((user) => {
+      await firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
       await getDocumentData(db.collection("users").doc(auth.cu.uid));
       let notificationList = userData['participatedEvents'];
