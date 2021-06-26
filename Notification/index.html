@@ -35,12 +35,23 @@
                       <div class="notiText">
                         <h4>Yay! &nbsp;</h4>
                         <p>
-                          You Have Been Registered For ${notificationList[i]}&nbsp;&nbsp;
+                          You Have Been Registered For ${notificationList[i]}&nbsp;&nbsp;<i class="fas fa-times closeButton"></i>
                         </p>
                       </div>
                     </div>
                     </li>`
       }
+      CloseButtons = document.getElementsByClassName('closeButton');
+      await getDocumentData(db.collection("users").doc(user.uid));
+      for (let i=0; i<CloseButtons.length; i++) {
+        CloseButtons[i].addEventListener('click', async () => {
+          let email = user.email;
+          var eventInstance = db.collection('events').doc(notificationList[i])
+          await eventInstance.update({
+            [email]: firebase.firestore.FieldValue.delete()
+          },);
+        })
+      };
     }});
       setTimeout(function() {
         document.getElementById('preloader').style.display = 'none';
@@ -110,7 +121,7 @@
                     <li><div class="notificationBar">
                       <div class="notiText">
                         <h4>&nbsp;</h4>
-                        <p>No New Notifications
+                        <p>No New Notifications<i class="fas fa-times"></i>
                         </p>
                       </div>
                     </div>
