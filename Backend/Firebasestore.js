@@ -29,6 +29,7 @@ async function sendEventRegistrationData(event) {
   try{
     var docRef = db.collection('events').doc(event);
   } catch(e) {
+    document.getElementById('regLoading').style.display = 'none';
     alert('Please select a event');
     document.getElementById('reg_form').reset();
     return;
@@ -47,7 +48,10 @@ async function sendEventRegistrationData(event) {
     if (newFields[i].value != '' && newFields[i].value != null) {
       participantData[newFields[i].id] = newFields[i].value;
     } else {
+      document.getElementById('regLoading').style.display = 'none';
       alert('Please input all values')
+      document.getElementById('reg_form').reset();
+      return;
     }
   }
   participatedList.push(event)
