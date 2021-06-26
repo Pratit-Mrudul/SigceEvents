@@ -13,12 +13,12 @@ async function regform() {
   await firebase.auth().onAuthStateChanged(async (user) => {
     if (user) {
       await getDocumentData(db.collection('users').doc(user.uid));
-      document.getElementById('regLoading').style.display = 'none';
-      alert(`You Have already Registered For The ${event}!`);
     }
   });
   let arrayData = userData['participatedEvents']
   if (arrayData != null && arrayData.includes(event)){
+    document.getElementById('regLoading').style.display = 'none';
+    alert(`You Have already Registered For The ${event}!`);
   } else {
     await sendEventRegistrationData(event);
   }
