@@ -12,7 +12,6 @@ async function regform() {
   var event = document.getElementById('event').value;
   await getDocumentData(db.collection('users').database(user.uid));
   if (userData['participatedEvents'].includes(event)){
-    break;
   } else {
     await sendEventRegistrationData(event);
   }
