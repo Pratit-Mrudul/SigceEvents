@@ -48,7 +48,7 @@
           let email = user.email;
           var eventInstance = db.collection('events').doc(notificationList[i])
           eventInstance.set({
-            [email]: firebase.firestore.FieldValue.delete()
+            [email]: null
           },);
         })
       };
