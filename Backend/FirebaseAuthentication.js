@@ -37,10 +37,12 @@ function createUser(email, password, name, phoneNo, year, branch, rollNo) {
         document.getElementById('verficationCollapse').style.display = '';
         document.getElementById('formCollapse').style.display = 'none';
         setInterval(function(){ 
-          if(user.emailVerified) { 
-            document.getElementById('reg_form').reset(); 
-            window.location.href = '/';
-          } }, 3000);
+          user.reload().then(ok => {
+            if (firebase.auth().currentUser.emailVerified) {
+              document.getElementById('reg_form').reset(); 
+              window.location.href = '/';
+            }}) 
+          }, 3000);
       });
     }).catch((error) => {
       user.delete().then(() => {
