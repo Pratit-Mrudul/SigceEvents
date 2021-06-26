@@ -50,7 +50,7 @@
           var eventInstance = db.collection('events').doc(eventName)
           await eventInstance.update({
             [email]: firebase.firestore.FieldValue.delete()
-          },);
+          },).then(() => {console.log(eventInstance.get())});
         })
       };
     }});
