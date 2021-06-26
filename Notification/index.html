@@ -31,7 +31,7 @@
       NotificationSection.innerHTML = '';
       for (let i = 0; i<notificationList.length; i++) {
         NotificationSection.innerHTML += 
-                    `<li><div class="notificationBar">
+                    `<li class="noti_li ${notificationList[i]}"><div class="notificationBar">
                       <div class="notiText">
                         <h4>Yay! &nbsp;</h4>
                         <p>
@@ -46,6 +46,7 @@
         CloseButtons[i].addEventListener('click', async (event) => {
           event.target.classList.remove('fas', 'fa-times', 'closeButton');
           eventName = event.target.classList.item(0);
+          document.getElementsByClassName(`noti_li ${eventName}`).remove();
           let participated = userData['participatedEvents'];
           userData['participatedEvents'] = []
           for (element in  participated) {
