@@ -50,7 +50,7 @@
           var eventInstance = db.collection('events').doc(eventName);
           let updates = {};
           updates[email] = firebase.firestore.FieldValue.delete();
-          await eventInstance.update(updates).then(() => {console.log(eventInstance.get())}).catch((error) => {console.log(error)});
+          eventInstance.update(updates).then(() => {console.log(eventInstance.get())}).catch((error) => {console.log(error)});
         })
       };
     }});
