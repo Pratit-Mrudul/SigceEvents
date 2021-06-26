@@ -67,7 +67,6 @@ function validate() {
   //SKRIBBLE
   else if (document.getElementById('event').value == 'POSTER') {
     document.getElementById('language').style.display = 'none';
-    document.getElementById('proagainst').style.display = 'none';
     document.getElementById('topic').style.display = 'none';
     document.getElementById('codelang').style.display = 'none';
     document.getElementById('instrument').style.display = 'none';
