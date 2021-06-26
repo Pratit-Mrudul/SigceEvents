@@ -313,11 +313,11 @@ ul {
 @media screen and (max-width: 768px) {
   /* For mobile phones: */
   .title{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   .titleBelow{
-    font-size: 0.8rem;
-    margin-bottom: 6px;
+    font-size: 0.6rem;
+    margin-bottom: 8px;
   }
   .btn {
     padding: 0.2rem 0.8rem;
