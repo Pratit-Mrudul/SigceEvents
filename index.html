@@ -29,7 +29,7 @@
       if (user) {
         document.getElementById('notLogin').style.display = 'none';
         document.getElementById('afterLogin').style.display = '';
-        document.getElementById('greetDiv').innerHTML = `Hello, <span> ${user.displayName}! </span>`
+        document.getElementById('greetDiv').innerHTML = `Hello, <span style="color: rgb(0 213 241);" > ${user.displayName} </span>`
       }
       setTimeout(function() {
         document.getElementById('preloader').style.display = 'none';
@@ -78,7 +78,7 @@
                 <button class="btn" id="loginNow" onclick="location.href = '/Login/'">Login</button>
               </div>
               <div id="afterLogin" style="display: none;">
-                <button class="btn" id="RegisterEvents" onclick="location.href = '/Registration/'">Register For Events</button>
+                <button class="btn" id="RegisterEvents" onclick="location.href = '/Registration/'">Participate</button>
               </div>
             </div>
           </div>
