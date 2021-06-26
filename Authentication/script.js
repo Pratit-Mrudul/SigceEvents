@@ -7,7 +7,7 @@ function registerAcc() {
   let branch = finalSelBranch();
   let rollNo = document.getElementById('participantRNo').value;
   if (emailValidation(email)) {
-    document.getElementById('regLoading').style.display = '';
+    document.getElementById('regLoading').style.display = 'block';
     createUser(email, pass, name, phoneNo, year, branch, rollNo);
   } else {
     alert('Enter The Valid Email Id!');
