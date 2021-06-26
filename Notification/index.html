@@ -49,7 +49,7 @@
           let participated = userData['participatedEvents'];
           userData['participatedEvents'] = []
           for (element in  participated) {
-            userData['participatedEvents'].push(element);
+            userData['participatedEvents'].push(participated[element]);
           }
           db.collection('users').doc(user.uid).set(userData);
           let email = user.email;
