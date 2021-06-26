@@ -48,9 +48,10 @@
           eventName = event.target.classList.item(0);
           let email = user.email;
           var documentReference = db.collection('events').doc(eventName);
-          await getDocumentData(documentReference);
-          delete userData[email];
-          await docRef.set(userData);
+          let Data = {};
+          documentReference.get().then((doc) => {Data = doc.data();});
+          delete Data[email];
+          await documentReference.set(Data);
         })
       };
     }});
