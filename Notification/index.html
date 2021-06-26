@@ -44,7 +44,7 @@
       CloseButtons = document.getElementsByClassName('closeButton');
       await getDocumentData(db.collection("users").doc(user.uid));
       for (let i=0; i<CloseButtons.length; i++) {
-        button.addEventListener('click', () => {
+        CloseButtons[i].addEventListener('click', () => {
           let email = user.email;
           data = {};
           data[email] = firebase.firestore.FieldValue.delete();
