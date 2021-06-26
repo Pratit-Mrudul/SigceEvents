@@ -28,8 +28,9 @@
       await getDocumentData(db.collection("users").doc(user.uid));
       let notificationList = userData['participatedEvents'];
       let NotificationSection = document.getElementById('Noticontent');
+      NotificationSection.innerHTML = '';
       for (let i = 0; i<notificationList.length; i++) {
-        NotificationSection.innerHTML = NotificationSection.innerHTML + 
+        NotificationSection.innerHTML += 
                     `<li><div class="notificationBar">
                       <div class="notiText">
                         <h4>Yay! &nbsp;</h4>
