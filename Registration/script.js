@@ -15,7 +15,8 @@ async function regform() {
       await getDocumentData(db.collection('users').doc(user.uid));
     }
   });
-  if (userData['participatedEvents'].includes(event)){
+  let arrayData = userData['participatedEvents']
+  if (arrayData.includes(event)){
   } else {
     await sendEventRegistrationData(event);
   }
