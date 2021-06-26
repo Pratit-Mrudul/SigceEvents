@@ -69,8 +69,11 @@ function login(email, password) {
     if (user.emailVerified) {
       var docRef = db.collection("users").doc(user.uid);
       await getDocumentData(docRef);
+      document.getElementById('regLoading').style.display = 'none';
       window.location.href = '/';
     } else {
+      document.getElementById('regLoading').style.display = 'none';
+      document.getElementById('reg_form').reset();
       document.getElementById('emailVerify').style.display = '';
       document.getElementById('regform').style.display = 'none';
       auth.signOut().catch((error) => {console.log(error);});
@@ -78,6 +81,8 @@ function login(email, password) {
   })
   .catch((error) => {
     console.log(error);
+    document.getElementById('regLoading').style.display = 'none';
+    document.getElementById('reg_form').reset();
     document.getElementById('alertBox').innerHTML = `<div class="alert alert-error" role="alert"> ${error.message} </div>`
   });
 }

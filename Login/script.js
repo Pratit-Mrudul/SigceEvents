@@ -10,10 +10,6 @@ function getLoginData() {
   let LoginPw = document.getElementById('LoginPw').value;
   if (emailValidation(loginEmail)) {
     document.getElementById('regLoading').style.display = 'inline-block';
-    setTimeout(function() {
-      document.getElementById('regLoading').style.display = 'none';
-      document.getElementById('reg_form').reset();
-    }, 1000);
     login(loginEmail, LoginPw);
   }
 }
