@@ -107,6 +107,10 @@ header {
   position: relative;
 }
 
+body.webp-supported header {
+  background: url("/Imgs/image.webp") no-repeat top center / cover !important;
+}
+
 .overlay {
   position: absolute;
   width: 100%;
