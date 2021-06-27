@@ -3,31 +3,38 @@
   <url>
     <loc>https://sigceevent.ml/</loc>
     <priority>1</priority>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sigceevent.ml/Authentication/</loc>
     <priority>0.9</priority>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sigceevent.ml/Login/</loc>
     <priority>0.9</priority>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sigceevent.ml/Credits/</loc>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://sigceevent.ml/Event/</loc>
     <priority>0.7</priority>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://sigceevent.ml/Co-ordinators/</loc>
     <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://sigceevent.ml/Registration/</loc>
   </url>
   <url>
     <loc>https://sigceevent.ml/Notification</loc>
+    <changefreq>always</changefreq>
   </url>
 </urlset>
