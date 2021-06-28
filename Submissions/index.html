@@ -28,32 +28,27 @@
         </div>
       </div>
     </div>
-
     <div class="main-container">
       <div class="main">
         <header>
           <div class="overlay">
             <div id="inner" class="inner">
+              <div class="formback">
+                <div class="drag-area">
+                  <div class="icon">
+                    <i class="fas fa-upload"></i>
+                  </div>
+                  <div class="header">
+                    Drag And Drop To Upload File
+                  </div>
 
-              <h3 class="title">Choose The Event</h3>
-              <select onchange="inputsettings()" name="event" id="event">
-                <option value="" selected="selected">Select</option>
-                <option value="NAIL-ART">NAIL ART</option>
-                <option value="POSTER">POSTER</option>
-                <option value="MASK-PAINTING">MASK PAINTING</option>
-                <option value="PHOTOGRAPHY">PHOTOGRAPHY</option>
-                <option value="INSTRUMENTS">INSTRUMENTS</option>
-                <option value="SKETCH">SKETCH</option>
-                <option value="CHALK">CHALK ART/CARVING</option>
-              </select>
-            </div>
-            <div id="card">
-              <div class="file-input">
-                <input type="file" id="file" class="file">
-                <label for="file">Select file</label>
+                  <span>OR</span>
+                  <button id="btnFiles" onclick="btnFiles()" type="">Browse Files</button>
+                  <input type="file" hidden onchange="inputFile()" />
+                </div>
+                <button id="subFile">Submit</button>
               </div>
             </div>
-
           </div>
         </header>
       </div>
@@ -61,29 +56,7 @@
       <div class="shadow one"></div>
       <div class="shadow two"></div>
     </div>
-
-    <div class="links">
-      <ul>
-        <li>
-          <a href="/" style="--i: 0.05s;">Home</a>
-        </li>
-        <li>
-          <a href="/Event/" style="--i: 0.1s;">Events</a>
-        </li>
-        <li>
-          <a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
-        </li>
-        <li>
-          <a href="/Registration/" style="--i: 0.2s;">Registration</a>
-        </li>
-        <li>
-          <a href="/Submissions/" style="--i: 0.25s;">Submission</a>
-        </li>
-        <li>
-          <a href="/Credits/" style="--i: 0.3s;">Credits</a>
-        </li>
-      </ul>
-    </div>
+    <div class="links"></div>
   </div>
 
   <script src="script.js"></script>
