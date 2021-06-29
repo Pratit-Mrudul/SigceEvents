@@ -104,11 +104,12 @@ function generateList() {
 }
 
 function sortEntries() {
+  document.getElementsByClassName("userFill")[0].style.display = 'none';
   $('.userData').sort(function(a, b) {
     if (a.innerText < b.innerText) {
       return -1;
     } else {
       return 1;
     }
-  }).appendTo('.userData');
+  }).appendTo('.userFillSearch');
 }
