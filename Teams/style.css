@@ -385,24 +385,59 @@ i {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.formbackP p {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 75%;
-  margin-top: 10px;
-}
 .back {
+display: flex;
   margin-right: 15px;
 }
-@media screen and (max-width: 768px) {
- .formback{
-   width: max-content;
-   text-align: center;
- }
- .formbackContainer{
-   grid-template-rows: auto auto auto; 
-   grid-row-gap: 10px;
- }
+.searchP {
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.searchDiv {
+  padding: 0;
+  width: 45%;
+  display: flex;
+  outline: none;
+  font-size: 14px;
+  border-radius: 30px;
+  background: white;
+  border: 2px solid grey;
+  justify-content: center;
+  align-items: center;
+}
+.searchDiv input {
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 30px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.searchDiv i {
+  height: 100%;
+  width: 20px;
+  font-size: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
+  color: black !important;
+}
+.userData{
+  width: 85%;
+ text-align: left;
+ margin-left: 10px;
+ display: flex;
+ flex-direction: column;
+}
+.userData span{
+  font-size: 12px;
+}
+.userFill{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;
 }
