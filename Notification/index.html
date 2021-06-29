@@ -63,7 +63,7 @@
             await documentReference.get().then(async (doc) => {
               let Data = doc.data();
               delete Data[email];
-              await documentReference.set(Data, {merge : true});
+              await documentReference.set(Data);
             });
             alert(`You have been successfully deleted your registration from ${eventName}.`)
           }
