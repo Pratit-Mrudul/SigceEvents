@@ -1,1 +1,147 @@
-iadncl
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024px" />
+  <title>SIGCE/Events</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style type="text/css" media="all">
+    button {
+      background: transparent;
+      outline: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+        <h3 class="logo">SIGCE <span>Events</span></h3>
+        <div class="hamburger-menu">
+          <div id="hamburger"class="bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">
+              <div id="formbackContainer" class="formbackContainer">
+                <div class="formback">
+                  <h4>BGMI</h4>
+                  <label for="">
+                    <p>
+                      Add Member<a><i id="BGMIMember" class="fas fa-user-plus"></i></a>
+                    </p>
+                  </label>
+                </div>
+                <div class="formback">
+                  <h4>QUIZ</h4>
+                  <label for="">
+                    <p>
+                      Add Member<a><i id="QUIZMember" class="fas fa-user-plus"></i></a>
+                    </p>
+                  </label>
+                </div>
+                <div class="formback">
+                  <h4>DEBATE</h4>
+                  <label for="">
+                    <p>
+                      Add Member<a><i id="DEBATEMember" class="fas fa-user-plus"></i></a>
+                    </p>
+                  </label>
+                </div>
+              </div>
+              <div id="participantsDisplay" class="participantsDisplay">
+                <div id="BGMIP" class="formbackP">
+                  <h4>BGMI</h4>
+                  <p>
+                    Name1<button><i class="fas fa-user-plus users"></i></button>
+                    <p>
+                      Name<button><i class="fas fa-user-plus users"></i></button>
+                    </p>
+                    <p>
+                      Name<button><i class="fas fa-user-plus users"></i></button>
+                    </p>
+                    <p>
+                      Name<button><i class="fas fa-user-plus users"></i></button>
+                    </p>
+                    <p class="backbtn" onclick="backBtn()">
+                      <i class="fas fa-arrow-circle-left back"></i>
+                      Back
+                    </p>
+                  </div>
+                  <div id="QUIZP" class="formbackP">
+                    <h4>QUIZ</h4>
+                    <p>
+                      Name2<a><i class="fas fa-user-plus"></i></a>
+                    </p>
+                    <p>
+                      Name<button><i class="fas fa-user-plus users"></i></button>
+                    </p>
+                    <p>
+                      Name<button><i class="fas fa-user-plus users"></i></button>
+                    </p>
+                    <p>
+                      Name<button><i class="fas fa-user-plus users"></i></button>
+                    </p>
+                    <p class="backbtn" onclick="backBtn()">
+                      <i class="fas fa-arrow-circle-left back"></i>
+                      Back
+                    </p>
+                  </div>
+                  <div id="DEBATEP" class="formbackP">
+                    <h4>DEBATE</h4>
+                    <p>
+                      Name3 <a><i class="fas fa-user-plus"></i></a>
+                    </p>
+                    <p>
+                      Name <a><i class="fas fa-user-plus"></i></a>
+                    </p>
+                    <p>
+                      Name <a><i class="fas fa-user-plus"></i></a>
+                    </p>
+                    <p>
+                      Name <a><i class="fas fa-user-plus"></i></a>
+                    </p>
+                    <p class="backbtn" onclick="backBtn()">
+                      <i class="fas fa-arrow-circle-left back"></i>
+                      Back
+                    </p>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <div class="shadow one"></div>
+            <div class="shadow two"></div>
+          </div>
+          <div class="links">
+            <ul>
+              <li>
+                <a href="/" style="--i: 0.05s;">Home</a>
+              </li>
+              <li>
+                <a href="/Event/" style="--i: 0.1s;">Events</a>
+              </li>
+              <li>
+                <a href="/Co-ordinators/" style="--i: 0.15s;">Co-Ordinators</a>
+              </li>
+              <li>
+                <a href="/Registration/" style="--i: 0.2s;">Registration</a>
+              </li>
+              <li>
+                <a href="/Submissions/" style="--i: 0.25s;">Submission</a>
+              </li>
+              <li>
+                <a href="/Credits/" style="--i: 0.3s;">Credits</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <script src="script.js"></script>
+      </body>
+    </html>
