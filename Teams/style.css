@@ -376,7 +376,7 @@ i {
 .formbackP {
   display: none;
   height: 75%;
-  width: max-content;
+  width: 80%;
   padding: 20px;
   position: absolute;
   top: 50%;
@@ -447,4 +447,5 @@ display: flex;
   justify-content: center;
   align-items: center;
   width: 100% !important;
+  flex-direction: column;
 }
