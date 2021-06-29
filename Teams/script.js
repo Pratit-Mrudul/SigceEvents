@@ -9,6 +9,10 @@ const BGMIP = document.getElementById('BGMIP');
 const QUIZP = document.getElementById('QUIZP');
 const DEBATEP = document.getElementById('DEBATEP');
 const backbtn = document.getElementsByClassName('backbtn');
+const BGMI = document.getElementsByClassName("BGMI");
+const QUIZ = document.getElementsByClassName("QUIZ");
+const DEBATE = document.getElementsByClassName("DEBATE");
+var selectedEvent = "";
 
 BGMIMember.addEventListener('click', bgmiTeams);
 QUIZMember.addEventListener('click', quizTeams);
@@ -20,6 +24,7 @@ function bgmiTeams() {
   QUIZP.style.display = 'none';
   DEBATEP.style.display = 'none';
   BGMIP.style.display = 'block';
+  selectedEvent = "BGMI";
 }
 
 function quizTeams() {
@@ -28,6 +33,7 @@ function quizTeams() {
   QUIZP.style.display = 'block';
   DEBATEP.style.display = 'none';
   BGMIP.style.display = 'none';
+  selectedEvent = "QUIZ";
 }
 
 function debateTeams() {
@@ -36,8 +42,21 @@ function debateTeams() {
   QUIZP.style.display = 'none';
   DEBATEP.style.display = 'block';
   BGMIP.style.display = 'none';
+  selectedEvent = "DEBATE";
 }
 function backBtn() {
   formbackContainer.style.display = '';
   participantsDisplay.style.display = 'none';
 }
+
+db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      Data = doc.data();
+      memberTemplate = `<p>Name: ${Data["name"]}  Email: ${Data["email"]}<button><i class="fas fa-user-plus users"></i></button></p>`;
+      document.getElementsByClassName(`${selectedEvent}P`).innerHTML += memberTemplate;
+  });
+})
+.catch((error) => {
+  console.log("Error getting documents: ", error);
+});
