@@ -21,18 +21,27 @@ function branchToggle() {
     document.getElementById('branch').style.display = 'inline-block';
     document.getElementById('branch2').style.display = 'none';
     document.getElementById('branch3').style.display = 'none';
+    document.getElementById('branch4').style.display = 'none';
   } else if (year == 'SY') {
     document.getElementById('branch').style.display = 'none';
     document.getElementById('branch2').style.display = 'inline-block';
     document.getElementById('branch3').style.display = 'none';
+    document.getElementById('branch4').style.display = 'none';
   } else if (year == 'TY') {
     document.getElementById('branch').style.display = 'none';
     document.getElementById('branch2').style.display = 'none';
     document.getElementById('branch3').style.display = 'inline-block';
+    document.getElementById('branch4').style.display = 'none';
   } else if (year == 'select') {
-    document.getElementById('branch').style.display = 'inline-block';
+    document.getElementById('branch').style.display = 'none';
     document.getElementById('branch2').style.display = 'none';
     document.getElementById('branch3').style.display = 'none';
+    document.getElementById('branch4').style.display = 'none';
+  } else if (year == 'BE') {
+    document.getElementById('branch4').style.display = 'inline-block';
+    document.getElementById('branch2').style.display = 'none';
+    document.getElementById('branch3').style.display = 'none';
+    document.getElementById('branch').style.display = 'none';
   }
 }
 
@@ -46,6 +55,8 @@ function finalSelBranch() {
     finalBranch = document.getElementById('branch2').value;
   } else if (year == 'TY') {
     finalBranch = document.getElementById('branch3').value;
+  } else if (year == 'BE') {
+    finalBranch = document.getElementById('branch4').value;
   } else {
     alert('Please Select The Year!');
   }
