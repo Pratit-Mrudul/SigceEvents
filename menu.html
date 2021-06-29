@@ -1,57 +1,64 @@
 <style>
   input {
-      outline: none !important;
+    outline: none !important;
   }
   select {
-      outline: none !important;
+    outline: none !important;
   }
   /* MEDIA QUERIES */
 @media screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .logo{
-    font-size: 1rem;
-  }
-  .logo span{
-    font-size: 1rem;
-  }
-  .container.active .main {
-    animation: main-animation 0.5s ease;
-    cursor: pointer;
-    transform: translateX(150%) scale(1);
-  }
-  input{
-    outline: none !important;
-  }
-  
-  @keyframes main-animation {
-    from {
-      transform: translate(0);
+    /* For mobile phones: */
+    .logo {
+      font-size: 1rem;
     }
-  
-    to {
+    .logo span {
+      font-size: 1rem;
+    }
+    .container.active .main {
+      animation: main-animation0.5s ease;
+      cursor: pointer;
       transform: translateX(150%) scale(1);
     }
+    input {
+      outline: none !important;
+    }
+
+@keyframes main-animation {
+      from {
+        transform: translate(0);
+      }
+
+      to {
+        transform: translateX(150%) scale(1);
+      }
+    }
+    .container.active .shadow.one {
+      display: none;
+    }
+    .container.active .shadow.two {
+      display: none;
+    }
+    .links {
+      color: white;
+      position: absolute;
+      width: 100%;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
   }
-  .container.active .shadow.one {
-    display: none;
-  }
-  .container.active .shadow.two {
-    display: none;
-  }
-  .links {
+  .footer {
+    font-size: 12px;
     color: white;
     position: absolute;
-    width: 100%;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    top: 96%;
+    left: 2%;
   }
-}
 </style>
 
 <script>
@@ -70,7 +77,9 @@
     if (user) {
       if (!user.emailVerified) {
         alert(`Hi ${user.displayName}, verify your email id before you proceed. You will be logged out.`);
-        auth.signOut().catch((error) => {console.log(error);});
+        auth.signOut().catch((error) => {
+          console.log(error);
+        });
         window.location.href = '/Login/';
       }
     }
@@ -115,3 +124,7 @@
     <a style="--i: 0.3s; display: none;" onclick="signOut()" id="LogOutLink">LogOut</a>
   </li>
 </ul>
+
+<div class="footer">
+  Made By Mrudul And Pratit
+</div>
