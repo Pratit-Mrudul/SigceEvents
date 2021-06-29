@@ -63,6 +63,7 @@ function backBtn() {
 }
 
 function generateList() {
+  document.getElementsByClassName("userFill")[0].innerHTML = 0;
   db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
