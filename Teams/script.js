@@ -34,6 +34,7 @@ function bgmiTeams() {
   IDEASP.style.display = 'none';
   BGMIP.style.display = 'block';
   selectedEvent = "BGMI";
+  generateList();
 }
 
 function quizTeams() {
@@ -44,6 +45,7 @@ function quizTeams() {
   IDEASP.style.display = 'none';
   BGMIP.style.display = 'none';
   selectedEvent = "QUIZ";
+  generateList();
 }
 
 function debateTeams() {
@@ -54,6 +56,7 @@ function debateTeams() {
   IDEASP.style.display = 'none';
   BGMIP.style.display = 'none';
   selectedEvent = "DEBATE";
+  generateList();
 }
 
 function ideasTeams() {
@@ -64,6 +67,7 @@ function ideasTeams() {
   IDEASP.style.display = 'block';
   BGMIP.style.display = 'none';
   selectedEvent = "IDEAS";
+  generateList();
 }
 function backBtn() {
   formbackContainer.style.display = '';
