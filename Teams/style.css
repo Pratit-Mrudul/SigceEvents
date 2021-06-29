@@ -311,7 +311,7 @@ ul {
 }
 .formback {
   height: auto;
-  width: 20vw;
+  width: 15vw;
   padding: 20px;
   background-color: #191919;
   text-align: center;
@@ -365,7 +365,7 @@ select {
 }
 .formbackContainer {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-column-gap: 20px;
 }
 i {
