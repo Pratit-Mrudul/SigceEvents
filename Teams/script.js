@@ -113,10 +113,11 @@ function sortEntries() {
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
     p = li[i].getElementsByTagName("p")[0];
-    txtValue = p.textContent || p.innerText;
+    txtValue = p.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
     } else {
+      document.getElementsByClassName('userCard')
       li[i].style.display = "none";
     }
   }
