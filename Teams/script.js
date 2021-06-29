@@ -80,7 +80,7 @@ function generateList() {
       // doc.data() is never undefined for query doc snapshots
       let Data = doc.data();
       memberTemplate = `<p>Name: ${Data["name"]}  Email: ${Data["email"]}<button><i class="fas fa-user-plus users"></i></button></p>`;
-      let editElement = document.getElementsByClassName(`${selectedEvent}P`);
+      let editElement = document.getElementById(`${selectedEvent}P`);
       editElement.innerHTML += memberTemplate;
     });
   })
