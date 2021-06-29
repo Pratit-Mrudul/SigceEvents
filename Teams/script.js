@@ -79,8 +79,20 @@ function generateList() {
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
       let Data = doc.data();
-      memberTemplate = `<p>Name: ${Data["name"]}  Email: ${Data["email"]}<button><i class="fas fa-user-plus users"></i></button></p>`;
-      let editElement = document.getElementById(`${selectedEvent}P`);
+      memberTemplate = `
+        <div class="userData">
+          <p>
+            ${Data["name"]}
+          </p>
+          <span>
+            ${Data["email"]}
+          </span>
+        </div>
+        <div class="userIcon">
+          <a><i class="fas fa-user-plus"></i></a>
+        </div>
+    `;
+      let editElement = document.getElementsByClassName("userFill")[0];
       editElement.innerHTML += memberTemplate;
     });
   })
