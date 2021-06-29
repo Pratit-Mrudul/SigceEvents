@@ -401,6 +401,6 @@ i {
    width: max-content;
  }
  .formbackContainer{
-   grid-template-row: auto auto auto; 
+   grid-template-rows: auto auto auto; 
  }
 }
