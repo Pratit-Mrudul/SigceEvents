@@ -433,6 +433,7 @@ display: flex;
   width: -webkit-fill-available;
   justify-content: space-between;
   padding-right: 30px;
+  margin: 7px 0;
 }
 .userData{
   width: 85%;
