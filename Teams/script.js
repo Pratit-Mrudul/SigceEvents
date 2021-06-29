@@ -104,8 +104,8 @@ function generateList() {
 }
 
 function sortEntries() {
-  $('.userData > p').sort(function(a, b) {
-    if (a.textContent < b.textContent) {
+  $('.userData').sort(function(a, b) {
+    if (a.innerHTML < b.innerHTML) {
       return -1;
     } else {
       return 1;
