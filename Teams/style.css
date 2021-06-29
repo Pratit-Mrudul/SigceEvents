@@ -384,11 +384,14 @@ i {
   background-color: #191919;
   transform: translate(-50%, -50%);
   text-align: center;
-  overflow-y: scroll;
 }
 .back {
 display: flex;
   margin-right: 15px;
+}
+.plist {
+  overflow-y: scroll;
+  height: 75%;
 }
 .searchP {
   display: flex;
@@ -399,19 +402,19 @@ display: flex;
 }
 .searchDiv {
   padding: 0;
-  width: 45%;
+  width: 50%;
+  height: 30px;
   display: flex;
   outline: none;
   font-size: 14px;
   border-radius: 30px;
   background: white;
   border: 2px solid grey;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
 }
 .searchDiv input {
   height: 100% !important;
-  width: 100% !important;
+  width: 100%;
   border-radius: 30px;
   text-align: center;
   border: none;
@@ -419,10 +422,10 @@ display: flex;
 }
 .searchDiv i {
   height: 100%;
-  width: 20px;
+  width: max-content;
   font-size: 18px;
-  margin-right: 5px;
   vertical-align: middle;
+  margin: 1% 4px;
   color: black !important;
 }
 .userCard {
