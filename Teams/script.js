@@ -22,6 +22,10 @@ QUIZMember.addEventListener('click', quizTeams);
 DEBATEMember.addEventListener('click', debateTeams);
 IDEASMember.addEventListener('click', ideasTeams);
 
+hamburger_menu.addEventListener("click", () => {
+  container.classList.toggle("active");
+});
+
 function bgmiTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
@@ -66,14 +70,16 @@ function backBtn() {
   participantsDisplay.style.display = 'none';
 }
 
-db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    Data = doc.data();
-    memberTemplate = `<p>Name: ${Data["name"]}  Email: ${Data["email"]}<button><i class="fas fa-user-plus users"></i></button></p>`;
-    document.getElementsByClassName(`${selectedEvent}P`).innerHTML += memberTemplate;
-  });
-})
-.catch((error) => {
-  console.log("Error getting documents: ", error);
-});
+function generateList() {
+  db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      Data = doc.data();
+      memberTemplate = `<p>Name: ${Data["name"]}  Email: ${Data["email"]}<button><i class="fas fa-user-plus users"></i></button></p>`;
+      document.getElementsByClassName(`${selectedEvent}P`).innerHTML += memberTemplate;
+    });
+  })
+  .catch((error) => {
+    console.log("Error getting documents: ", error);
+  })
+}
