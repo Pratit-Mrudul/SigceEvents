@@ -29,9 +29,6 @@ hamburger_menu.addEventListener("click", () => {
 function bgmiTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
-  QUIZP.style.display = 'none';
-  DEBATEP.style.display = 'none';
-  IDEASP.style.display = 'none';
   BGMIP.style.display = 'block';
   selectedEvent = "BGMI";
   generateList();
@@ -40,10 +37,7 @@ function bgmiTeams() {
 function quizTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
-  QUIZP.style.display = 'block';
-  DEBATEP.style.display = 'none';
-  IDEASP.style.display = 'none';
-  BGMIP.style.display = 'none';
+  BGMIP.style.display = 'block';
   selectedEvent = "QUIZ";
   generateList();
 }
@@ -51,10 +45,7 @@ function quizTeams() {
 function debateTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
-  QUIZP.style.display = 'none';
-  DEBATEP.style.display = 'block';
-  IDEASP.style.display = 'none';
-  BGMIP.style.display = 'none';
+  BGMIP.style.display = 'block';
   selectedEvent = "DEBATE";
   generateList();
 }
@@ -62,10 +53,7 @@ function debateTeams() {
 function ideasTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
-  QUIZP.style.display = 'none';
-  DEBATEP.style.display = 'none';
-  IDEASP.style.display = 'block';
-  BGMIP.style.display = 'none';
+  BGMIP.style.display = 'block';
   selectedEvent = "IDEAS";
   generateList();
 }
