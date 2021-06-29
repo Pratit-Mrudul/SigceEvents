@@ -22,7 +22,8 @@
       document.getElementById('container').style.display = 'none';
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html')
-
+      
+      // Generating Event Participation Notifications
       await firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
       await getDocumentData(db.collection("users").doc(user.uid));
@@ -41,6 +42,7 @@
                     </div>
                     </li>`
       }
+      // Delete User Functionality
       CloseButtons = document.getElementsByClassName('closeButton');
       for (let i=0; i<CloseButtons.length; i++) {
         CloseButtons[i].addEventListener('click', async (event) => {
@@ -72,6 +74,7 @@
           }
         })
       };
+      // Generate User Invite Notifications
     }});
       setTimeout(function() {
         document.getElementById('preloader').style.display = 'none';

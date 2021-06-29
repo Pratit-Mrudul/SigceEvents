@@ -102,3 +102,30 @@ function generateList() {
     console.log("Error getting documents: ", error);
   })
 }
+
+function sortEntries() {
+  let searchQuery = document.getElementById("searchInput");
+  UserDataList = document.getElementsByClassName("userData");
+  let scoreArray = []
+  for (UserData in UserDataList) {
+    let score = 0;
+    let previousScore = 0;
+    for(letters in UserData.innerHTML) {
+      if (searchQuery.includes(letters)) {
+        score += 1;
+      }
+    }
+    let editSearchElement = document.getElementsByClassName("userFillSearch");
+    if (score == 0) {
+    } else if (score >= previousScore) {
+      editSearchElement.innerHTML = UserData + editSearchElement[0].innerHTML;
+      previousScore = score;
+    } else if (score <= previousScore) {
+      for (let i = 0; i < scoreArray.length; i++) {
+        if (scoreArray[i] < score) {
+          editSearchElement.innerHTML = editSearchElement[i-1].innerHTML + UserData;
+        }
+      }
+    }
+  }
+}
