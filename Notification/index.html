@@ -60,10 +60,11 @@
             db.collection('users').doc(user.uid).set(userData);
             let email = user.email;
             var documentReference = db.collection('events').doc(eventName);
-            let Data = {};
-            documentReference.get().then((doc) => {Data = doc.data();});
-            delete Data[email];
-            await documentReference.set(Data);
+            await documentReference.get().then(async (doc) => {
+              let Data = doc.data();
+              delete Data[email];
+              await documentReference.set(Data, {merge : true});
+            });
             alert(`You have been successfully deleted your registration from ${eventName}.`)
           }
           else{
