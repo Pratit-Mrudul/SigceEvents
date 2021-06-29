@@ -52,7 +52,7 @@ function debateTeams() {
   selectedEvent = "DEBATE";
 }
 
-function ideasTeamsTeams() {
+function ideasTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
   QUIZP.style.display = 'none';
