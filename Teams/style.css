@@ -402,5 +402,6 @@ i {
  }
  .formbackContainer{
    grid-template-rows: auto auto auto; 
+   grid-row-gap: 10px;
  }
 }
