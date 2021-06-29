@@ -80,6 +80,7 @@ function generateList() {
       // doc.data() is never undefined for query doc snapshots
       let Data = doc.data();
       memberTemplate = `
+      <div class = "userCard">
         <div class="userData">
           <p>
             ${Data["name"]}
@@ -91,6 +92,7 @@ function generateList() {
         <div class="userIcon">
           <a><i class="fas fa-user-plus"></i></a>
         </div>
+      </div>
     `;
       let editElement = document.getElementsByClassName("userFill")[0];
       editElement.innerHTML += memberTemplate;

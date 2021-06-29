@@ -375,8 +375,8 @@ i {
 }
 .formbackP {
   display: none;
-  height: auto;
-  width: 55vw;
+  height: 75%;
+  width: max-content;
   padding: 20px;
   position: absolute;
   top: 50%;
@@ -384,6 +384,7 @@ i {
   background-color: #191919;
   transform: translate(-50%, -50%);
   text-align: center;
+  overflow-y: scroll;
 }
 .back {
 display: flex;
@@ -423,6 +424,12 @@ display: flex;
   margin-right: 5px;
   vertical-align: middle;
   color: black !important;
+}
+.userCard {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  padding-right: 30px;
 }
 .userData{
   width: 85%;
