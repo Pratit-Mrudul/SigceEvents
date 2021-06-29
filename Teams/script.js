@@ -110,5 +110,5 @@ function sortEntries() {
     } else {
       return 1;
     }
-  }).appendTo('.userData');ś
+  }).appendTo('.userData');
 }
