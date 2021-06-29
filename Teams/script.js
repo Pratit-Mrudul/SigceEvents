@@ -115,7 +115,7 @@ function sortEntries() {
     p = li[i].getElementsByTagName("p")[0];
     txtValue = p.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+      document.getElementsByClassName('userCard')[i].style.display = "";
     } else {
       document.getElementsByClassName('userCard')[i].style.display = "none";
     }
