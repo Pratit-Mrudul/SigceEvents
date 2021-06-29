@@ -78,9 +78,10 @@ function generateList() {
   db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      Data = doc.data();
+      let Data = doc.data();
       memberTemplate = `<p>Name: ${Data["name"]}  Email: ${Data["email"]}<button><i class="fas fa-user-plus users"></i></button></p>`;
-      document.getElementsByClassName(`${selectedEvent}P`).innerHTML += memberTemplate;
+      let editElement = document.getElementsByClassName(`${selectedEvent}P`);
+      editElement.innerHTML += memberTemplate;
     });
   })
   .catch((error) => {
