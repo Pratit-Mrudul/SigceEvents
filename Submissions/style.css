@@ -410,7 +410,7 @@ select:focus{
   margin: 10px 0 10px 0;
   font-weight: 500;
 }
-.drag-area button{
+.drag-area label{
   background: none;
   margin: 10px 3px;
   text-align: center;

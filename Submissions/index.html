@@ -34,18 +34,21 @@
           <div class="overlay">
             <div id="inner" class="inner">
               <div class="formback">
-                <div class="drag-area">
-                  <div class="icon">
-                    <i class="fas fa-upload"></i>
-                  </div>
-                  <div class="header">
-                    Drag And Drop To Upload File
-                  </div>
+                <form method="post" action="" enctype="multipart/form-data">
+                  <div class="drag-area">
+                    <div class="icon">
+                      <i class="fas fa-upload"></i>
+                    </div>
+                    <div class="header">
+                      Drag And Drop To Upload File
+                    </div>
 
-                  <span>OR</span>
-                  <button id="btnFiles" onclick="btnFiles()" type="">Browse Files</button>
-                  <input type="file" hidden onchange="inputFile()" />
-                </div>
+                    <span>OR</span>
+                    <label for="file" id="btnFiles" onclick="btnFiles()" type="">Browse Files</label>
+                    <input type="file" name="files[]" id="file" style="display: none" onchange="this.nextElementSibling.textContent = this.previousElementSibling.title = this.files[0].name; changeButton();"/>
+                    <div></div>
+                  </div>
+                </form>
                 <button id="subFile">Submit</button>
               </div>
             </div>
