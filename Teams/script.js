@@ -54,7 +54,7 @@ function ideasTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
   BGMIP.style.display = 'block';
-  selectedEvent = "IDEAS";
+  selectedEvent = "SCI-PROJECT";
   generateList();
 }
 function backBtn() {
@@ -63,6 +63,7 @@ function backBtn() {
 }
 
 function generateList() {
+  BGMIP.getElementsByTagName("h4").innerHTML = selectedEvent;
   document.getElementsByClassName("userFill")[0].innerHTML = '';
   db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
