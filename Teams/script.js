@@ -63,7 +63,7 @@ function backBtn() {
 }
 
 function generateList() {
-  BGMIP.getElementsByTagName("h4").innerHTML = selectedEvent;
+  BGMIP.getElementsByTagName("h4")[0].innerHTML = selectedEvent;
   document.getElementsByClassName("userFill")[0].innerHTML = '';
   db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -110,4 +110,17 @@ function sortEntries() {
       document.getElementsByClassName('userCard')[i].style.display = "none";
     }
   }
+}
+
+function sendRequest() {
+  let senderEmail = BGMIP.getElementsByTagName("span")[0].innerHTML;
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      db.collection("events").doc(selectedEvent).get().then((doc) => {
+        let data = doc.data();
+        recievedRequests = []
+        data[senderEmail] = {[recievedRequests]: recievedRequests.push(user.email)};
+      });
+    } else {}
+  });
 }
