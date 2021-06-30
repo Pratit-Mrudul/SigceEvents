@@ -32,17 +32,25 @@ firebase.auth().onAuthStateChanged((user) => {
       let data = doc.data();
       let participatedEvents = data['participatedEvents'];
       if (participatedEvents != null && participatedEvents != undefined) {
+        let count = 0
         if (participatedEvents.includes('BGMI')) {
           document.getElementById('BGMIBlock').style.display = '';
+          count += 1;
         }
         if (participatedEvents.includes('QUIZ')) {
           document.getElementById('QUIZBlock').style.display = '';
+          count += 1;
         }
         if (participatedEvents.includes('DEBATE')) {
           document.getElementById('DEBATEBlock').style.display = '';
+          count += 1;
         }
         if (participatedEvents.includes('SCI-PROJECT')) {
           document.getElementById('SCI-PROJECTBlock').style.display = '';
+          count += 1;
+        }
+        for (let i = 1; i < count; i++) {
+          formbackContainer.style.gridTemplateColumns += "auto";
         }
       }
     });
