@@ -462,8 +462,8 @@ display: flex;
     grid-template-rows: auto auto auto auto;
     grid-row-gap: 20px;
     width: 100%;
-    grid-template-columns: inherit;
-    grid-column-gap: inherit;
+    grid-template-columns: inherit !important;
+    grid-column-gap: inherit !important;
   }
   .inner {
     width: 100%;
