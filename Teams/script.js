@@ -49,9 +49,11 @@ firebase.auth().onAuthStateChanged((user) => {
           document.getElementById('SCI-PROJECTBlock').style.display = '';
           count += 1;
         }
+        let totalColumns = ''
         for (let i = 0; i < count; i++) {
-          formbackContainer.style.gridTemplateColumns += "auto";
+           totalColumns += "auto";
         }
+        formbackContainer.style.gridTemplateColumns = totalColumns;
       }
     });
   } else {}
