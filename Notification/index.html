@@ -134,7 +134,7 @@
             AcceptButton[i].addEventListener('click', async (event) => {
               let confirmAccept = window.confirm("Are you sure you want to accept this request?");
               if (confirmAccept) {
-                selection = event.target.classList.item(3);
+                selection = event.target.classList.item(4);
                 await db.collection("events").doc(selection).get().then((doc) => {
                   let data = doc.data();
                   event.target.classList.remove('fa-check', 'checkBtn');
