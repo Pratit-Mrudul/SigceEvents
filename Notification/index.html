@@ -104,25 +104,17 @@
             DenyButtons[i].addEventListener('click', async (event) => {
               let confirmDelete = window.confirm("Are you sure you want to deny this request?");
               if(confirmDelete){
-                let groupEvents = ["BGMI", "SCI-PROJECT", "DEBATE", "QUIZ"];
-                let selection = ''
-                for (selectedEvent in groupEvents) {
-                  if (DenyButtons.parentElement.innerHTML.includes(groupEvents[selectedEvent])) {
-                    selection = groupEvents[selectedEvent];
-                  }
-                  if (selection != undefined && selection != '') {
-                    await db.collection("events").doc(selection).get().then((doc) => {
-                      let data = doc.data();
-                      event.target.classList.remove('fas', 'fa-times', 'denyRequest');
-                      senderEmail = event.target.classList.item(0);
-                      var liCard = document.getElementsByClassName(`noti_li ${senderEmail}`)[0];
-                      liCard.remove();
-                      data[senderEmail]['sentRequests'].remove(user.email);
-                      data[user.email]['recievedRequests'].remove(senderEmail);
-                      db.collection("events").doc(selection).set(data, {merge: true});
-                    });
-                  }
-                }
+                selection = event.target.classList.item(-1);
+                await db.collection("events").doc(selection).get().then((doc) => {
+                  let data = doc.data();
+                  event.target.classList.remove('fas', 'fa-times', 'denyRequest');
+                  senderEmail = event.target.classList.item(0);
+                  var liCard = document.getElementsByClassName(`noti_li ${senderEmail}`)[0];
+                  liCard.remove();
+                  data[senderEmail]['sentRequests'].remove(user.email);
+                  data[user.email]['recievedRequests'].remove(senderEmail);
+                  db.collection("events").doc(selection).set(data, {merge: true});
+                });
                 alert(`You have successfully denied request from ${senderEmail}.`)
               }
               else{
