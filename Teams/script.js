@@ -47,7 +47,7 @@ firebase.auth().onAuthStateChanged((user) => {
                   }
                 }
               }
-              repeaterChecker([user.email]);
+              repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('BGMIMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
