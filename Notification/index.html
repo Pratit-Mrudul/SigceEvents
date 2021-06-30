@@ -171,6 +171,8 @@
                       acceptedRequests.push(senderEmail);
                       data[sendersAccepted[userIndex]]['acceptedRequests'] = acceptedRequests;
                     }
+                  } else {
+                    data[senderEmail]['acceptedRequests'] = acceptedRequests;
                   }
                   db.collection("events").doc(selection).set(data, {
                     merge: true
