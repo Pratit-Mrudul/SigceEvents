@@ -122,7 +122,10 @@ function sendRequest(recieverEmail) {
         if (recievedRequests == null || recievedRequests == undefined) {
           recievedRequests = [];
         }
-        if (recievedRequests.includes(senderEmail)) {alert(`You have already sent a request to ${data[recieverEmail]['name']}`); return;};
+        if (recievedRequests.includes(senderEmail)) {
+          alert(`You have already sent a request to ${data[recieverEmail]['name']}`);
+          return;
+        };
         let sentRequests = data[senderEmail]['sentRequests'];
         if (sentRequests == null || sentRequests == undefined) {
           sentRequests = [];
