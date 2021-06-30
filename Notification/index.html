@@ -186,6 +186,8 @@
                     if (sendersAccepted == undefined || sendersAccepted == []) {
                       sendersAccepted = [];
                       data[senderEmail]['acceptedRequests'] = [user.email];
+                      db.collection("events").doc(selection).set(data, {merge: true});
+                      alert(`You have successfully accepted request from ${senderEmail}.`)
                       return;
                     }
                     for (userIndex in sendersAccepted) {
@@ -198,7 +200,7 @@
                       data[sendersAccepted[userIndex]]['acceptedRequests'] = acceptedRequests;
                     }
                   } catch (e) {
-                    data[senderEmail]['acceptedRequests'] = [user.email];
+                    console.log(e);
                   }
                   db.collection("events").doc(selection).set(data, {
                     merge: true
