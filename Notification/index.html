@@ -106,7 +106,7 @@
                   let data = doc.data();
                   let AcceptedRequests = data[user.email]['acceptedRequests'];
                   for (element in AcceptedRequests) {
-                    if (data[recievedRequests[element]] != undefined) {
+                    if (data[AcceptedRequests[element]] != undefined) {
                       NotificationSection.innerHTML +=
                         `<li class="noti_li ${AcceptedRequests[element]}"><div class="notificationBar">
                         <div class="notiText">
