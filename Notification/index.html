@@ -183,6 +183,11 @@
                   data[user.email]['acceptedRequests'] = acceptedRequests;
                   let sendersAccepted = data[senderEmail]['acceptedRequests'];
                   try {
+                    if (acceptedRequests == undefined || acceptedRequests == []) {
+                      acceptedRequests = [];
+                      data[senderEmail]['acceptedRequests'] = [user.email];
+                      return;
+                    }
                     for (userIndex in sendersAccepted) {
                       data[sendersAccepted[userIndex]]['acceptedRequests']
                       let acceptedRequests = data[sendersAccepted[userIndex]]['acceptedRequests'];
