@@ -79,7 +79,7 @@ function generateList() {
             ${Data["email"]}
           </span>
         </div>
-        <div class="userIcon" onClick="sendRequest(${Data["email"]})">
+        <div class="userIcon" onClick="sendRequest('${Data["email"]}')">
           <a><i class="fas fa-user-plus"></i></a>
         </div>
       </div>
