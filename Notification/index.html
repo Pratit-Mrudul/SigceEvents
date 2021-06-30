@@ -192,11 +192,11 @@
                     }
                     for (let userIndex in sendersAccepted) {
                       for (let individual in data[user.email]['acceptedRequests']) {
-                        if (!data[sendersAccepted[userIndex]]['acceptedRequests'].includes(individual)) {
-                          data[sendersAccepted[userIndex]]['acceptedRequests'].push(individual);
+                        if (!data[sendersAccepted[userIndex]]['acceptedRequests'].includes(data[user.email]['acceptedRequests'][individual])) {
+                          data[sendersAccepted[userIndex]]['acceptedRequests'].push(data[user.email]['acceptedRequests'][individual]);
                         }
-                        if (!sendersAccepted.includes(individual)) {
-                          sendersAccepted.push(individual);
+                        if (!sendersAccepted.includes(data[user.email]['acceptedRequests'][individual])) {
+                          sendersAccepted.push(data[user.email]['acceptedRequests'][individual]);
                         }
                       }
                     }
