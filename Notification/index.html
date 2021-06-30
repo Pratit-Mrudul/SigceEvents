@@ -19,6 +19,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     jQuery(async function() {
+      Array.prototype.remove = function(v) { this.splice(this.indexOf(v) == -1 ? this.length : this.indexOf(v), 1); }
       document.getElementById('container').style.display = 'none';
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html')
@@ -77,7 +78,7 @@
           // Generate User Invite Notifications
           let groupEvents = ["BGMI", "SCI-PROJECT", "DEBATE", "QUIZ"];
           for (selectedEvent in groupEvents) {
-            db.collection("events").doc(groupEvents[selectedEvent]).get().then((doc) => {
+            await db.collection("events").doc(groupEvents[selectedEvent]).get().then((doc) => {
               let data = doc.data();
               let recievedRequests = data[user.email]['recievedRequests'];
               for (element in recievedRequests) {
@@ -93,6 +94,39 @@
                           </li>`
               }
             });
+          };
+          // Deny Request Functionality
+          let DenyButtons = document.getElementsByClassName('denyRequest');
+          let senderEmail = ''
+          for (let i=0; i<DenyButtons.length; i++) {
+            DenyButtons[i].addEventListener('click', async (event) => {
+              let confirmDelete = window.confirm("Are you sure you want to deny this request?");
+              if(confirmDelete){
+                let groupEvents = ["BGMI", "SCI-PROJECT", "DEBATE", "QUIZ"];
+                let selection = ''
+                for (selectedEvent in groupEvents) {
+                  if (DenyButtons.parentElement.innerHTML.includes(groupEvents[selectedEvent])) {
+                    selection = groupEvents[selectedEvent];
+                  }
+                  if (selection != undefined && selection != '') {
+                    await db.collection("events").doc(selection).get().then((doc) => {
+                      let data = doc.data();
+                      event.target.classList.remove('fas', 'fa-times', 'denyRequest');
+                      senderEmail = event.target.classList.item(0);
+                      var liCard = document.getElementsByClassName(`noti_li ${senderEmail}`)[0];
+                      liCard.remove();
+                      data[senderEmail]['sentRequests'].remove(user.email);
+                      data[user.email]['recievedRequests'].remove(senderEmail);
+                      db.collection("events").doc(selection).set(data, {merge: true});
+                    });
+                  }
+                }
+                alert(`You have successfully denied request from ${senderEmail}.`)
+              }
+              else{
+                return;
+              }
+            })
           }
         }
       });
