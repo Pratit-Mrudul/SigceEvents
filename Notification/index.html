@@ -191,13 +191,14 @@
                       return;
                     }
                     for (let userIndex in sendersAccepted) {
-                      acceptedRequests = data[sendersAccepted[userIndex]]['acceptedRequests'];
-                      if (acceptedRequests == undefined) {
-                        acceptedRequests = [];
+                      for (let individual in data[user.email]['acceptedRequests']) {
+                        if (!data[sendersAccepted[userIndex]]['acceptedRequests'].includes(individual)) {
+                          data[sendersAccepted[userIndex]]['acceptedRequests'].push(individual);
+                        }
+                        if (!sendersAccepted.includes(individual)) {
+                          sendersAccepted.push(individual);
+                        }
                       }
-                      acceptedRequests.push(user.email);
-                      let otherUser = data[sendersAccepted[userIndex]]
-                      otherUser["acceptedRequests"] = acceptedRequests;
                     }
                   } catch (e) {
                     console.log(e);
