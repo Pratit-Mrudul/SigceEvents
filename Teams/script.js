@@ -61,6 +61,21 @@ firebase.auth().onAuthStateChanged((user) => {
           try {
             await db.collection('events').doc('QUIZ').get().then((doc) => {
               let data = doc.data();
+              function repeaterChecker(acceptedEmailList) {
+                for (let index in acceptedEmailList) {
+                  if(!isNaN(parseInt(index))) {
+                    if (acceptedEmailList[index] != user.email) {
+                      if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                        data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                      }
+                      if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                        repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
+                      }
+                    }
+                  }
+                }
+              }
+              repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('QUIZMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('QUIZMembers').innerHTML;
@@ -74,6 +89,21 @@ firebase.auth().onAuthStateChanged((user) => {
           try {
             await db.collection('events').doc('DEBATE').get().then((doc) => {
               let data = doc.data();
+              function repeaterChecker(acceptedEmailList) {
+                for (let index in acceptedEmailList) {
+                  if(!isNaN(parseInt(index))) {
+                    if (acceptedEmailList[index] != user.email) {
+                      if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                        data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                      }
+                      if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                        repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
+                      }
+                    }
+                  }
+                }
+              }
+              repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('DEBATEMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('DEBATEMembers').innerHTML;
@@ -87,6 +117,21 @@ firebase.auth().onAuthStateChanged((user) => {
           try {
             await db.collection('events').doc('SCI-PROJECT').get().then((doc) => {
               let data = doc.data();
+              function repeaterChecker(acceptedEmailList) {
+                for (let index in acceptedEmailList) {
+                  if(!isNaN(parseInt(index))) {
+                    if (acceptedEmailList[index] != user.email) {
+                      if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                        data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                      }
+                      if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                        repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
+                      }
+                    }
+                  }
+                }
+              }
+              repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('SCI-PROJECTMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('SCI-PROJECTMembers').innerHTML;
