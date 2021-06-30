@@ -183,11 +183,15 @@ function sendRequest(recieverEmail) {
       db.collection("events").doc(selectedEvent).get().then((doc) => {
         let data = doc.data();
         let recievedRequests = data[recieverEmail]['recievedRequests'];
+        let acceptedRequests = data[recieverEmail]['acceptedRequests'];
         if (recievedRequests == null || recievedRequests == undefined) {
           recievedRequests = [];
         }
-        if (recievedRequests.includes(senderEmail)) {
-          alert(`You have already sent a request to ${data[recieverEmail]['name']}`);
+        if (acceptedRequests == null || acceptedRequests == undefined) {
+          acceptedRequests = [];
+        }
+        if (recievedRequests.includes(senderEmail) || acceptedRequests.includes(senderEmail)) {
+          alert(`You have already sent or accepted the request to ${data[recieverEmail]['name']}`);
           return;
         };
         let sentRequests = data[senderEmail]['sentRequests'];
