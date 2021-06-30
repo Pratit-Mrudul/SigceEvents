@@ -40,9 +40,9 @@ firebase.auth().onAuthStateChanged((user) => {
                       if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
                         data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
                       }
-                    }
-                    if (acceptedEmailList[index]['acceptedRequests'] != undefined) {
-                      repeaterChecker(acceptedEmailList[index]['acceptedRequests']);
+                      if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                        repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
+                      }
                     }
                   }
                 }
