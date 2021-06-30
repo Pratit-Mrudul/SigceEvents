@@ -191,9 +191,9 @@
                       return;
                     }
                     for (let userIndex in sendersAccepted) {
-                      if (!isNAN(parseInt(userIndex))) {
+                      if (!isNaN(parseInt(userIndex))) {
                         for (let individual in data[user.email]['acceptedRequests']) {
-                          if (!isNAN(parseInt(individual))) {
+                          if (!isNaN(parseInt(individual))) {
                             if (!data[sendersAccepted[userIndex]]['acceptedRequests'].includes(data[user.email]['acceptedRequests'][individual])) {
                               data[sendersAccepted[userIndex]]['acceptedRequests'].push(data[user.email]['acceptedRequests'][individual]);
                             }
