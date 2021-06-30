@@ -51,7 +51,7 @@ firebase.auth().onAuthStateChanged((user) => {
         }
         let totalColumns = ''
         for (let i = 0; i < count; i++) {
-           totalColumns += "auto";
+           totalColumns += "auto ";
         }
         formbackContainer.style.gridTemplateColumns = totalColumns;
       }
