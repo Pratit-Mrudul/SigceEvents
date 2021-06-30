@@ -26,6 +26,29 @@ hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
 });
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    db.collection("users").doc(user.uid).get().then((doc) => {
+      let data = doc.data();
+      let participatedEvents = data['participatedEvents'];
+      if (participatedEvents != null && participatedEvents != undefined) {
+        if (participatedEvents.includes('BGMI')) {
+          document.getElementsByClassName('BGMIBlock').style.display = '';
+        }
+        if (participatedEvents.includes('QUIZ')) {
+          document.getElementsByClassName('QUIZBlock').style.display = '';
+        }
+        if (participatedEvents.includes('DEBATE')) {
+          document.getElementsByClassName('DEBATEBlock').style.display = '';
+        }
+        if (participatedEvents.includes('SCI-PROJECT')) {
+          document.getElementsByClassName('SCI-PROJECTBlock').style.display = '';
+        }
+      }
+    });
+  } else {}
+});
+
 function bgmiTeams() {
   formbackContainer.style.display = 'none';
   participantsDisplay.style.display = 'block';
