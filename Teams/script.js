@@ -122,8 +122,15 @@ function sendRequest(recieverEmail) {
         if (recievedRequests == null || recievedRequests == undefined) {
           recievedRequests = [];
         }
-        recievedRequests.push(senderEmail)
+        if (recievedRequests.includes(senderEmail)) {return;};
+        let sentRequests = data[senderEmail]['sentRequests'];
+        if (sentRequests == null || sentRequests == undefined) {
+          sentRequests = [];
+        }
+        recievedRequests.push(senderEmail);
+        sentRequests.push(recieverEmail);
         data[recieverEmail] = {'recievedRequests': recievedRequests};
+        data[senderEmail] = {'sentRequests': sentRequests};
         db.collection("events").doc(selectedEvent).set(data, {merge: true})
       });
     } else {}
