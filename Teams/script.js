@@ -124,7 +124,7 @@ function sendRequest(recieverEmail) {
         }
         recievedRequests.push(senderEmail)
         data[recieverEmail] = {'recievedRequests': recievedRequests};
-        db.collection("events").doc(selectedEvent).set(data)
+        db.collection("events").doc(selectedEvent).set(data, {merge: true})
       });
     } else {}
   });
