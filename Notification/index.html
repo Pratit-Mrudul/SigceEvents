@@ -99,7 +99,7 @@
                       </div>
                       </li>`
                   }
-                } catch (e) {}
+                } catch (e) {console.log(e)}
                 try {
                   let AcceptedRequests = data[user.email]['acceptedRequests'];
                   for (element in AcceptedRequests) {
@@ -115,7 +115,7 @@
                       </div>
                       </li>`
                   }
-                } catch (e) {}
+                } catch (e) {console.log(e)}
               });
             };
           } catch (e) {}
