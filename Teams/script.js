@@ -48,7 +48,7 @@ firebase.auth().onAuthStateChanged((user) => {
               let data = doc.data();
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
-                document.getElementById('QUIZMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+                document.getElementById('QUIZMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('QUIZMembers').innerHTML;
               }
             })
           } catch (e) {console.log(e)}
@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged((user) => {
               let data = doc.data();
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
-                document.getElementById('DEBATEMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+                document.getElementById('DEBATEMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('DEBATEMembers').innerHTML;
               }
             })
           } catch (e) {console.log(e)}
@@ -74,7 +74,7 @@ firebase.auth().onAuthStateChanged((user) => {
               let data = doc.data();
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
-                document.getElementById('SCI-PROJECTMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+                document.getElementById('SCI-PROJECTMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('SCI-PROJECTMembers').innerHTML;
               }
             })
           } catch(e) {console.log(e)}
