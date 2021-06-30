@@ -190,8 +190,7 @@
                       alert(`You have successfully accepted request from ${senderEmail}.`)
                       return;
                     }
-                    for (userIndex in sendersAccepted) {
-                      data[sendersAccepted[userIndex]]['acceptedRequests']
+                    for (let userIndex in sendersAccepted) {
                       acceptedRequests = data[sendersAccepted[userIndex]]['acceptedRequests'];
                       if (acceptedRequests == undefined) {
                         acceptedRequests = [];
