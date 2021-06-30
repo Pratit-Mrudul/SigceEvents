@@ -196,7 +196,8 @@
                         acceptedRequests = [];
                       }
                       acceptedRequests.push(user.email);
-                      data[sendersAccepted[userIndex]]["acceptedRequests"] = acceptedRequests;
+                      let otherUser = data[sendersAccepted[userIndex]]
+                      otherUser["acceptedRequests"] = acceptedRequests;
                     }
                   } catch (e) {
                     console.log(e);
