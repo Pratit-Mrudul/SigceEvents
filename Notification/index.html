@@ -86,34 +86,38 @@
                   let data = doc.data();
                   let recievedRequests = data[user.email]['recievedRequests'];
                   for (element in recievedRequests) {
-                    NotificationSection.innerHTML +=
-                      `<li class="noti_li ${recievedRequests[element]}"><div class="notificationBar">
-                      <div class="notiText">
-                      <h4>Yay! &nbsp;</h4>
-                      <p>
-                      You have been requested to join ${data[recievedRequests[element]]['name']} in ${groupEvents[selectedEvent]}&nbsp;&nbsp;
-                      <i class="fas fa-times denyRequest ${recievedRequests[element]} ${groupEvents[selectedEvent]}"></i>
-                      <i class="fas fa-check checkBtn ${recievedRequests[element]} ${groupEvents[selectedEvent]}"></i>
-                      </p>
-                      </div>
-                      </div>
-                      </li>`
+                    if (data[recievedRequests[element]] != undefined) {
+                      NotificationSection.innerHTML +=
+                        `<li class="noti_li ${recievedRequests[element]}"><div class="notificationBar">
+                        <div class="notiText">
+                        <h4>Yay! &nbsp;</h4>
+                        <p>
+                        You have been requested to join ${data[recievedRequests[element]]['name']} in ${groupEvents[selectedEvent]}&nbsp;&nbsp;
+                        <i class="fas fa-times denyRequest ${recievedRequests[element]} ${groupEvents[selectedEvent]}"></i>
+                        <i class="fas fa-check checkBtn ${recievedRequests[element]} ${groupEvents[selectedEvent]}"></i>
+                        </p>
+                        </div>
+                        </div>
+                        </li>`
+                    }
                   }
                 } catch (e) {console.log(e)}
                 try {
                   let AcceptedRequests = data[user.email]['acceptedRequests'];
                   for (element in AcceptedRequests) {
-                    NotificationSection.innerHTML +=
-                      `<li class="noti_li ${AcceptedRequests[element]}"><div class="notificationBar">
-                      <div class="notiText">
-                      <h4>Yay! &nbsp;</h4>
-                      <p>
-                      You have been requested to join ${data[AcceptedRequests[element]]['name']} in ${groupEvents[selectedEvent]}&nbsp;&nbsp;
-                      <i class="fas fa-times denyRequest ${AcceptedRequests[element]} ${groupEvents[selectedEvent]}"></i>
-                      </p>
-                      </div>
-                      </div>
-                      </li>`
+                    if (data[recievedRequests[element]] != undefined) {
+                      NotificationSection.innerHTML +=
+                        `<li class="noti_li ${AcceptedRequests[element]}"><div class="notificationBar">
+                        <div class="notiText">
+                        <h4>Yay! &nbsp;</h4>
+                        <p>
+                        You have been requested to join ${data[AcceptedRequests[element]]['name']} in ${groupEvents[selectedEvent]}&nbsp;&nbsp;
+                        <i class="fas fa-times denyRequest ${AcceptedRequests[element]} ${groupEvents[selectedEvent]}"></i>
+                        </p>
+                        </div>
+                        </div>
+                        </li>`
+                    }
                   }
                 } catch (e) {console.log(e)}
               });
