@@ -25,57 +25,77 @@
       
       // Generating Event Participation Notifications
       await firebase.auth().onAuthStateChanged(async (user) => {
-      if (user) {
-      await getDocumentData(db.collection("users").doc(user.uid));
-      let notificationList = userData['participatedEvents'];
-      let NotificationSection = document.getElementById('Noticontent');
-      NotificationSection.innerHTML = '';
-      for (let i = 0; i<notificationList.length; i++) {
-        NotificationSection.innerHTML += 
-                    `<li class="noti_li ${notificationList[i]}"><div class="notificationBar">
-                      <div class="notiText">
-                        <h4>Yay! &nbsp;</h4>
-                        <p>
-                          You Have Been Registered For ${notificationList[i]}&nbsp;&nbsp;<i class="fas fa-times closeButton ${notificationList[i]}"></i>
-                        </p>
-                      </div>
-                    </div>
-                    </li>`
-      }
-      // Delete User Functionality
-      CloseButtons = document.getElementsByClassName('closeButton');
-      for (let i=0; i<CloseButtons.length; i++) {
-        CloseButtons[i].addEventListener('click', async (event) => {
-          let confirmDelete = window.confirm("Are you sure, You want to delete your registration this event?");
-          if(confirmDelete){
-            event.target.classList.remove('fas', 'fa-times', 'closeButton');
-            eventName = event.target.classList.item(0);
-            var liCard = document.getElementsByClassName(`noti_li ${eventName}`)[0];
-            liCard.remove();
-            let participated = userData['participatedEvents'];
-            userData['participatedEvents'] = []
-            for (element in  participated) {
-              if (participated[element] != eventName) {
-                userData['participatedEvents'].push(participated[element]);
+        if (user) {
+          await getDocumentData(db.collection("users").doc(user.uid));
+          let notificationList = userData['participatedEvents'];
+          let NotificationSection = document.getElementById('Noticontent');
+          NotificationSection.innerHTML = '';
+          for (let i = 0; i<notificationList.length; i++) {
+            NotificationSection.innerHTML += 
+                        `<li class="noti_li ${notificationList[i]}"><div class="notificationBar">
+                          <div class="notiText">
+                            <h4>Yay! &nbsp;</h4>
+                            <p>
+                              You Have Been Registered For ${notificationList[i]}&nbsp;&nbsp;<i class="fas fa-times closeButton ${notificationList[i]}"></i>
+                            </p>
+                          </div>
+                        </div>
+                        </li>`
+          }
+          // Delete User Functionality
+          CloseButtons = document.getElementsByClassName('closeButton');
+          for (let i=0; i<CloseButtons.length; i++) {
+            CloseButtons[i].addEventListener('click', async (event) => {
+              let confirmDelete = window.confirm("Are you sure, You want to delete your registration this event?");
+              if(confirmDelete){
+                event.target.classList.remove('fas', 'fa-times', 'closeButton');
+                eventName = event.target.classList.item(0);
+                var liCard = document.getElementsByClassName(`noti_li ${eventName}`)[0];
+                liCard.remove();
+                let participated = userData['participatedEvents'];
+                userData['participatedEvents'] = []
+                for (element in  participated) {
+                  if (participated[element] != eventName) {
+                    userData['participatedEvents'].push(participated[element]);
+                  }
+                }
+                db.collection('users').doc(user.uid).set(userData);
+                let email = user.email;
+                var documentReference = db.collection('events').doc(eventName);
+                await documentReference.get().then(async (doc) => {
+                  let Data = doc.data();
+                  delete Data[email];
+                  await documentReference.set(Data);
+                });
+                alert(`You have been successfully deleted your registration from ${eventName}.`)
               }
-            }
-            db.collection('users').doc(user.uid).set(userData);
-            let email = user.email;
-            var documentReference = db.collection('events').doc(eventName);
-            await documentReference.get().then(async (doc) => {
-              let Data = doc.data();
-              delete Data[email];
-              await documentReference.set(Data);
+              else{
+                return;
+              }
+            })
+          };
+          // Generate User Invite Notifications
+          let groupEvents = ["BGMI", "SCI-PROJECT", "DEBATE", "QUIZ"];
+          for (selectedEvent in groupEvents) {
+            db.collection("events").doc(selectedEvent).get().then((doc) => {
+              let data = doc.data();
+              let recievedRequests = data[user.email]['recievedRequests'];
+              for (element in recievedRequests) {
+                NotificationSection.innerHTML += 
+                          `<li class="noti_li ${recievedRequests[element]}"><div class="notificationBar">
+                            <div class="notiText">
+                              <h4>Yay! &nbsp;</h4>
+                              <p>
+                                You have been requested to join ${data[recievedRequests[element]]['name']} in ${selectedEvent}&nbsp;&nbsp;<i class="fas fa-times denyRequest ${recievedRequests[element]}"></i>
+                              </p>
+                            </div>
+                          </div>
+                          </li>`
+              }
             });
-            alert(`You have been successfully deleted your registration from ${eventName}.`)
           }
-          else{
-            return;
-          }
-        })
-      };
-      // Generate User Invite Notifications
-    }});
+        }
+      });
       setTimeout(function() {
         document.getElementById('preloader').style.display = 'none';
         document.getElementById('container').style.display = '';
