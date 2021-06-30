@@ -28,25 +28,61 @@ hamburger_menu.addEventListener("click", () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    db.collection("users").doc(user.uid).get().then((doc) => {
+    db.collection("users").doc(user.uid).get().then(async (doc) => {
       let data = doc.data();
       let participatedEvents = data['participatedEvents'];
       if (participatedEvents != null && participatedEvents != undefined) {
         let count = 0
         if (participatedEvents.includes('BGMI')) {
           document.getElementById('BGMIBlock').style.display = '';
+          try {
+            await db.collection('events').doc('BGMI').get().then((doc) => {
+              let data = doc.data();
+              let AcceptedList = data[user.email]['acceptedRequests'];
+              for (index in AcceptedList) {
+                document.getElementById('BGMIMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+              }
+            })
+          } catch (e) {}
           count += 1;
         }
         if (participatedEvents.includes('QUIZ')) {
           document.getElementById('QUIZBlock').style.display = '';
+          try {
+            await db.collection('events').doc('QUIZ').get().then((doc) => {
+              let data = doc.data();
+              let AcceptedList = data[user.email]['acceptedRequests'];
+              for (index in AcceptedList) {
+                document.getElementById('QUIZMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+              }
+            })
+          } catch (e) {}
           count += 1;
         }
         if (participatedEvents.includes('DEBATE')) {
           document.getElementById('DEBATEBlock').style.display = '';
+          try {
+            await db.collection('events').doc('DEBATE').get().then((doc) => {
+              let data = doc.data();
+              let AcceptedList = data[user.email]['acceptedRequests'];
+              for (index in AcceptedList) {
+                document.getElementById('DEBATEMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+              }
+            })
+          } catch (e) {}
           count += 1;
         }
         if (participatedEvents.includes('SCI-PROJECT')) {
           document.getElementById('SCI-PROJECTBlock').style.display = '';
+          try {
+            await db.collection('events').doc('SCI-PROJECT').get().then((doc) => {
+              let data = doc.data();
+              let AcceptedList = data[user.email]['acceptedRequests'];
+              for (index in AcceptedList) {
+                document.getElementById('SCI-PROJECTMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+              }
+            })
+          } catch(e) {}
           count += 1;
         }
         let totalColumns = ''
