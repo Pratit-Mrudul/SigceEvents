@@ -168,11 +168,11 @@
                       if (acceptedRequests == undefined) {
                         acceptedRequests = [];
                       }
-                      acceptedRequests.push(senderEmail);
+                      acceptedRequests.push(user.email);
                       data[sendersAccepted[userIndex]]['acceptedRequests'] = acceptedRequests;
                     }
                   } else {
-                    data[senderEmail]['acceptedRequests'] = acceptedRequests;
+                    data[senderEmail]['acceptedRequests'] = [user.email];
                   }
                   db.collection("events").doc(selection).set(data, {
                     merge: true
