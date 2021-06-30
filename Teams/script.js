@@ -17,11 +17,6 @@ const IDEAS = document.getElementsByClassName("IDEAS");
 const DEBATE = document.getElementsByClassName("DEBATE");
 var selectedEvent = "";
 
-BGMIMember.addEventListener('click', bgmiTeams);
-QUIZMember.addEventListener('click', quizTeams);
-DEBATEMember.addEventListener('click', debateTeams);
-IDEASMember.addEventListener('click', ideasTeams);
-
 hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
 });
