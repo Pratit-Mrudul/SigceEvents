@@ -134,10 +134,10 @@
             AcceptButton[i].addEventListener('click', async (event) => {
               let confirmAccept = window.confirm("Are you sure you want to accept this request?");
               if (confirmAccept) {
-                selection = event.target.classList.item(4);
+                selection = event.target.classList.item(3);
                 await db.collection("events").doc(selection).get().then((doc) => {
                   let data = doc.data();
-                  event.target.classList.remove('fas', 'fa-times', 'denyRequest');
+                  event.target.classList.remove('fa-check', 'checkBtn');
                   senderEmail = event.target.classList.item(0);
                   var liCard = document.getElementsByClassName(`noti_li ${senderEmail}`)[0];
                   liCard.remove();
