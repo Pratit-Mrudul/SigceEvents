@@ -191,12 +191,16 @@
                       return;
                     }
                     for (let userIndex in sendersAccepted) {
-                      for (let individual in data[user.email]['acceptedRequests']) {
-                        if (!data[sendersAccepted[userIndex]]['acceptedRequests'].includes(individual)) {
-                          data[sendersAccepted[userIndex]]['acceptedRequests'].push(individual);
-                        }
-                        if (!sendersAccepted.includes(individual)) {
-                          sendersAccepted.push(individual);
+                      if (parseInt(userIndex) != NaN) {
+                        for (let individual in data[user.email]['acceptedRequests']) {
+                          if (parseInt(individual) != NaN) {
+                            if (!data[sendersAccepted[userIndex]]['acceptedRequests'].includes(individual)) {
+                              data[sendersAccepted[userIndex]]['acceptedRequests'].push(individual);
+                            }
+                            if (!sendersAccepted.includes(individual)) {
+                              sendersAccepted.push(individual);
+                            }
+                          }
                         }
                       }
                     }
