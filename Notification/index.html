@@ -103,7 +103,7 @@
           } catch (e) {}
           // Deny Request Functionality
           let DenyButtons = document.getElementsByClassName('denyRequest');
-          let senderEmail = ''
+          senderEmail = ''
           for (let i = 0; i < DenyButtons.length; i++) {
             DenyButtons[i].addEventListener('click', async (event) => {
               let confirmDelete = window.confirm("Are you sure you want to deny this request?");
