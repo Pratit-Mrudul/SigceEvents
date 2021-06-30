@@ -49,7 +49,7 @@ firebase.auth().onAuthStateChanged((user) => {
           document.getElementById('SCI-PROJECTBlock').style.display = '';
           count += 1;
         }
-        for (let i = 1; i < count; i++) {
+        for (let i = 0; i < count; i++) {
           formbackContainer.style.gridTemplateColumns += "auto";
         }
       }
