@@ -79,7 +79,7 @@ function generateList() {
             ${Data["email"]}
           </span>
         </div>
-        <div class="userIcon">
+        <div class="userIcon" onClick="sendRequest(${Data["email"]})">
           <a><i class="fas fa-user-plus"></i></a>
         </div>
       </div>
@@ -112,14 +112,18 @@ function sortEntries() {
   }
 }
 
-function sendRequest() {
-  let senderEmail = BGMIP.getElementsByTagName("span")[0].innerHTML;
+function sendRequest(recieverEmail) {
   firebase.auth().onAuthStateChanged((user) => {
+    let senderEmail = user.email;
     if (user) {
       db.collection("events").doc(selectedEvent).get().then((doc) => {
         let data = doc.data();
-        recievedRequests = []
-        data[senderEmail] = {[recievedRequests]: recievedRequests.push(user.email)};
+        let recievedRequests = data[recieverEmail]['recievedRequests'];
+        if (recievedRequests == null || recievedRequests == undefined) {
+          recievedRequests = [];
+        }
+        data[recieverEmail] = {'recievedRequests': recievedRequests.push(senderEmail)};
+        db.collection("events").doc(selectedEvent).set(data)
       });
     } else {}
   });
