@@ -23,6 +23,21 @@ hamburger_menu.addEventListener("click", () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    function repeaterChecker(acceptedEmailList) {
+      for (let index in acceptedEmailList) {
+        if(!isNaN(parseInt(index))) {
+          if (acceptedEmailList[index] != user.email) {
+            if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+              data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+            }
+          }
+          if (acceptedEmailList[index]['acceptedRequests'] != undefined) {
+            repeaterChecker(acceptedEmailList[index]['acceptedRequests']);
+          }
+        }
+      }
+    }
+    repeaterChecker([user.email]);
     db.collection("users").doc(user.uid).get().then(async (doc) => {
       let data = doc.data();
       let participatedEvents = data['participatedEvents'];
