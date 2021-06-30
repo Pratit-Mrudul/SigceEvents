@@ -120,7 +120,7 @@ header {
 }
 
 .inner {
-  max-width: 35rem;
+  width: 80%;
   text-align: center;
   color: #fff;
   padding: 0 2rem;
