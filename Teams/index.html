@@ -23,6 +23,28 @@
       document.getElementById('container').style.display = 'none';
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html');
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          db.collection("users").doc(user.uid).get().then((doc) => {
+            let data = doc.data();
+            let participatedEvents = data['participatedEvents'];
+            if (participatedEvents != null && participatedEvents != undefined) {
+              if (participatedEvents.includes('BGMI')) {
+                document.getElementsByClassName('BGMIBlock').style.display = '';
+              }
+              if (participatedEvents.includes('QUIZ')) {
+                document.getElementsByClassName('QUIZBlock').style.display = '';
+              }
+              if (participatedEvents.includes('DEBATE')) {
+                document.getElementsByClassName('DEBATEBlock').style.display = '';
+              }
+              if (participatedEvents.includes('SCI-PROJECT')) {
+                document.getElementsByClassName('SCI-PROJECTBlock').style.display = '';
+              }
+            }
+          });
+        } else {}
+      });
       setTimeout(function() {
         document.getElementById('preloader').style.display = 'none';
         document.getElementById('container').style.display = '';
@@ -54,7 +76,7 @@
           <div class="overlay">
             <div class="inner">
               <div id="formbackContainer" class="formbackContainer">
-                <div class="formback">
+                <div class="formback BGMIBlock" style="display: none;">
                   <h4>BGMI</h4>
                   <label for="">
                     <p>
@@ -62,7 +84,7 @@
                     </p>
                   </label>
                 </div>
-                <div class="formback">
+                <div class="formback QUIZBlock" style="display: none;">
                   <h4>QUIZ</h4>
                   <label for="">
                     <p>
@@ -70,7 +92,7 @@
                     </p>
                   </label>
                 </div>
-                <div class="formback">
+                <div class="formback SCI-PROJECTBlock" style="display: none;">
                   <h4>INNOVATIVE IDEAS</h4>
                   <label for="">
                     <p>
@@ -78,7 +100,7 @@
                     </p>
                   </label>
                 </div>
-                <div class="formback">
+                <div class="formback DEBATEBlock" style="display: none;">
                   <h4>DEBATE</h4>
                   <label for="">
                     <p>
@@ -102,102 +124,6 @@
                   </div>
                   <div class="plist">
                     <div class="userFill">
-                    </div>
-                  </div>
-                  <div class="backbtn" onclick="backBtn()">
-                    <i class="fas fa-arrow-circle-left back"></i>
-                    Back
-                  </div>
-                </div>
-                <div id="QUIZP" class="formbackP">
-                  <h4>QUIZ</h4>
-                  <div class="searchP">
-                    <div class="searchDiv">
-                      <input type="text" name="" id="" value="" placeholder="Search">
-                      <i class="bx bx-search"></i>
-                    </div>
-                  </div>
-                  <div class="plist">
-                    <div class="userFill">
-                      <div class="userData">
-                        <p>
-                          Name Name Name
-                        </p>
-                        <span>
-                          2020ab69f@sigce.edu.in
-                        </span>
-                      </div>
-                      <div class="userIcon">
-                        <a><i class="fas fa-user-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="backbtn" onclick="backBtn()">
-                    <i class="fas fa-arrow-circle-left back"></i>
-                    Back
-                  </div>
-                </div>
-                <div id="IDEASP" class="formbackP">
-                  <h4>INNOVATIVE IDEAS</h4>
-                  <div class="searchP">
-                    <table class="searchDiv">
-                      <tr>
-                        <td>
-                          <input type="text" name="" id="" value="" placeholder="Search" />
-                        </td>
-                        <td>
-                          <i class='bx bx-search'></i>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="plist">
-                    <div class="userFill">
-                      <div class="userData">
-                        <p>
-                          Name Name Name
-                        </p>
-                        <span>
-                          2020ab69f@sigce.edu.in
-                        </span>
-                      </div>
-                      <div class="userIcon">
-                        <a><i class="fas fa-user-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="backbtn" onclick="backBtn()">
-                    <i class="fas fa-arrow-circle-left back"></i>
-                    Back
-                  </div>
-                </div>
-                <div id="DEBATEP" class="formbackP">
-                  <h4>DEBATE</h4>
-                  <div class="searchP">
-                    <table class="searchDiv">
-                      <tr>
-                        <td>
-                          <input type="text" name="" id="" value="" placeholder="Search" />
-                        </td>
-                        <td>
-                          <i class='bx bx-search'></i>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="plist">
-                    <div class="userFill">
-                      <div class="userData">
-                        <p>
-                          Name Name Name
-                        </p>
-                        <span>
-                          2020ab69f@sigce.edu.in
-                        </span>
-                      </div>
-                      <div class="userIcon">
-                        <a><i class="fas fa-user-plus"></i></a>
-                      </div>
                     </div>
                   </div>
                   <div class="backbtn" onclick="backBtn()">
