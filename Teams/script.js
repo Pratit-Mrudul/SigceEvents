@@ -33,16 +33,16 @@ firebase.auth().onAuthStateChanged((user) => {
       let participatedEvents = data['participatedEvents'];
       if (participatedEvents != null && participatedEvents != undefined) {
         if (participatedEvents.includes('BGMI')) {
-          document.getElementsByClassName('BGMIBlock').style.display = '';
+          document.getElementById('BGMIBlock').style.display = '';
         }
         if (participatedEvents.includes('QUIZ')) {
-          document.getElementsByClassName('QUIZBlock').style.display = '';
+          document.getElementById('QUIZBlock').style.display = '';
         }
         if (participatedEvents.includes('DEBATE')) {
-          document.getElementsByClassName('DEBATEBlock').style.display = '';
+          document.getElementById('DEBATEBlock').style.display = '';
         }
         if (participatedEvents.includes('SCI-PROJECT')) {
-          document.getElementsByClassName('SCI-PROJECTBlock').style.display = '';
+          document.getElementById('SCI-PROJECTBlock').style.display = '';
         }
       }
     });
