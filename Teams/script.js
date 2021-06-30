@@ -38,7 +38,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 document.getElementById('BGMIMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
               }
             })
-          } catch (e) {}
+          } catch (e) {console.log(e)}
           count += 1;
         }
         if (participatedEvents.includes('QUIZ')) {
@@ -51,7 +51,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 document.getElementById('QUIZMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
               }
             })
-          } catch (e) {}
+          } catch (e) {console.log(e)}
           count += 1;
         }
         if (participatedEvents.includes('DEBATE')) {
@@ -64,7 +64,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 document.getElementById('DEBATEMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
               }
             })
-          } catch (e) {}
+          } catch (e) {console.log(e)}
           count += 1;
         }
         if (participatedEvents.includes('SCI-PROJECT')) {
@@ -77,7 +77,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 document.getElementById('SCI-PROJECTMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
               }
             })
-          } catch(e) {}
+          } catch(e) {console.log(e)}
           count += 1;
         }
         let totalColumns = ''
