@@ -158,7 +158,7 @@
           }
           // Accept Request Functionality
           let AcceptButton = document.getElementsByClassName('checkBtn');
-          let senderEmail = ''
+          senderEmail = ''
           for (let i = 0; i < AcceptButton.length; i++) {
             AcceptButton[i].addEventListener('click', async (event) => {
               let confirmAccept = window.confirm("Are you sure you want to accept this request?");
