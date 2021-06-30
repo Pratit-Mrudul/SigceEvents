@@ -155,7 +155,7 @@
                   data[senderEmail]['sentRequests'].remove(user.email);
                   data[user.email]['recievedRequests'].remove(senderEmail);
                   let acceptedRequests = data[user.email]['acceptedRequests'];
-                  if (acceptedRequests != undefined && acceptedRequests != []) {
+                  if (acceptedRequests == undefined || acceptedRequests == []) {
                     acceptedRequests = [];
                   }
                   acceptedRequests.push(senderEmail);
