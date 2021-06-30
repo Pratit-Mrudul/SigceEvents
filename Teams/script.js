@@ -122,7 +122,8 @@ function sendRequest(recieverEmail) {
         if (recievedRequests == null || recievedRequests == undefined) {
           recievedRequests = [];
         }
-        data[recieverEmail] = {'recievedRequests': recievedRequests.push(senderEmail)};
+        recievedRequests.push(senderEmail)
+        data[recieverEmail] = {'recievedRequests': recievedRequests};
         db.collection("events").doc(selectedEvent).set(data)
       });
     } else {}
