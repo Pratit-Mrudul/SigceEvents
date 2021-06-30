@@ -76,27 +76,27 @@
             })
           };
           // Generate User Invite Notifications
-          let groupEvents = ["BGMI", "SCI-PROJECT", "DEBATE", "QUIZ"];
-          for (selectedEvent in groupEvents) {
-            await db.collection("events").doc(groupEvents[selectedEvent]).get().then((doc) => {
-              let data = doc.data();
-              try {
-                let recievedRequests = data[user.email]['recievedRequests'];
-                for (element in recievedRequests) {
-                  NotificationSection.innerHTML += 
-                            `<li class="noti_li ${recievedRequests[element]}"><div class="notificationBar">
-                              <div class="notiText">
-                                <h4>Yay! &nbsp;</h4>
-                                <p>
-                                  You have been requested to join ${data[recievedRequests[element]]['name']} in ${groupEvents[selectedEvent]}&nbsp;&nbsp;<i class="fas fa-times denyRequest ${recievedRequests[element]}"></i>
-                                </p>
+          try {
+            let groupEvents = ["BGMI", "SCI-PROJECT", "DEBATE", "QUIZ"];
+            for (selectedEvent in groupEvents) {
+              await db.collection("events").doc(groupEvents[selectedEvent]).get().then((doc) => {
+                let data = doc.data();
+                  let recievedRequests = data[user.email]['recievedRequests'];
+                  for (element in recievedRequests) {
+                    NotificationSection.innerHTML += 
+                              `<li class="noti_li ${recievedRequests[element]}"><div class="notificationBar">
+                                <div class="notiText">
+                                  <h4>Yay! &nbsp;</h4>
+                                  <p>
+                                    You have been requested to join ${data[recievedRequests[element]]['name']} in ${groupEvents[selectedEvent]}&nbsp;&nbsp;<i class="fas fa-times denyRequest ${recievedRequests[element]}"></i>
+                                  </p>
+                                </div>
                               </div>
-                            </div>
-                            </li>`
-                }
-              } catch (e) {}
-            });
-          };
+                              </li>`
+                  }
+              });
+            };
+          } catch (e) {}
           // Deny Request Functionality
           let DenyButtons = document.getElementsByClassName('denyRequest');
           let senderEmail = ''
