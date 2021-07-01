@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024px" />
+  <title>SIGCE Events Time-Table</title>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    jQuery(function() {
+      document.getElementById('container').style.display = 'none';
+      jQuery('#preloader').load('/Preloader/index.html');
+      jQuery('.links').load('/menu.html')
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('container').style.display = '';
+      }, 4500);
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+        <h3 class="logo">SIGCE <span>Events</span></h3>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">
+              <div class="formback">
+                <section>
+                  <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <thead>
+                        <tr>
+                          <th>TIME</th>
+                          <th>2ND JULY</th>
+                          <th>3RD JULY</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td>10:00AM To 10:30AM</td>
+                          <td>Opening Ceremony</td>
+                          <td>Quiz (KB Patil Sir,DD Gote Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>10:30AM To 11:30AM</td>
+                          <td>Poetry (Govind Sir, Rishikesh Sir)</td>
+                          <td>Quiz (KB Patil Sir,DD Gote Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>11:30AM To 12:00PM</td>
+                          <td>Coding (Umakant Sir, Sarita Bopalkar Maam)</td>
+                          <td>Quiz (KB Patil Sir,DD Gote Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>12:00PM To 01:00PM</td>
+                          <td>Coding (Umakant Sir, Sarita Bopalkar Maam)</td>
+                          <td>Innovative Ideas (Umakant Sir, Dinesh Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>01:00PM To 02:00PM</td>
+                          <td>Elocution (Govind Sir, Archana Maam)</td>
+                          <td>Debate (Govind Sir, Mulla Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>02:00PM To 03:00PM</td>
+                          <td>Music & Instruments</td>
+                          <td>Debate (Govind Sir, Mulla Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>03:00PM To 04:00PM</td>
+                          <td>Chess (UV Pawar Sir)</td>
+                          <td>Debate (Govind Sir, Mulla Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>04:00PM To 05:00PM</td>
+                          <td>Chess (UV Pawar Sir)</td>
+                          <td>BGMI (Dinesh Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>05:00PM To 06:00PM</td>
+                          <td>Skribble (KB Patil Sir)</td>
+                          <td>BGMI (Dinesh Sir)</td>
+                        </tr>
+                        <tr>
+                          <td>07:00PM</td>
+                          <td>Skribble (KB Patil Sir)</td>
+                          <td>Prize Distribution Ceremony</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+
+    <div class="links"></div>
+  </div>
+  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
