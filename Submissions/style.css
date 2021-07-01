@@ -432,3 +432,31 @@ select:focus{
 #subFile{
   display: none;
 }
+
+/* Select Event CSS */
+select {
+  font-size: 15px;
+  padding: 7px 5px;
+  border: 1px solid #3498dd;
+  background: none;
+  color: white;
+  border-radius: 15px;
+}
+select:focus {
+  border: 1px solid #2ecc71;
+}
+.btnrules {
+  width: 100px;
+  margin: 8px auto !important;
+}
+.btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.8rem;
+  background-color: #1179e7;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}

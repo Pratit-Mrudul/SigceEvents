@@ -34,7 +34,25 @@
         <header>
           <div class="overlay">
             <div id="inner" class="inner">
-              <div class="formback">
+              <div class="formback" id="selectEvent">
+                <div style="width:100%">
+                  <h2 class="title">CHOOSE EVENT</h2>
+                  <select name="event" id="event">
+                    <option value="" selected="selected">Select</option>
+                    <option value="PHOTOGRAPHY" selected="">PHOTOGRAPHY</option>
+                    <option value="DANCE" selected="">DANCE</option>
+                    <option value="NAIL-ART" selected="">NAIL ART</option>
+                    <option value="INSTRUMENT" selected="">INSTRUMENT</option>
+                    <option value="SKETCH" selected="">SKETCH</option>
+                    <option value="CHALK" selected="">CHALK CARVING</option>
+                    <option value="POSTER" selected="">POSTER</option>
+                  </select>
+                </div>
+                <div style="width: 100%">
+                  <button type="button" onclick="info()" class="btn">CHECK</button>
+                </div>
+              </div>
+              <div class="formback" style="display: none;">
                 <form method="post" action="" enctype="multipart/form-data">
                   <div class="drag-area">
                     <div class="icon">
@@ -43,10 +61,9 @@
                     <div class="header">
                       Drag And Drop To Upload File
                     </div>
-
                     <span>OR</span>
                     <label for="file" id="btnFiles" onclick="sendFiles()" type="">Browse Files</label>
-                    <input type="file" name="files[]" id="file" style="display: none" onchange="this.nextElementSibling.textContent = this.previousElementSibling.title = this.files[0].name; changeButton();"/>
+                    <input type="file" name="files[]" id="file" style="display: none" onchange="this.nextElementSibling.textContent += this.previousElementSibling.title += this.files[0].name; this.nextElementSibling.textContent += '<br>';  changeButton();"/>
                     <div></div>
                   </div>
                 </form>
