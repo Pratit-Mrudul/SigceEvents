@@ -1,8 +1,8 @@
 const ref = firebase.storage().ref();
 
-function sendFiles() {
-    const file = document.querySelector('#file').files[0];
+async function sendFiles() {
+    const file = await document.querySelector('#file').files[0];
     const name = (+new Date()) + '-' + file.name;
     const metadata = { contentType: file.type };
-    const task = ref.child('Photography').put(file, metadata);
+    await ref.child('Photography').put(file, metadata).then(() => {console.log('done')});
 }
