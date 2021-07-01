@@ -187,7 +187,7 @@
                   if (acceptedRequests == undefined || acceptedRequests == []) {
                     acceptedRequests = [];
                   }
-                  if (acceptedRequests.length < 4) {
+                  if (acceptedRequests.length < 3) {
                     acceptedRequests.push(senderEmail);
                   }
                   data[user.email]['acceptedRequests'] = acceptedRequests;
@@ -197,9 +197,9 @@
                       for (let index in acceptedEmailList) {
                         if(!isNaN(parseInt(index))) {
                           if (acceptedEmailList[index] != user.email) {
-                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index]) && acceptedEmailListRecord < 4) {
+                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index]) && acceptedEmailListRecord < 3) {
                               acceptedEmailListRecord.push(acceptedEmailList[index]);
-                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index]) && data[user.email]['acceptedRequests'].length < 4) {
+                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index]) && data[user.email]['acceptedRequests'].length < 3) {
                                 data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
                               }
                               if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
@@ -219,7 +219,7 @@
                       alert(`You have successfully accepted request from ${senderEmail}.`)
                       return;
                     }
-                    if (data[senderEmail]['acceptedRequests'].length < 4) {
+                    if (data[senderEmail]['acceptedRequests'].length < 3) {
                       data[senderEmail]['acceptedRequests'].push(user.email);
                     }
                     repeaterChecker(sendersAccepted);
