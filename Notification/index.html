@@ -185,10 +185,10 @@
                   acceptedEmailListRecord = [];
                   function repeaterChecker(acceptedEmailList) {
                     if (!acceptedEmailListRecord.includes(acceptedEmailList)) {
-                      acceptedEmailListRecord.push(acceptedEmailListRecord);
                         for (let index in acceptedEmailList) {
                           if(!isNaN(parseInt(index))) {
                             if (acceptedEmailList[index] != user.email) {
+                              acceptedEmailListRecord.push(acceptedEmailList[index]);
                               if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
                                 data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
                               }
