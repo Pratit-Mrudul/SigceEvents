@@ -187,7 +187,9 @@
                   if (acceptedRequests == undefined || acceptedRequests == []) {
                     acceptedRequests = [];
                   }
-                  acceptedRequests.push(senderEmail);
+                  if (acceptedRequests.length < 4) {
+                    acceptedRequests.push(senderEmail);
+                  }
                   data[user.email]['acceptedRequests'] = acceptedRequests;
                   let sendersAccepted = data[senderEmail]['acceptedRequests'];
                   acceptedEmailListRecord = [];
@@ -195,9 +197,9 @@
                       for (let index in acceptedEmailList) {
                         if(!isNaN(parseInt(index))) {
                           if (acceptedEmailList[index] != user.email) {
-                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
+                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index]) && acceptedEmailListRecord < 4) {
                               acceptedEmailListRecord.push(acceptedEmailList[index]);
-                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index]) && data[user.email]['acceptedRequests'].length < 4) {
                                 data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
                               }
                               if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
@@ -217,7 +219,9 @@
                       alert(`You have successfully accepted request from ${senderEmail}.`)
                       return;
                     }
-                    data[senderEmail]['acceptedRequests'].push(user.email);
+                    if (data[senderEmail]['acceptedRequests'].length < 4) {
+                      data[senderEmail]['acceptedRequests'].push(user.email);
+                    }
                     repeaterChecker(sendersAccepted);
                     repeaterChecker(data[user.email]['acceptedRequests']);
                   } catch (e) {
