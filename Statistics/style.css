@@ -103,7 +103,7 @@ header {
   min-height: 100vh;
   width: 100%;
   background-color: black;
-  background: url("image1.2.jpg") no-repeat top center / cover;
+  background: url("/Imgs/image1.2.jpg") no-repeat top center / cover;
   position: relative;
 }
 
@@ -113,7 +113,7 @@ header {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(43, 51, 59, 0.7);
+  background-color: rgba(10, 10, 10, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;

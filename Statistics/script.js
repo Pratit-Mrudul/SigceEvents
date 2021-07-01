@@ -8,17 +8,20 @@ hamburger_menu.addEventListener("click", () => {
 db.collection("events").get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+          if (doc.id != 'dummy') {
             let data = doc.data();
             let count = 0;
             for(index in data) {
               count += 1;
             }
+
             document.getElementById('table').innerHTML += `
               <tr id="row">
                 <td>${doc.id}</td>
                 <td>${count}</td>
               </tr>
               `
+          }
         });
     })
     .catch((error) => {
