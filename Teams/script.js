@@ -34,30 +34,31 @@ firebase.auth().onAuthStateChanged((user) => {
             await db.collection('events').doc('BGMI').get().then((doc) => {
               let data = doc.data();
               acceptedEmailListRecord = [];
-                  function repeaterChecker(acceptedEmailList) {
-                      for (let index in acceptedEmailList) {
-                        if(!isNaN(parseInt(index))) {
-                          if (acceptedEmailList[index] != user.email) {
-                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
-                              acceptedEmailListRecord.push(acceptedEmailList[index]);
-                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
-                                data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
-                              }
-                              if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
-                                repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
-                              }
-                            }
-                          }
+              function repeaterChecker(acceptedEmailList) {
+                for (let index in acceptedEmailList) {
+                  if (!isNaN(parseInt(index))) {
+                    if (acceptedEmailList[index] != user.email) {
+                      if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
+                        acceptedEmailListRecord.push(acceptedEmailList[index]);
+                        if (!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                          data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                        }
+                        if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                          repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
                         }
                       }
                     }
+                  }
+                }
+              }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('BGMIMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('BGMIMembers').innerHTML}</p>`;
               }
             })
-          } catch (e) {console.log(e)}
+          } catch (e) {
+            console.log(e)}
           count += 1;
         }
         if (participatedEvents.includes('QUIZ')) {
@@ -66,30 +67,31 @@ firebase.auth().onAuthStateChanged((user) => {
             await db.collection('events').doc('QUIZ').get().then((doc) => {
               let data = doc.data();
               acceptedEmailListRecord = [];
-                  function repeaterChecker(acceptedEmailList) {
-                      for (let index in acceptedEmailList) {
-                        if(!isNaN(parseInt(index))) {
-                          if (acceptedEmailList[index] != user.email) {
-                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
-                              acceptedEmailListRecord.push(acceptedEmailList[index]);
-                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
-                                data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
-                              }
-                              if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
-                                repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
-                              }
-                            }
-                          }
+              function repeaterChecker(acceptedEmailList) {
+                for (let index in acceptedEmailList) {
+                  if (!isNaN(parseInt(index))) {
+                    if (acceptedEmailList[index] != user.email) {
+                      if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
+                        acceptedEmailListRecord.push(acceptedEmailList[index]);
+                        if (!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                          data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                        }
+                        if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                          repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
                         }
                       }
                     }
+                  }
+                }
+              }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('QUIZMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('QUIZMembers').innerHTML}</p>`;
               }
             })
-          } catch (e) {console.log(e)}
+          } catch (e) {
+            console.log(e)}
           count += 1;
         }
         if (participatedEvents.includes('DEBATE')) {
@@ -98,30 +100,31 @@ firebase.auth().onAuthStateChanged((user) => {
             await db.collection('events').doc('DEBATE').get().then((doc) => {
               let data = doc.data();
               acceptedEmailListRecord = [];
-                  function repeaterChecker(acceptedEmailList) {
-                      for (let index in acceptedEmailList) {
-                        if(!isNaN(parseInt(index))) {
-                          if (acceptedEmailList[index] != user.email) {
-                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
-                              acceptedEmailListRecord.push(acceptedEmailList[index]);
-                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
-                                data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
-                              }
-                              if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
-                                repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
-                              }
-                            }
-                          }
+              function repeaterChecker(acceptedEmailList) {
+                for (let index in acceptedEmailList) {
+                  if (!isNaN(parseInt(index))) {
+                    if (acceptedEmailList[index] != user.email) {
+                      if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
+                        acceptedEmailListRecord.push(acceptedEmailList[index]);
+                        if (!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                          data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                        }
+                        if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                          repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
                         }
                       }
                     }
+                  }
+                }
+              }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('DEBATEMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('DEBATEMembers').innerHTML}</p>`;
               }
             })
-          } catch (e) {console.log(e)}
+          } catch (e) {
+            console.log(e)}
           count += 1;
         }
         if (participatedEvents.includes('SCI-PROJECT')) {
@@ -130,35 +133,36 @@ firebase.auth().onAuthStateChanged((user) => {
             await db.collection('events').doc('SCI-PROJECT').get().then((doc) => {
               let data = doc.data();
               acceptedEmailListRecord = [];
-                  function repeaterChecker(acceptedEmailList) {
-                      for (let index in acceptedEmailList) {
-                        if(!isNaN(parseInt(index))) {
-                          if (acceptedEmailList[index] != user.email) {
-                            if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
-                              acceptedEmailListRecord.push(acceptedEmailList[index]);
-                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
-                                data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
-                              }
-                              if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
-                                repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
-                              }
-                            }
-                          }
+              function repeaterChecker(acceptedEmailList) {
+                for (let index in acceptedEmailList) {
+                  if (!isNaN(parseInt(index))) {
+                    if (acceptedEmailList[index] != user.email) {
+                      if (!acceptedEmailListRecord.includes(acceptedEmailList[index])) {
+                        acceptedEmailListRecord.push(acceptedEmailList[index]);
+                        if (!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                          data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                        }
+                        if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                          repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
                         }
                       }
                     }
+                  }
+                }
+              }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
                 document.getElementById('SCI-PROJECTMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('SCI-PROJECTMembers').innerHTML}</p>`;
               }
             })
-          } catch(e) {console.log(e)}
+          } catch(e) {
+            console.log(e)}
           count += 1;
         }
         let totalColumns = ''
         for (let i = 0; i < count; i++) {
-           totalColumns += "auto ";
+          totalColumns += "auto ";
         }
         formbackContainer.style.gridTemplateColumns = totalColumns;
       }
@@ -205,29 +209,31 @@ function backBtn() {
 function generateList() {
   BGMIP.getElementsByTagName("h4")[0].innerHTML = selectedEvent;
   document.getElementsByClassName("userFill")[0].innerHTML = '';
-  db.collection("users").where("participatedEvents", "array-contains", selectedEvent).get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      let Data = doc.data();
-      memberTemplate = `
-      <div class = "userCard">
+  db.collection("users").where("participatedEvents",
+    "array-contains",
+    selectedEvent).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        let Data = doc.data();
+        memberTemplate = `
+        <div class = "userCard">
         <div class="userData">
-          <p>
-            ${Data["name"]}
-          </p>
-          <span>
-            ${Data["email"]}
-          </span>
+        <p>
+        ${Data["name"]}
+        </p>
+        <span>
+        ${Data["email"]}
+        </span>
         </div>
         <div class="userIcon" onClick="sendRequest('${Data["email"]}')">
-          <a><i class="fas fa-user-plus"></i></a>
+        <a><i class="fas fa-user-plus"></i></a>
         </div>
-      </div>
-    `;
-      let editElement = document.getElementsByClassName("userFill")[0];
-      editElement.innerHTML += memberTemplate;
-    });
-  })
+        </div>
+        `;
+        let editElement = document.getElementsByClassName("userFill")[0];
+        editElement.innerHTML += memberTemplate;
+      });
+    })
   .catch((error) => {
     console.log("Error getting documents: ", error);
   })
@@ -260,7 +266,7 @@ function sendRequest(recieverEmail) {
         let confirmAdd = window.confirm(`Are you sure, You want to add ${recieverEmail} to ${selectedEvent} team?`);
         if (confirmAdd) {
           if (selectedEvent == "BGMI") {
-            
+            let BGMIID = prompt("Enter The BGMI Character ID!");
           }
           let data = doc.data();
           let recievedRequests = data[recieverEmail]['recievedRequests'];
@@ -281,9 +287,15 @@ function sendRequest(recieverEmail) {
           }
           recievedRequests.push(senderEmail);
           sentRequests.push(recieverEmail);
-          data[recieverEmail] = {'recievedRequests': recievedRequests};
-          data[senderEmail] = {'sentRequests': sentRequests};
-          db.collection("events").doc(selectedEvent).set(data, {merge: true})
+          data[recieverEmail] = {
+            'recievedRequests': recievedRequests
+          };
+          data[senderEmail] = {
+            'sentRequests': sentRequests
+          };
+          db.collection("events").doc(selectedEvent).set(data, {
+            merge: true
+          })
         }
       });
     } else {}
