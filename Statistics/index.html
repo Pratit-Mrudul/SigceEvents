@@ -1,1 +1,74 @@
-jelms
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>SIGCE Events Statistics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/Preloader/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    jQuery(function() {
+      document.getElementById('container').style.display = 'none';
+      jQuery('#preloader').load('/Preloader/index.html');
+      jQuery('.links').load('/menu.html')
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('container').style.display = '';
+      }, 4500);
+    });
+  </script>
+</head>
+<body>
+  <div id="preloader" style="z-index: 1000;">
+  </div>
+  <div class="container" id="container">
+    <div class="navbar">
+      <div class="menu">
+        <h3 class="logo">SIGCE <span>Events</span></h3>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">
+              <div class="formback">
+                <section>
+                  <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <thead>
+                        <tr>
+                          <th>Events</th>
+                          <th>Participants</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td>BGMI</td>
+                          <td>69</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+    <div class="links"></div>
+  </div>
+  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
