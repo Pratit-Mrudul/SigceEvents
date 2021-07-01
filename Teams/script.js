@@ -54,7 +54,7 @@ firebase.auth().onAuthStateChanged((user) => {
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
-                document.getElementById('BGMIMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('BGMIMembers').innerHTML;
+                document.getElementById('BGMIMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('BGMIMembers').innerHTML}</p>`;
               }
             })
           } catch (e) {console.log(e)}
@@ -86,7 +86,7 @@ firebase.auth().onAuthStateChanged((user) => {
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
-                document.getElementById('QUIZMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('QUIZMembers').innerHTML;
+                document.getElementById('QUIZMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('QUIZMembers').innerHTML}</p>`;
               }
             })
           } catch (e) {console.log(e)}
@@ -118,7 +118,7 @@ firebase.auth().onAuthStateChanged((user) => {
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
-                document.getElementById('DEBATEMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('DEBATEMembers').innerHTML;
+                document.getElementById('DEBATEMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('DEBATEMembers').innerHTML}</p>`;
               }
             })
           } catch (e) {console.log(e)}
@@ -150,7 +150,7 @@ firebase.auth().onAuthStateChanged((user) => {
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
               for (index in AcceptedList) {
-                document.getElementById('SCI-PROJECTMembers').innerHTML = data[AcceptedList[index]]['name'] + document.getElementById('SCI-PROJECTMembers').innerHTML;
+                document.getElementById('SCI-PROJECTMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('SCI-PROJECTMembers').innerHTML}</p>`;
               }
             })
           } catch(e) {console.log(e)}
@@ -257,28 +257,34 @@ function sendRequest(recieverEmail) {
     let senderEmail = user.email;
     if (user) {
       db.collection("events").doc(selectedEvent).get().then((doc) => {
-        let data = doc.data();
-        let recievedRequests = data[recieverEmail]['recievedRequests'];
-        let acceptedRequests = data[recieverEmail]['acceptedRequests'];
-        if (recievedRequests == null || recievedRequests == undefined) {
-          recievedRequests = [];
+        let confirmAdd = window.confirm(`Are you sure, You want to add ${recieverEmail} to ${selectedEvent} team?`);
+        if (confirmAdd) {
+          if (selectedEvent == "BGMI") {
+            
+          }
+          let data = doc.data();
+          let recievedRequests = data[recieverEmail]['recievedRequests'];
+          let acceptedRequests = data[recieverEmail]['acceptedRequests'];
+          if (recievedRequests == null || recievedRequests == undefined) {
+            recievedRequests = [];
+          }
+          if (acceptedRequests == null || acceptedRequests == undefined) {
+            acceptedRequests = [];
+          }
+          if (recievedRequests.includes(senderEmail) || acceptedRequests.includes(senderEmail)) {
+            alert(`You have already sent or accepted the request to ${data[recieverEmail]['name']}`);
+            return;
+          };
+          let sentRequests = data[senderEmail]['sentRequests'];
+          if (sentRequests == null || sentRequests == undefined) {
+            sentRequests = [];
+          }
+          recievedRequests.push(senderEmail);
+          sentRequests.push(recieverEmail);
+          data[recieverEmail] = {'recievedRequests': recievedRequests};
+          data[senderEmail] = {'sentRequests': sentRequests};
+          db.collection("events").doc(selectedEvent).set(data, {merge: true})
         }
-        if (acceptedRequests == null || acceptedRequests == undefined) {
-          acceptedRequests = [];
-        }
-        if (recievedRequests.includes(senderEmail) || acceptedRequests.includes(senderEmail)) {
-          alert(`You have already sent or accepted the request to ${data[recieverEmail]['name']}`);
-          return;
-        };
-        let sentRequests = data[senderEmail]['sentRequests'];
-        if (sentRequests == null || sentRequests == undefined) {
-          sentRequests = [];
-        }
-        recievedRequests.push(senderEmail);
-        sentRequests.push(recieverEmail);
-        data[recieverEmail] = {'recievedRequests': recievedRequests};
-        data[senderEmail] = {'sentRequests': sentRequests};
-        db.collection("events").doc(selectedEvent).set(data, {merge: true})
       });
     } else {}
   });
