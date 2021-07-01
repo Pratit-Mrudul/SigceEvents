@@ -209,6 +209,7 @@
                       alert(`You have successfully accepted request from ${senderEmail}.`)
                       return;
                     }
+                    data[senderEmail]['acceptedRequests'].push(user.email);
                     repeaterChecker(sendersAccepted);
                     repeaterChecker(data[user.email]['acceptedRequests']);
                   } catch (e) {
