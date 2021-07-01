@@ -64,7 +64,6 @@
 <script>
   firebase.auth().onAuthStateChanged((user) => {
     if (user.emailVerified) {
-      document.getElementById('RegistrationLink').style.display = '';
       document.getElementById('LogOutLink').style.display = '';
       document.getElementById('LoginLink').style.display = 'none';
       document.getElementById('SignUpLink').style.display = 'none';
