@@ -265,10 +265,16 @@ function sendRequest(recieverEmail) {
       db.collection("events").doc(selectedEvent).get().then((doc) => {
         let confirmAdd = window.confirm(`Are you sure, You want to add ${recieverEmail} to ${selectedEvent} team?`);
         if (confirmAdd) {
-          if (selectedEvent == "BGMI") {
-            let BGMIID = prompt("Enter The BGMI Character ID!");
-          }
           let data = doc.data();
+          if (selectedEvent == "BGMI") {
+            let BGMIID = prompt("Enter Your Own BGMI Character ID!");
+            let BGMIUserName = prompt("Enter Your Own BGMI User Name!");
+            data[senderEmail]['BGMICharID'] = BGMIID;
+            data[senderEmail]['userName'] = BGMIUserName;
+          } else if (selectedEvent == "SCI-PROJECT") {
+            let SCIProject = prompt("Enter SCI-PROJECT Topic!");
+            data[senderEmail]['topicvalue'] = SCIProject;
+          }
           let recievedRequests = data[recieverEmail]['recievedRequests'];
           let acceptedRequests = data[recieverEmail]['acceptedRequests'];
           if (recievedRequests == null || recievedRequests == undefined) {
