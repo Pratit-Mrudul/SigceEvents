@@ -159,6 +159,15 @@
                 selection = event.target.classList.item(4);
                 await db.collection("events").doc(selection).get().then((doc) => {
                   let data = doc.data();
+                  if (selection == "BGMI") {
+                    let BGMIID = prompt("Enter Your Own BGMI Character ID!");
+                    let BGMIUserName = prompt("Enter Your Own BGMI User Name!");
+                    data[senderEmail]['BGMICharID'] = BGMIID;
+                    data[senderEmail]['userName'] = BGMIUserName;
+                  } else if (selection == "SCI-PROJECT") {
+                    let SCIProject = prompt("Enter SCI-PROJECT Topic!");
+                    data[senderEmail]['topicvalue'] = SCIProject;
+                  }
                   event.target.classList.remove('fas', 'fa-check', 'checkBtn');
                   senderEmail = event.target.classList.item(0);
                   var liCard = document.getElementsByClassName(`noti_li ${senderEmail}`)[0];
