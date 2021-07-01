@@ -63,7 +63,7 @@
                     </div>
                     <span>OR</span>
                     <label for="file" id="btnFiles" onclick="sendFiles()" type="">Browse Files</label>
-                    <input type="file" name="files[]" id="file" style="display: none" onchange="this.nextElementSibling.innerHTML += this.previousElementSibling.title += `<p>${this.files[0].name}</p>`; changeButton();"/>
+                    <input type="file" name="files[]" id="file" style="display: none" onchange="this.nextElementSibling.innerHTML += `<p>${this.files[0].name}</p>`; changeButton();"/>
                     <div></div>
                   </div>
                 </form>
