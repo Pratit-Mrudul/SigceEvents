@@ -53,7 +53,7 @@ firebase.auth().onAuthStateChanged((user) => {
               }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
-              if (AcceptedList.length() >= 4) {
+              if (AcceptedList.length >= 4) {
                 BGMIMember.style.display = 'none';
               }
               for (index in AcceptedList) {
@@ -89,7 +89,7 @@ firebase.auth().onAuthStateChanged((user) => {
               }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
-              if (AcceptedList.length() >= 4) {
+              if (AcceptedList.length >= 4) {
                 QUIZMember.style.display = 'none';
               }
               for (index in AcceptedList) {
@@ -125,7 +125,7 @@ firebase.auth().onAuthStateChanged((user) => {
               }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
-              if (AcceptedList.length() >= 4) {
+              if (AcceptedList.length >= 4) {
                 DEBATEMember.style.display = 'none';
               }
               for (index in AcceptedList) {
@@ -161,7 +161,7 @@ firebase.auth().onAuthStateChanged((user) => {
               }
               repeaterChecker(data[user.email]['acceptedRequests']);
               let AcceptedList = data[user.email]['acceptedRequests'];
-              if (AcceptedList.length() >= 4) {
+              if (AcceptedList.length >= 4) {
                 IDEASMember.style.display = 'none';
               }
               for (index in AcceptedList) {
