@@ -182,15 +182,7 @@
                   acceptedRequests.push(senderEmail);
                   data[user.email]['acceptedRequests'] = acceptedRequests;
                   let sendersAccepted = data[senderEmail]['acceptedRequests'];
-                  try {
-                    if (sendersAccepted == undefined || sendersAccepted == []) {
-                      sendersAccepted = [];
-                      data[senderEmail]['acceptedRequests'] = [user.email];
-                      db.collection("events").doc(selection).set(data, {merge: true});
-                      alert(`You have successfully accepted request from ${senderEmail}.`)
-                      return;
-                    }
-                    function repeaterChecker(acceptedEmailList) {
+                  function repeaterChecker(acceptedEmailList) {
                       for (let index in acceptedEmailList) {
                         if(!isNaN(parseInt(index))) {
                           if (acceptedEmailList[index] != user.email) {
@@ -204,6 +196,15 @@
                         }
                       }
                     }
+                  try {
+                    if (sendersAccepted == undefined) {
+                      sendersAccepted = [];
+                      data[senderEmail]['acceptedRequests'] = [user.email];
+                      repeaterChecker(data[user.email]['acceptedRequests']);
+                      db.collection("events").doc(selection).set(data, {merge: true});
+                      alert(`You have successfully accepted request from ${senderEmail}.`)
+                      return;
+                    }
                     repeaterChecker(sendersAccepted);
                     repeaterChecker(data[user.email]['acceptedRequests']);
                   } catch (e) {
@@ -212,8 +213,8 @@
                   db.collection("events").doc(selection).set(data, {
                     merge: true
                   });
+                  alert(`You have successfully accepted request from ${senderEmail}.`)
                 });
-                alert(`You have successfully accepted request from ${senderEmail}.`)
               } else {
                 return;
               }
