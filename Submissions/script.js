@@ -13,9 +13,12 @@ function inputsettings() {
 }
 
 function changeButton() {
-  var Labelbtn = document.getElementById('btnFiles');
-  Labelbtn.innerHTML = 'Upload';
-  Labelbtn.setAttribute('for', '');
+  let submittedFiles = document.querySelector('#file').files;
+  if (submittedFiles.length == numberOfFiles) {
+    var Labelbtn = document.getElementById('btnFiles');
+    Labelbtn.innerHTML = 'Upload';
+    Labelbtn.setAttribute('for', '');
+  }
 }
 
 function info() {
