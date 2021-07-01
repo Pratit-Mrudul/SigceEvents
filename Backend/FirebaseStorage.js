@@ -11,7 +11,7 @@ async function sendFiles() {
             const name = (+new Date()) + '-' + file.name;
             if (fileTypes.includes(file.type)) {
                 const metadata = { contentType: file.type };
-                await ref.child(eventName).put(file, metadata).then(() => {console.log('done')});
+                await ref.child(`${eventName}/${name}`).put(file, metadata).then(() => {console.log('done')});
             }
         }
     }
