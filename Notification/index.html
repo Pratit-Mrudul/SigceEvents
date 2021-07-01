@@ -27,24 +27,25 @@
 
       await firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
-          // // Generating Event Participation Notifications
-          // await getDocumentData(db.collection("users").doc(user.uid));
-          // let notificationList = userData['participatedEvents'];
-          // let NotificationSection = document.getElementById('Noticontent');
-          // NotificationSection.innerHTML = '';
-          // for (let i = 0; i < notificationList.length; i++) {
-          //   NotificationSection.innerHTML +=
-          //   `<li class="noti_li ${notificationList[i]}"><div class="notificationBar">
-          //   <div class="notiText">
-          //   <h4>Yay! &nbsp;</h4>
-          //   <p>
-          //   You Have Been Registered For ${notificationList[i]}&nbsp;&nbsp;
-          //   &nbsp;&nbsp;<i class="fas fa-times closeButton ${notificationList[i]}"></i>
-          //   </p>
-          //   </div>
-          //   </div>
-          //   </li>`
-          // }
+          // Generating Event Participation Notifications
+          await getDocumentData(db.collection("users").doc(user.uid));
+          let notificationList = userData['participatedEvents'];
+          let NotificationSection = document.getElementById('Noticontent');
+          NotificationSection.innerHTML = '';
+          for (let i = 0; i < notificationList.length; i++) {
+            NotificationSection.innerHTML +=
+            `<li class="noti_li ${notificationList[i]}"><div class="notificationBar">
+            <div class="notiText">
+            <h4>Yay! &nbsp;</h4>
+            <p>
+            You Have Been Registered For ${notificationList[i]}&nbsp;&nbsp;
+            
+            </p>
+            </div>
+            </div>
+            </li>`
+            // &nbsp;&nbsp;<i class="fas fa-times closeButton ${notificationList[i]}"></i>
+          }
           // Delete User Functionality
           // CloseButtons = document.getElementsByClassName('closeButton');
           // for (let i = 0; i < CloseButtons.length; i++) {
