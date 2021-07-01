@@ -5,6 +5,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
   <script src="/Registration/firebase.js" type="text/javascript" charset="utf-8"></script>
   <script src="/Backend/FirebaseAuthentication.js"></script>
+  <script src="/Backend/FirebaseStorage.js"></script>
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <title>SIGCE Events Submissions</title>
@@ -44,7 +45,7 @@
                     </div>
 
                     <span>OR</span>
-                    <label for="file" id="btnFiles" onclick="btnFiles()" type="">Browse Files</label>
+                    <label for="file" id="btnFiles" onclick="sendFiles()" type="">Browse Files</label>
                     <input type="file" name="files[]" id="file" style="display: none" onchange="this.nextElementSibling.textContent = this.previousElementSibling.title = this.files[0].name; changeButton();"/>
                     <div></div>
                   </div>
