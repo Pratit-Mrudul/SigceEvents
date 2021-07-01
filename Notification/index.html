@@ -182,15 +182,19 @@
                   acceptedRequests.push(senderEmail);
                   data[user.email]['acceptedRequests'] = acceptedRequests;
                   let sendersAccepted = data[senderEmail]['acceptedRequests'];
+                  acceptedEmailListRecord = [];
                   function repeaterChecker(acceptedEmailList) {
-                      for (let index in acceptedEmailList) {
-                        if(!isNaN(parseInt(index))) {
-                          if (acceptedEmailList[index] != user.email) {
-                            if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
-                              data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
-                            }
-                            if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
-                              repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
+                    if (!acceptedEmailListRecord.includes(acceptedEmailList)) {
+                      acceptedEmailListRecord.push(acceptedEmailListRecord);
+                        for (let index in acceptedEmailList) {
+                          if(!isNaN(parseInt(index))) {
+                            if (acceptedEmailList[index] != user.email) {
+                              if(!data[user.email]['acceptedRequests'].includes(acceptedEmailList[index])) {
+                                data[user.email]['acceptedRequests'].push(acceptedEmailList[index]);
+                              }
+                              if (data[acceptedEmailList[index]]['acceptedRequests'] != undefined) {
+                                repeaterChecker(data[acceptedEmailList[index]]['acceptedRequests']);
+                              }
                             }
                           }
                         }
