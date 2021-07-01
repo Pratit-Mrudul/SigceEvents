@@ -1,5 +1,7 @@
 const hamburger_menu = document.querySelector(".hamburger-menu");
 const container = document.querySelector(".container");
+const eventSelector = document.querySelector("#selectEvent");
+const fileUpload = document.getElementsByClassName('formback')[1];
 
 hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
