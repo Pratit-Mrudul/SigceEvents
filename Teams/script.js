@@ -57,7 +57,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 BGMIMember.style.display = 'none';
               }
               for (index in AcceptedList) {
-                document.getElementById('BGMIMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('BGMIMembers').innerHTML}</p>`;
+                document.getElementById('BGMIMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} ${document.getElementById('BGMIMembers').innerHTML}</p>`;
               }
             })
           } catch (e) {
@@ -93,7 +93,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 QUIZMember.style.display = 'none';
               }
               for (index in AcceptedList) {
-                document.getElementById('QUIZMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('QUIZMembers').innerHTML}</p>`;
+                document.getElementById('QUIZMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} ${document.getElementById('QUIZMembers').innerHTML}</p>`;
               }
             })
           } catch (e) {
@@ -129,7 +129,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 DEBATEMember.style.display = 'none';
               }
               for (index in AcceptedList) {
-                document.getElementById('DEBATEMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('DEBATEMembers').innerHTML}</p>`;
+                document.getElementById('DEBATEMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} ${document.getElementById('DEBATEMembers').innerHTML}</p>`;
               }
             })
           } catch (e) {
@@ -165,7 +165,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 IDEASMember.style.display = 'none';
               }
               for (index in AcceptedList) {
-                document.getElementById('SCI-PROJECTMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} + ${document.getElementById('SCI-PROJECTMembers').innerHTML}</p>`;
+                document.getElementById('SCI-PROJECTMembers').innerHTML = `<p>${data[AcceptedList[index]]['name']} ${document.getElementById('SCI-PROJECTMembers').innerHTML}</p>`;
               }
             })
           } catch(e) {
