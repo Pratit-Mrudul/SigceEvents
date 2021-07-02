@@ -78,7 +78,7 @@
                       Drag And Drop To Upload File
                     </div>
                     <span>OR</span>
-                    <label for="file" id="btnFiles" onclick="sendFiles()" type="">Browse Files</label>
+                    <label for="file" id="btnFiles" type="">Browse Files</label>
                     <input type="file" name="files[]" id="file" style="display: none" onchange="
                       for (let i = 0; i<this.files.length; i++) {
                         this.nextElementSibling.innerHTML += `<p>${this.files[i].name}</p>`;
