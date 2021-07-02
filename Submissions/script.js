@@ -24,8 +24,8 @@ function sizeCheck(files2) {
 };
 
 function changeButton() {
-  let submittedFiles = document.querySelector('#file').files;
-  if (submittedFiles.length == finalFilesList) {
+  let submittedFiles = finalFilesList;
+  if (submittedFiles.length == numberOfFiles) {
     var Labelbtn = document.getElementById('btnFiles');
     var Uploadbtn = document.getElementById('btnFilesUpload');
     Labelbtn.style.display = 'none';
