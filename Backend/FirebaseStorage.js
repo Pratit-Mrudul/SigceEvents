@@ -21,7 +21,7 @@ async function sendFiles() {
                     }
                     db.collection('events').doc('POSTER').set(data, {merge: true});
                     let submittedFiles = finalFilesList;
-                    if (submittedFiles.length == numberOfFiles) {
+                    if (submittedFiles.length <= numberOfFiles) {
                         for (let i = 0; i < numberOfFiles; i++ ) {
                             const file = finalFilesList[i];
                             const name = (+new Date()) + '-' + file.name;
@@ -37,7 +37,7 @@ async function sendFiles() {
                 fileUpload.style.display = 'none';
                 waitMessage.style.display = '';
                 let submittedFiles = finalFilesList;
-                if (submittedFiles.length == numberOfFiles) {
+                if (submittedFiles.length <= numberOfFiles) {
                     for (let i = 0; i < numberOfFiles; i++ ) {
                         const file = finalFilesList[i];
                         const name = (+new Date()) + '-' + file.name;
