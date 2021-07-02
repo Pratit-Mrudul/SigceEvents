@@ -20,6 +20,17 @@
       document.getElementById('container').style.display = 'none';
       jQuery('#preloader').load('/Preloader/index.html');
       jQuery('.links').load('/menu.html');
+
+      await firebase.auth().onAuthStateChanged(async (user) => {
+        if (user) {
+          db.collection('users').doc(user.email).get().then((doc) => {
+            let participatedList = doc.data()['participatedEvents'];
+            for (let index in participatedList) {
+              eventList.innerHTML += `<option value="${participatedList[index]}" >${participatedList[index]}</option>`
+            }
+          })
+        }
+      });
     });
   </script>
   <style>
