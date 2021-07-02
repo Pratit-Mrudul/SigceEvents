@@ -2,7 +2,8 @@ const ref = firebase.storage().ref();
 var numberOfFiles = 1
 var fileTypes = [];
 let eventName = '';
-let textContentPoster = ''
+let textContentPoster = '';
+let finalFilesList = []
 
 async function sendFiles() {
     await firebase.auth().onAuthStateChanged(async (user) => {
@@ -19,7 +20,7 @@ async function sendFiles() {
                         "posterDescription": textContentPoster,
                     }
                     db.collection('events').doc('POSTER').set(data, {merge: true});
-                    let submittedFiles = document.querySelector('#file').files;
+                    let submittedFiles = finalFilesList;
                     if (submittedFiles.length == numberOfFiles) {
                         for (let i = 0; i < numberOfFiles; i++ ) {
                             const file = await document.querySelector('#file').files[i];
