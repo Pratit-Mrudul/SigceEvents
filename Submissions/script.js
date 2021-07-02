@@ -27,7 +27,7 @@ function changeButton() {
   let submittedFiles = document.querySelector('#file').files;
   if (submittedFiles.length == numberOfFiles) {
     var Labelbtn = document.getElementById('btnFiles');
-    var Uploadbtn = document.getElementById('btnFiles');
+    var Uploadbtn = document.getElementById('btnFilesUpload');
     Labelbtn.style.display = 'none';
     Labelbtn.setAttribute('for', '');
     Uploadbtn.style.display = ''
