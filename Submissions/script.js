@@ -15,8 +15,8 @@ function inputsettings() {
   document.getElementById('inner').style.display = 'none';
 }
 
-function sizeCheck(files) {
-  if(files[0].size > 200000000){
+function sizeCheck(files2) {
+  if(files2[0].size > 200000000){
      alert("File is too big!");
      location.reload();
      return;
