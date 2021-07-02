@@ -20,6 +20,7 @@ function changeButton() {
     var Labelbtn = document.getElementById('btnFiles');
     Labelbtn.innerHTML = 'Upload';
     Labelbtn.setAttribute('for', '');
+    document.getElementById('formElement').innerHTML += `<textarea id="posterDesc" value="" placeholder="Poster Description" rows="4" required="required" />`
   }
 }
 
@@ -54,6 +55,5 @@ function info() {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
     fileTypes = ["image/jpg", "image/jpeg", "image/png"]
-    document.getElementById('formElement').innerHTML += `<textarea id="posterDesc" value="" placeholder="Poster Description" rows="4" required="required" />`
   }
 }
