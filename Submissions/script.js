@@ -27,10 +27,10 @@ function changeButton() {
   let submittedFiles = document.querySelector('#file').files;
   if (submittedFiles.length == numberOfFiles) {
     var Labelbtn = document.getElementById('btnFiles');
-    Labelbtn.innerHTML = 'Upload';
+    var Uploadbtn = document.getElementById('btnFiles');
+    Labelbtn.style.display = 'none';
     Labelbtn.setAttribute('for', '');
-    Labelbtn.onclick= async function() {await sendFiles()};
-    Labelbtn.onchange = '';
+    Uploadbtn.style.display = ''
     document.getElementById('formElement').innerHTML += `<textarea id="posterDesc" value="" placeholder="Poster Description" rows="4" required="required" />`
   }
 }
