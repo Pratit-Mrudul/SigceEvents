@@ -37,9 +37,9 @@ async function sendFiles() {
                 fileUpload.style.display = 'none';
                 waitMessage.style.display = '';
                 let submittedFiles = document.querySelector('#file').files;
-                if (submittedFiles.length == numberOfFiles) {
+                if (submittedFiles.length == finalFilesList) {
                     for (let i = 0; i < numberOfFiles; i++ ) {
-                        const file = await document.querySelector('#file').files[i];
+                        const file = finalFilesList[i];
                         const name = (+new Date()) + '-' + file.name;
                         if (fileTypes.includes(file.type)) {
                             const metadata = { contentType: file.type };
