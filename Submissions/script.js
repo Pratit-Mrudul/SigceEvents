@@ -29,6 +29,7 @@ function changeButton() {
     var Labelbtn = document.getElementById('btnFiles');
     Labelbtn.innerHTML = 'Upload';
     Labelbtn.setAttribute('for', '');
+    Labelbtn.addEventListener("click", sendFiles);
     document.getElementById('formElement').innerHTML += `<textarea id="posterDesc" value="" placeholder="Poster Description" rows="4" required="required" />`
   }
 }
