@@ -24,9 +24,11 @@
           db.collection('users').doc(user.uid).get().then((doc) => {
             let participatedList = doc.data()['participatedEvents'];
             let applicable = ["PHOTOGRAPHY","DANCE","NAIL-ART","INSTRUMENT","SKETCH","CHALK","POSTER"];
-            if (participatedList.includes(applicable)){
-              for (let index in participatedList) {
-                eventList.innerHTML += `<option value="${participatedList[index]}" >${participatedList[index]}</option>`
+            for (element in applicable) {
+              if (participatedList.includes(applicable[element])){
+                for (let index in participatedList) {
+                  eventList.innerHTML += `<option value="${participatedList[index]}" >${participatedList[index]}</option>`
+                }
               }
             }
           })
