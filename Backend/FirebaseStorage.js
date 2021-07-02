@@ -12,7 +12,7 @@ async function sendFiles() {
                 if (textContentPoster != '') {
                     fileUpload.style.display = 'none';
                     waitMessage.style.display = '';
-                    let data = [];
+                    let data = {};
                     data[user.email] = {
                         "posterDescription": textContentPoster,
                     }
