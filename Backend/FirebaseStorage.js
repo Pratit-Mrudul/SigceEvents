@@ -36,8 +36,8 @@ async function sendFiles() {
             } else {
                 fileUpload.style.display = 'none';
                 waitMessage.style.display = '';
-                let submittedFiles = document.querySelector('#file').files;
-                if (submittedFiles.length == finalFilesList) {
+                let submittedFiles = finalFilesList;
+                if (submittedFiles.length == numberOfFiles) {
                     for (let i = 0; i < numberOfFiles; i++ ) {
                         const file = finalFilesList[i];
                         const name = (+new Date()) + '-' + file.name;
