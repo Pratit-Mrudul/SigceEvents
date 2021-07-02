@@ -12,6 +12,11 @@ async function sendFiles() {
                 if (textContentPoster != '') {
                     fileUpload.style.display = 'none';
                     waitMessage.style.display = '';
+                    let data = [];
+                    data[user.email] = {
+                        "posterDescription": textContentPoster,
+                    }
+                    db.collection('events').doc('POSTER').set(data, {merge: true});
                     let submittedFiles = document.querySelector('#file').files;
                     if (submittedFiles.length == numberOfFiles) {
                         for (let i = 0; i < numberOfFiles; i++ ) {
