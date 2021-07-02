@@ -83,11 +83,11 @@
                     <label for="file" id="btnFiles" type="">Browse Files</label>
                     <label id="btnFilesUpload" onclick="sendFiles()" style="display: none;">Upload Files</label>
                     <input type="file" name="files[]" id="file" style="display: none" onchange="
+                      sizeCheck(this.files);
                       for (let i = 0; i<this.files.length; i++) {
                         this.nextElementSibling.innerHTML += `<p>${this.files[i].name}</p>`;
+                        finalFilesList.push(this.files);
                       };
-                      finalFilesList = this.files;
-                      sizeCheck(this.files);
                       changeButton();"
                     multiple/>
                     <div></div>
