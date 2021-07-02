@@ -20,7 +20,7 @@
       jQuery('.links').load('/menu.html');
       await firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
-          db.collection('users').doc(user.email).get().then((doc) => {
+          db.collection('users').doc(user.uid).get().then((doc) => {
             let participatedList = doc.data()['participatedEvents'];
             for (let index in participatedList) {
               eventList.innerHTML += `<option value="${participatedList[index]}" >${participatedList[index]}</option>`
@@ -78,7 +78,8 @@
                     <input type="file" name="files[]" id="file" style="display: none" onchange="
                       for (let i = 0; i<this.files.length; i++) {
                         this.nextElementSibling.innerHTML += `<p>${this.files[i].name}</p>`;
-                      }
+                      };
+                      sizeCheck(this.files);
                       changeButton();"
                     multiple/>
                     <div></div>

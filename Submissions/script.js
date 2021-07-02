@@ -15,6 +15,14 @@ function inputsettings() {
   document.getElementById('inner').style.display = 'none';
 }
 
+function sizeCheck(files) {
+  if(files[0].size > 200000000){
+     alert("File is too big!");
+     location.reload();
+     return;
+  };
+};
+
 function changeButton() {
   let submittedFiles = document.querySelector('#file').files;
   if (submittedFiles.length == numberOfFiles) {
