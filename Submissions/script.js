@@ -31,7 +31,9 @@ function changeButton() {
     Labelbtn.style.display = 'none';
     Labelbtn.setAttribute('for', '');
     Uploadbtn.style.display = ''
-    document.getElementById('formElement').innerHTML += `<textarea id="posterDesc" value="" placeholder="Poster Description" rows="4" required="required" />`
+    if (eventName == "POSTER") {
+      document.getElementById('formElement').innerHTML += `<textarea id="posterDesc" value="" placeholder="Poster Description" rows="4" required="required" />`
+    }
   }
 }
 
