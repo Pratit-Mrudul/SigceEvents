@@ -57,7 +57,7 @@ function info() {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
     numberOfFiles = 2
-    fileTypes = ['.jpg', '.jpeg', '.png']
+    fileTypes = ["image/jpg", "image/jpeg", "image/png",]
   } else if (eventName == "CHALK") {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
