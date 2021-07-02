@@ -23,7 +23,7 @@
         if (user) {
           db.collection('users').doc(user.uid).get().then((doc) => {
             let participatedList = doc.data()['participatedEvents'];
-            let applicable = ["PHOTOGRAPHY","DANCE","NAIL-ART","INSTRUMENT","SKETCH","CHALK","POSTER"];
+            let applicable = ["PHOTOGRAPHY","DANCE","NAIL-ART","SKETCH","CHALK","POSTER"];
             for (element in applicable) {
               if (participatedList.includes(applicable[element])){
                 for (let index in participatedList) {
