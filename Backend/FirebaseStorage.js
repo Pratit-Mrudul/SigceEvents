@@ -8,7 +8,9 @@ async function sendFiles() {
     await firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
             if (eventName == 'POSTER') {
-                textContentPoster = document.getElementById('posterDesc').value;
+                try{
+                    textContentPoster = document.getElementById('posterDesc').value;
+                } catch(e) {console.log(e); return;}
                 if (textContentPoster != '') {
                     fileUpload.style.display = 'none';
                     waitMessage.style.display = '';
