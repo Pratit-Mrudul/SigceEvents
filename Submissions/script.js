@@ -4,7 +4,7 @@ const eventSelector = document.getElementById("selectEvent");
 const fileUpload = document.getElementsByClassName('formback')[1];
 const waitMessage = document.getElementById("waitMessage");
 const waitScreenMessage = document.getElementById("waitingScreenMessage");
-const eventList = document.documentElementByID('event');
+const eventList = document.getElementById('event');
 
 hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
