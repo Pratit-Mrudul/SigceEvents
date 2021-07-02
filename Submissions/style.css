@@ -460,3 +460,21 @@ select:focus {
   cursor: pointer;
   text-decoration: none;
 }
+/* Text Input Stuff */
+textarea {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 1px solid #3498dd;
+  padding: 7px 5px;
+  width: 200px;
+  color: white;
+  border-radius: 15px;
+  transition: 0.25s;
+}
+textarea :focus {
+  width: 280px;
+  border-color: #2ecc71;
+}

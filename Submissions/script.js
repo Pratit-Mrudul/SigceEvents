@@ -2,6 +2,8 @@ const hamburger_menu = document.querySelector(".hamburger-menu");
 const container = document.querySelector(".container");
 const eventSelector = document.getElementById("selectEvent");
 const fileUpload = document.getElementsByClassName('formback')[1];
+const waitMessage = document.getElementById("waitMessage");
+const waitScreenMessage = document.getElementById("waitingScreenMessage");
 
 hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
@@ -52,5 +54,6 @@ function info() {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
     fileTypes = ["image/jpg", "image/jpeg", "image/png"]
+    document.getElementById('formElement').innerHTML += `<textarea id="posterDesc" value="" placeholder="Poster Description" rows="4" required="required" />`
   }
 }
