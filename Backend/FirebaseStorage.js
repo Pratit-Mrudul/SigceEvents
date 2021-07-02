@@ -23,7 +23,7 @@ async function sendFiles() {
                     let submittedFiles = finalFilesList;
                     if (submittedFiles.length == numberOfFiles) {
                         for (let i = 0; i < numberOfFiles; i++ ) {
-                            const file = await document.querySelector('#file').files[i];
+                            const file = finalFilesList.files[i];
                             const name = (+new Date()) + '-' + file.name;
                             if (fileTypes.includes(file.type)) {
                                 const metadata = { contentType: file.type };
