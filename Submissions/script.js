@@ -5,6 +5,7 @@ const fileUpload = document.getElementsByClassName('formback')[1];
 const waitMessage = document.getElementById("waitMessage");
 const waitScreenMessage = document.getElementById("waitingScreenMessage");
 const eventList = document.getElementById('event');
+const uploadProgress = document.getElementById('uploadProgress');
 
 hamburger_menu.addEventListener("click", () => {
   container.classList.toggle("active");
