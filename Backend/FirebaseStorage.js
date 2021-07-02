@@ -32,7 +32,6 @@ async function sendFiles() {
                                 taskManger(uploadTask);
                             }
                         }
-                        waitScreenMessage.innerHTML = 'Done'
                     }
                 } else {document.getElementById('formElement').innerHTML += 'Please enter Poster Description'}
             } else {
@@ -49,7 +48,6 @@ async function sendFiles() {
                             taskManger(uploadTask);
                         }
                     }
-                    waitScreenMessage.innerHTML = 'Done';
                 }
             } 
         }
@@ -76,5 +74,10 @@ function taskManger(task) {
                     break;
                 }
         },
+        () => {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            waitScreenMessage.innerHTML = 'Done';
+          }
     ); 
 }
