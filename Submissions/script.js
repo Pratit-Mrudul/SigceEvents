@@ -51,19 +51,18 @@ function info() {
   } else if (eventName == "NAIL-ART") {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
-    fileTypes = ["video/x-matroska", "video/mp4"]
-  } else if (eventName == "INSTRUMENT") {
-    eventSelector.style.display = 'none';
-    fileUpload.style.display = '';
-    fileTypes = ["video/x-matroska", "video/mp4"]
+    numberOfFiles = 2
+    fileTypes = ["video/x-matroska", "video/mp4", "image/jpg", "image/jpeg", "image/png", "image/DNG", "image/NEF"]
   } else if (eventName == "SKETCH") {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
+    numberOfFiles = 2
     fileTypes = ['.jpg', '.jpeg', '.png']
   } else if (eventName == "CHALK") {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
-    fileTypes = ["video/x-matroska", "video/mp4"]
+    numberOfFiles = 2
+    fileTypes = ["video/x-matroska", "video/mp4", "image/jpg", "image/jpeg", "image/png", "image/DNG", "image/NEF"]
   } else if (eventName == "POSTER") {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
@@ -71,6 +70,7 @@ function info() {
   } else if (eventName == "MASK-PAINTING") {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
-    fileTypes = ["image/jpg", "image/jpeg", "image/png"]
+    numberOfFiles = 2
+    fileTypes = ["video/x-matroska", "video/mp4", "image/jpg", "image/jpeg", "image/png", "image/DNG", "image/NEF"]
   }
 }
