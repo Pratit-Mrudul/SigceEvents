@@ -66,5 +66,9 @@ function info() {
     eventSelector.style.display = 'none';
     fileUpload.style.display = '';
     fileTypes = ["image/jpg", "image/jpeg", "image/png"]
+  } else if (eventName == "MASK-PAINTING") {
+    eventSelector.style.display = 'none';
+    fileUpload.style.display = '';
+    fileTypes = ["image/jpg", "image/jpeg", "image/png"]
   }
 }
