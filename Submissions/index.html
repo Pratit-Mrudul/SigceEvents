@@ -15,7 +15,17 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     jQuery(function() {
-      jQuery('.links').load('/menu.html')
+      jQuery('.links').load('/menu.html');
+      await firebase.auth().onAuthStateChanged(async (user) => {
+        if (user) {
+          db.collection('users').doc(user.email).get().then((doc) => {
+            let participatedList = doc.data()['participatedEvents'];
+            for (let index in participatedList) {
+              eventList.innerHTML += `<option value="${participatedList[index]}" >${participatedList[index]}</option>`
+            }
+          })
+        }
+      });
     });
   </script>
 </head>
