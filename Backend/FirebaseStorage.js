@@ -1,4 +1,4 @@
-const ref = firebase.storage().ref();
+let ref = firebase.storage().ref();
 var numberOfFiles = 1
 var fileTypes = [];
 let eventName = '';
