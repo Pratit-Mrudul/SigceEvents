@@ -238,6 +238,37 @@
               }
             })
           }
+          // Submission Notification
+          for (element in notificationList) {
+            var listRef = storageRef.child(`${notificationList[element]}/${user.email}`);
+            // Find all the prefixes and items.
+            listRef.listAll()
+              .then((res) => {
+                res.prefixes.forEach((folderRef) => {
+                  // All the prefixes under listRef.
+                  // You may call listAll() recursively on them.
+                });
+                res.items.forEach((itemRef) => {
+                  // All the items under listRef.
+                  if(itemRef != undefined && itemRef != null) {
+                    NotificationSection.innerHTML +=
+                    `<li class="noti_li"><div class="notificationBar">
+                    <div class="notiText">
+                    <h4>Yay! &nbsp;</h4>
+                    <p>
+                    You have successfully submitted for ${notificationList[element]}&nbsp;&nbsp;
+                    </p>
+                    </div>
+                    </div>
+                    </li>`
+                    return;
+                  }
+                });
+              }).catch((error) => {
+                // Uh-oh, an error occurred!
+                console.log(error);
+              });
+          }
         }
       });
       setTimeout(function() {
